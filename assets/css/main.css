@@ -19,6 +19,15 @@ ul {
     list-style-type: square;
 }
 
+p {
+    font-family: Cambria, Georgia, serif;
+    text-align: justify;
+}
+
+em {
+    color: #b90505
+}
+
 .old_news {
     margin-top:-16px;
 }
@@ -42,4 +51,20 @@ height: 200px;
     border-radius: 50%;
 }
   
+
+.emphasis {
+    background-color: #fef1f1;
+    border-left: 4px solid #b90505;
+    display: block;
+    border-radius: 4px 8px 8px 4px;
+    -moz-border-radius: 4px 8px 8px 4px;
+    -webkit-border-radius: 4px 8px 8px 4px;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 0.8em!important;
+    margin-top: 0.8em!important;
+    orphans: 3;
+}
 

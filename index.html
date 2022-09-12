@@ -11,7 +11,7 @@ circle-img: /assets/img/mansurarief.jpg
 <a href="https://engineering.cmu.edu/">College of Engineering</a> at  <a href="https://www.cmu.edu/">Carnegie Mellon University</a>. 
 I received my bachelor's degree from the <a href="https://www.its.ac.id/industrial-and-systems-engineering/">Industrial and Systems Engineering Department</a> 
 at <a href="https://www.its.ac.id/">ITS</a> and master's degree from the <a href="https://ioe.engin.umich.edu/">Industrial and Operations Engineering Department</a> 
-at the <a href="https://www.umich.edu/">University of Michigan</a>. 
+at the <a href="https://www.umich.edu/">University of Michigan</a>.
 </p> 
 
 <p>I work in the <a href="https://safeai-lab.github.io/">CMU Safe AI Lab</a> supervised by <a href="https://safeai-lab.github.io/">Prof. Ding Zhao</a>. 
@@ -70,5 +70,12 @@ Some of my most recent publications:
 
 
 
+Test Here
 
-
+<ul>
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
