@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introduction to Engineering Optimization
-permalink: engineering-optimization-notes
+permalink: intro-to-engineering-optimization
 tags: [optimization, engineering]
 ---
 
@@ -25,6 +25,8 @@ In this form, $$\mathbf x$$ denotes the *decision variable*, i.e. the adjustable
 
 {: .emphasis}
 Suppose $$x_1$$ denotes the radius of a cylinder in meter and $$x_2$$ denotes its height (also in meter). What is its maximum surface area, if its volume must equal $$V$$ cubic meter? Formulate the problem into an optimization problem in negative null form!
+<br>
+![Cylinder](/assets/img/cylinder_problem.svg){:height="240px"}
 
 ### Negative Null Form
 
@@ -71,7 +73,7 @@ $$
 ### Solving the Problem
 
 {: .emphasis}
-Perhaps the easiest way to solve the above problem is by converting the 2-dimensional problem into 1-dimensional problem, using the fact
+Perhaps the most intuitive way to solve the above problem is by converting the 2-dimensional problem into 1-dimensional problem, using the fact
 $$
 \begin{align}
 x_2 = \frac{V}{\pi x_1^2}
@@ -80,7 +82,7 @@ $$
 Hence, the objective function becomes
 $$
 \begin{align}
-f(\mathbf x) &= -2 \pi x_1^2 - 2 \cancel{\pi x_1} \frac{V}{\cancel{\pi x_1} x_1}\\
+f(\mathbf x) = f(x_1) &= -2 \pi x_1^2 - 2 \cancel{\pi x_1} \frac{V}{\cancel{\pi x_1} x_1}\\
 &= -2 \pi x_1^2 - \frac{2V}{x_1} \label{eq:reformulated_problem}
 \end{align}
 $$
