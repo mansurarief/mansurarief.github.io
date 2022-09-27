@@ -1,0 +1,46 @@
+---
+layout: post
+title: Local Optimality
+permalink: local-optimality
+tags: [engineering, optimization]
+---
+
+## Test
+
+{% highlight python linenos %}
+
+import numpy as np
+import gurobipy as gp
+
+Q = np.diag([1, 2, 3])
+A = np.array([ [1, 2, 3], [1, 1, 0] ])
+b = np.array([4, 1])
+m = gp.Model()
+x = m.addMVar(3, ub=1.0, name='x')
+m.setObjective(x @ Q @ x)
+m.addConstr(A@x >= b)
+
+m.optimize()
+print(f"Opt solution: {x.x}")
+
+{% endhighlight %}
+
+
+## Boxes
+
+You can add notification, warning and error boxes like this:
+
+### Notification
+
+{: .box-note}
+**Note:** This is a notification box.
+
+### Warning
+
+{: .box-warning}
+**Warning:** This is a warning box.
+
+### Error
+
+{: .box-error}
+**Error:** This is an error box.

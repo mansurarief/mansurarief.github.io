@@ -19,21 +19,8 @@ ul {
     list-style-type: square;
 }
 
-p {
-    font-family: Cambria, Georgia, serif;
-    text-align: justify;
-}
-
-p {
-    margin-bottom: 0 }
-    p + p {
-    text-indent: 1.5em;
-    margin-top: 0 
-}
-
-
-em {
-    color: #b90505;
+li {
+    margin-bottom: 5px;
 }
 
 .old_news {
@@ -59,6 +46,11 @@ height: 200px;
     border-radius: 50%;
 }
   
+
+em {
+    color: #b90505;
+}
+
 
 .emphasis {
     background-color: #fef1f1;

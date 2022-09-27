@@ -1,4 +1,13 @@
-- tag: '<u>Arief, Mansur</u>, Zhiyuan Huang, Guru Koushik Senthil Kumar, Yuanlu Bai, Shengyi He, Wenhao Ding, Henry Lam, and Ding Zhao. "Deep Probabilistic Accelerated Evaluation: A Certifiable Rare-Event Simulation Methodology for Black-Box Autonomy." To appear in the <i>Proceedings of the 24th International Conference on Artificial Intelligence and Statistics (AISTATS)</i>. PMLR, 2021.'
+- tag: '<u>Arief, Mansur</u>, Zhepeng Cen, Zhenyuan Liu,  Zhiyuan Huang, Bo Li, Henry Lam, and Ding Zhao. "Test Against High-Dimensional Uncertainties: Accelerated Evaluation of Autonomous Vehicles with Deep Importance Sampling." <i>Under review</i>.'
+  link: 'https://arxiv.org/abs/2204.02351'
+
+- tag: '<u>Arief, Mansur</u>, Yuanlu Bai, Wenhao Ding, Shengyi He, Zhiyuan Huang, Henry Lam, and Ding Zhao. "Certifiable deep importance sampling for rare-event simulation of black-box systems." <i>Under review</i>.'
+  link: 'https://arxiv.org/abs/2111.02204'
+
+- tag: '<u>Arief, Mansur</u>, Zhepeng Cen, Zhenyuan Liu,  Zhiyuan Huang, Bo Li, Henry Lam, and Ding Zhao. "Certifiable Evaluation for Autonomous Vehicle Perception Systems Using Deep Importance Sampling (Deep IS)." To appear in <i>2022 25th International Conference on Intelligent Transportation Systems (ITSC)</i>. IEEE, 2022.'
+  link: 'https://arxiv.org/abs/2204.02351'
+
+- tag: '<u>Arief, Mansur</u>, Zhiyuan Huang, Guru Koushik Senthil Kumar, Yuanlu Bai, Shengyi He, Wenhao Ding, Henry Lam, and Ding Zhao. "Deep Probabilistic Accelerated Evaluation: A Certifiable Rare-Event Simulation Methodology for Black-Box Autonomy." In <i>Proceedings of the 24th International Conference on Artificial Intelligence and Statistics (AISTATS)</i>. PMLR, 2021.'
   link: 'https://arxiv.org/abs/2006.15722'
 
 - tag: 'Arief, Hasan Asy’ari, <u>Mansur Arief</u>, Guilin Zhang, Zuxin Liu, Manoj Bhat, Ulf Geir Indahl, Håvard Tveite, and Ding Zhao. "SAnE: Smart Annotation and Evaluation Tools for Point Cloud Data." <i>IEEE Access 8 (2020): 131848-131858</i>.'

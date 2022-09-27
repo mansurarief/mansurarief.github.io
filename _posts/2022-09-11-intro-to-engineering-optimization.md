@@ -2,7 +2,9 @@
 layout: post
 title: Introduction to Engineering Optimization
 permalink: intro-to-engineering-optimization
-tags: [optimization, engineering]
+tags: [engineering, optimization]
+header-includes:
+    - \usepackage{xcolor}
 ---
 
 ## Introduction
@@ -12,6 +14,7 @@ This note contains technical notes about mathematical optimization often used in
 We will use the following standard form (also known as the *negative null form*):
 $$
 \begin{align}
+\newcommand{\matr}[1]{\mathbf{#1}}
 \mathrm{minimize}_\mathbf{x}~~&f(\mathbf{x}) \label{eq:obj_fun}\\
 \mathrm{s.t.}~g(\mathbf x) &\leq \mathbf 0 \label{eq:ineq_cons}\\
 h(\mathbf x) &= \mathbf 0 \label{eq:eq_cons}\\
@@ -19,7 +22,14 @@ h(\mathbf x) &= \mathbf 0 \label{eq:eq_cons}\\
 \end{align}
 $$
 
-In this form, $$\mathbf x$$ denotes the *decision variable*, i.e. the adjustable parameter that needs careful selection to minimize a certain single-valued *objective function* $$f(\mathbf x),$$ while simultaneously satisfying a certain constraints. Note that we allow the decision variable to be multi-dimensional $$\mathbf x = [x_1, x_2, \cdots, x_d] \in \mathbb R^d$$, but the objective function value $$f(\mathbf x)$$ must be single-valued. We address three major types of constraints: *inequality constraints* denoted by $$g(\mathbf x)$$ (\ref{eq:ineq_cons}), *equality constraints* denoted by $$h(\mathbf x)$$  (\ref{eq:eq_cons}), and *domain constraints* denoted by set membership (\ref{eq:dom_cons}).
+In this form, $\mathbf x$ denotes the 
+<span class="sidenote">
+<label class="sidenote-label" for="note_1">*decision variable*</label>
+<input class="sidenote-checkbox" type="checkbox" id="note_1">
+<span class="sidenote-content sidenote-right">
+<span class="sidenote-delimiter">[note:</span>
+In the context of optimization, *decision variables* are unknown and controllable parameters of the system which finding their value is the purpose of problem solving effort. The value of decision values determines the system objective function value. ([IGI Global](https://www.igi-global.com/dictionary/unconstrained-optimization-in-business-analytics/7036))
+<span class="sidenote-delimiter">]</span></span></span>, i.e. the adjustable parameter that needs careful selection to minimize a certain single-valued *objective function* $$f(\mathbf x),$$ while simultaneously satisfying a certain constraints. Note that we allow the decision variable to be multi-dimensional $$\mathbf x = [x_1, x_2, \cdots, x_d] \in \mathbb R^d$$, but the objective function value $$f(\mathbf x)$$ must be single-valued. We address three major types of constraints: *inequality constraints* denoted by $$g(\mathbf x)$$ (\ref{eq:ineq_cons}), *equality constraints* denoted by $$h(\mathbf x)$$  (\ref{eq:eq_cons}), and *domain constraints* denoted by set membership (\ref{eq:dom_cons}).
 
 ### Example: Cylinder Surface Maximixation
 
@@ -122,7 +132,7 @@ f^{\prime \prime} (\mathbf x) &= - 4 \pi - \frac{4V}{\frac{V}{2\pi}} \\
 &< 0 \nonumber.
 \end{align}
 $$
-Hence, no, $$\mathbf x^*$$ is not a minimizer. It is a maximizer! The reformulated problem (\ref{eq:reformulated_problem}) turns out to be unbounded (see the figure below). Thus, the solution is trivial $$\mathbf x^* = [x_1^*, x_2^*]$$ where $$x_1^*  \to 0$$ and $$x_2^*  \to \infty$$. This highlights the importance of following optimization procedure and all its checks to ensure the correctness of the obtained solutions with regard to the problem.
+Hence, no, $$\mathbf x^*$$ is not a minimizer. It is a maximizer! The reformulated problem (\ref{eq:reformulated_problem}) turns out to be unbounded (see the figure below). Thus, the solution is trivial $$\mathbf x^* = [x_1^*, x_2^*]$$ where $$x_1^*\to 0$$ and $$x_2^*  \to \infty$$. This highlights the importance of following optimization procedure and all its checks to ensure the correctness of the obtained solutions with regard to the problem.
 <br>
 ![Plot](/assets/img/cylinder_surface_maximization.svg)
 
