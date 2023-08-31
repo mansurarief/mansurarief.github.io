@@ -19,9 +19,10 @@ navbar-links:
   Home: "index"
   Publications: "publications"
   Teaching: "teaching"
-  External Links:
-    - SISL: "https://sisl.stanford.edu"
-    - CMU Safe AI: "https://safeai-lab.github.io/"
+  Contact: "contact"
+#  External Links:
+#    - SISL: "https://sisl.stanford.edu"
+#    - CMU Safe AI: "https://safeai-lab.github.io/"
 
 # --- Logo --- #
 

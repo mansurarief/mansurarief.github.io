@@ -23,6 +23,12 @@
   category: 1
   year: 2023
 
+- tag: 'Abdussyukur, Hafizh, Mahmud Dwi Sulistiyo, Ema Rachmawati, <u>Mansur Arief</u>, Gamma Kosala. "Semantic Segmentation for Identifying Road Surface Damages Using Lightweight Encoder-Decoder Network." <i>ICACNIS, 2022</i>.'
+  link: 'https://ieeexplore.ieee.org/abstract/document/10056030'
+  selected: false
+  category: 2
+  year: 2022    
+
 - tag: 'Ziyad, Muhammad, Kenrick Tjandra, Mushonnifun Faiz Sugihartanto, <u>Mansur Arief</u>. "An Optimized and Safety-aware Maintenance Framework: A Case Study on Aircraft Engine." <i>ITSC, 2022</i>.'
   link: https://ieeexplore.ieee.org/abstract/document/9922187
   selected: false
@@ -82,6 +88,12 @@
   selected: false
   category: 1
   year: 2018
+
+- tag: 'Oktavian, Muhammad Rizki, Diana Febrita, <u>Mansur Arief</u>. "Cogeneration Power-Desalination in Small Modular Reactors (SMRs) for Load Following in Indonesia." <i>ICST, 2018</i>.'
+  link: 'https://ieeexplore.ieee.org/abstract/document/8528706'
+  selected: false
+  category: 4
+  year: 2018  
 
 - tag: 'Pujawan, Nyoman, <u>Mansur Arief</u>, Benny Tjahjono, and Duangpun Kritchanchai. "An Integrated Shipment Planning and Storage Capacity Decision under Uncertainty." <i>International Journal of Physical Distribution & Logistics Management (IJPDLM), 2015</i>.'
   link: 'https://www.emerald.com/insight/content/doi/10.1108/IJPDLM-08-2014-0198/full/html'
