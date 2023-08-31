@@ -1,32 +1,91 @@
-- tag: '<u>Arief, Mansur</u>, Zhepeng Cen, Zhenyuan Liu,  Zhiyuan Huang, Bo Li, Henry Lam, and Ding Zhao. "Test Against High-Dimensional Uncertainties: Accelerated Evaluation of Autonomous Vehicles with Deep Importance Sampling." <i>Under review</i>.'
-  link: 'https://arxiv.org/abs/2204.02351'
+- tag: '<u>Mansur Arief</u>, Yan Akhra, Iwan Vanany. "A Robust and Efficient Optimization Model for Electric Vehicle Charging Stations in Developing Countries under Electricity Uncertainty." <i>Under Review</i>.'
+  link: 'https://arxiv.org/abs/2307.05470'
+  selected: false
+  category: 3
+  year: 2023
 
-- tag: '<u>Arief, Mansur</u>, Yuanlu Bai, Wenhao Ding, Shengyi He, Zhiyuan Huang, Henry Lam, and Ding Zhao. "Certifiable deep importance sampling for rare-event simulation of black-box systems." <i>Under review</i>.'
+- tag: 'Nissa Amilia, Zulkifli Palinrungi, Iwan Vanany, <u>Mansur Arief</u>. "Designing an Optimized Electric Vehicle Charging Station Infrastructure for Urban Area: A Case study from Indonesia." <i>ITSC, 2022</i>.'
+  link: 'https://ieeexplore.ieee.org/abstract/document/9922278'
+  selected: false
+  category: 3
+  year: 2022
+
+- tag: 'Wenhao Ding, Chejian Xu, <u>Mansur Arief</u>, Haohong Lin, Bo Li, Ding Zhao. "A survey on safety-critical driving scenario generation—A methodological perspective." <i>T-ITS, 2023</i>.'
+  link: https://ieeexplore.ieee.org/abstract/document/10089194
+  selected: true
+  category: 1
+  year: 2023
+  
+
+- tag: '<u>Mansur Arief</u>. "Certifiable Evaluation for Safe Intelligent Autonomy." <i>Carnegie Mellon University, 2023</i>.'
+  link: https://www.proquest.com/openview/45f55565d4810a203cc28fc50dd878a6
+  selected: false
+  category: 1
+  year: 2023
+
+- tag: 'Muhammad Ziyad, Kenrick Tjandra, Mushonnifun Faiz Sugihartanto, <u>Mansur Arief</u>. "An Optimized and Safety-aware Maintenance Framework: A Case Study on Aircraft Engine." <i>ITSC, 2022</i>.'
+  link: https://ieeexplore.ieee.org/abstract/document/9922187
+  selected: false
+  category: 4
+  year: 2022
+
+- tag: '<u>Arief, Mansur</u>, Yuanlu Bai, Wenhao Ding, Shengyi He, Zhiyuan Huang, Henry Lam, and Ding Zhao. "Certifiable Deep Importance Sampling for Rare-Event Simulation of Black-Box Systems." <i>Under Review</i>.'
   link: 'https://arxiv.org/abs/2111.02204'
+  selected: false
+  category: 1
+  year: 2022
 
-- tag: '<u>Arief, Mansur</u>, Zhepeng Cen, Zhenyuan Liu,  Zhiyuan Huang, Bo Li, Henry Lam, and Ding Zhao. "Certifiable Evaluation for Autonomous Vehicle Perception Systems Using Deep Importance Sampling (Deep IS)." To appear in <i>2022 25th International Conference on Intelligent Transportation Systems (ITSC)</i>. IEEE, 2022.'
-  link: 'https://arxiv.org/abs/2204.02351'
+- tag: '<u>Arief, Mansur</u>, Zhepeng Cen, Zhenyuan Liu,  Zhiyuan Huang, Bo Li, Henry Lam, and Ding Zhao. "Certifiable Evaluation for Autonomous Vehicle Perception Systems Using Deep Importance Sampling (Deep IS)." <i>ITSC, 2022</i>.'
+  link: 'https://ieeexplore.ieee.org/abstract/document/9922202'
+  selected: true
+  category: 1
+  year: 2022
 
-- tag: '<u>Arief, Mansur</u>, Zhiyuan Huang, Guru Koushik Senthil Kumar, Yuanlu Bai, Shengyi He, Wenhao Ding, Henry Lam, and Ding Zhao. "Deep Probabilistic Accelerated Evaluation: A Certifiable Rare-Event Simulation Methodology for Black-Box Autonomy." In <i>Proceedings of the 24th International Conference on Artificial Intelligence and Statistics (AISTATS)</i>. PMLR, 2021.'
-  link: 'https://arxiv.org/abs/2006.15722'
+- tag: '<u>Arief, Mansur</u>, Zhiyuan Huang, Guru Koushik Senthil Kumar, Yuanlu Bai, Shengyi He, Wenhao Ding, Henry Lam, and Ding Zhao. "Deep Probabilistic Accelerated Evaluation: A Certifiable Rare-Event Simulation Methodology for Black-Box Autonomy. "<i>AISTATS, 2021</i>.'
+  link: 'https://proceedings.mlr.press/v130/arief21a/arief21a.pdf'
+  selected: true
+  category: 1
+  year: 2021
 
-- tag: 'Arief, Hasan Asy’ari, <u>Mansur Arief</u>, Guilin Zhang, Zuxin Liu, Manoj Bhat, Ulf Geir Indahl, Håvard Tveite, and Ding Zhao. "SAnE: Smart Annotation and Evaluation Tools for Point Cloud Data." <i>IEEE Access 8 (2020): 131848-131858</i>.'
+- tag: 'Arief, Hasan Asy’ari, <u>Mansur Arief</u>, Guilin Zhang, Zuxin Liu, Manoj Bhat, Ulf Geir Indahl, Håvard Tveite, and Ding Zhao. "SAnE: Smart Annotation and Evaluation Tools for Point Cloud Data." <i>IEEE Access, 2020</i>.'
   link: 'https://ieeexplore.ieee.org/iel7/6287639/8948470/09143095.pdf' 
+  selected: false
+  category: 2
+  year: 2020
 
-- tag: 'Chen, Rui, <u>Mansur Arief</u>, Weiyang Zhang, and Ding Zhao. "How to Evaluate Proving Grounds for Self-Driving? A Quantitative Approach." <i>IEEE Transactions on Intelligent Transportation Systems</i> (2020).'
-  link: 'https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9094370'
+- tag: 'Chen, Rui, <u>Mansur Arief</u>, Weiyang Zhang, and Ding Zhao. "How to Evaluate Proving Grounds for Self-Driving? A Quantitative Approach." <i>T-ITS, 2020</i>.'
+  link: 'https://ieeexplore.ieee.org/document/9094370'
+  selected: false
+  category: 1
+  year: 2020
 
-#- tag: 'Huang, Zhiyuan, <u>Mansur Arief</u>, Henry Lam, and Ding Zhao. "Evaluation uncertainty in data-driven self-driving testing." In <i>2019 IEEE Intelligent Transportation Systems Conference (ITSC)</i>, pp. 1902-1907. IEEE, 2019.'
-#  link: 'https://ieeexplore.ieee.org/abstract/document/8917406/'
+- tag: 'Huang, Zhiyuan, <u>Mansur Arief</u>, Henry Lam, and Ding Zhao. "Evaluation Uncertainty in Data-Driven Self-Driving Testing." <i>ITSC, 2019</i>.'
+  link: 'https://ieeexplore.ieee.org/abstract/document/8917406'
+  selected: false
+  category: 1
+  year: 2019
 
-#- tag: 'Arief, Hasan Asy`ari, <u>Mansur Arief</u>, Manoj Bhat, Ulf Geir Indahl, Håvard Tveite, and Ding Zhao. "Density-Adaptive Sampling for Heterogeneous Point Cloud Object Segmentation in Autonomous Vehicle Applications." In <i>CVPR Workshops</i>, pp. 26-33. 2019.'
-#  link: 'https://openaccess.thecvf.com/content_CVPRW_2019/papers/UG2+%20Prize%20Challenge/Arief_Density-Adaptive_Sampling_for_Heterogeneous_Point_Cloud_Object_Segmentation_in_Autonomous_CVPRW_2019_paper.pdf'
+- tag: 'Arief, Hasan Asy`ari, <u>Mansur Arief</u>, Manoj Bhat, Ulf Geir Indahl, Håvard Tveite, and Ding Zhao. "Density-Adaptive Sampling for Heterogeneous Point Cloud Object Segmentation in Autonomous Vehicle Applications." <i>CVPR Workshops, 2019</i>.'
+  link: 'https://openaccess.thecvf.com/content_CVPRW_2019/papers/UG2+%20Prize%20Challenge/Arief_Density-Adaptive_Sampling_for_Heterogeneous_Point_Cloud_Object_Segmentation_in_Autonomous_CVPRW_2019_paper.pdf'
+  selected: false
+  category: 2
+  year: 2019
 
-- tag: 'Liu, Zuxin, <u>Mansur Arief</u>, and Ding Zhao. "Where should we place lidars on the autonomous vehicle?-an optimal design approach." In <i>2019 International Conference on Robotics and Automation (ICRA)</i>, pp. 2793-2799. IEEE, 2019.'
-  link: 'https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8793619'
+- tag: 'Liu, Zuxin, <u>Mansur Arief</u>, and Ding Zhao. "Where Should We Place LiDARs on the Autonomous Vehicle? An Optimal Design Approach." <i>ICRA, 2019</i>.'
+  link: 'https://ieeexplore.ieee.org/document/8793619'
+  selected: false
+  category: 2
+  year: 2019
 
-- tag: '<u>Arief, Mansur</u>, Peter Glynn, and Ding Zhao. "An accelerated approach to safely and efficiently test pre-production autonomous vehicles on public streets." In <i>2018 21st International Conference on Intelligent Transportation Systems (ITSC)</i>, pp. 2006-2011. IEEE, 2018.'
-  link: 'https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8569371'
+- tag: '<u>Arief, Mansur</u>, Peter Glynn, and Ding Zhao. "An Accelerated Approach to Safely and Efficiently Test Pre-production Autonomous Vehicles on Public Streets." <i>ITSC, 2018</i>.'
+  link: 'https://ieeexplore.ieee.org/document/9094370'
+  selected: false
+  category: 1
+  year: 2018
 
-#- tag: 'Pujawan, Nyoman, <u>Mansur Maturidi Arief</u>, Benny Tjahjono, and Duangpun Kritchanchai. "An integrated shipment planning and storage capacity decision under uncertainty." <i>International Journal of Physical Distribution & Logistics Management</i> (2015).'
-#  link: 'https://www.emerald.com/insight/content/doi/10.1108/IJPDLM-08-2014-0198/full/html'
+- tag: 'Pujawan, Nyoman, <u>Mansur Arief</u>, Benny Tjahjono, and Duangpun Kritchanchai. "An Integrated Shipment Planning and Storage Capacity Decision under Uncertainty." <i>International Journal of Physical Distribution & Logistics Management (IJPDLM), 2015</i>.'
+  link: 'https://www.emerald.com/insight/content/doi/10.1108/IJPDLM-08-2014-0198/full/html'
+  selected: false
+  category: 4
+  year: 2015
+

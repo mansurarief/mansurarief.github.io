@@ -1,0 +1,17 @@
+- category: 'ev & infrastructure'
+  id: 3
+  desc: Studies focused on vehicle electrification and infrastructure designs.
+
+- category: 'verification & validation'
+  id: 1
+  desc: Development of efficient verification and validation algorithms for autonomous systems.
+
+- category: 'Decision-making under Uncertainty'
+  id: 4
+  desc: Exploration of optimization and simulation techniques for in the context of decision-making under uncertainty.
+
+- category: 'autonomous driving perception'
+  id: 2
+  desc: Works that design robust perception systems for autonomous driving applications.
+
+

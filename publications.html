@@ -1,0 +1,24 @@
+---
+layout: default
+title: Publications
+---
+
+<h1>Publications</h1>
+
+<p>Check out our publications across various categories, showcasing the remarkable collaborations I am fortunate to have engaged in. These works exemplify the profound expertise and dedication of my esteemed collaborators. We welcome new opportunities for collaboration and invite you to join us on our research journey!</p>
+
+{% assign categories = site.data.publications | group_by: 'category' %}
+{% assign sorted_categories = categories | sort: 'name' %}
+
+{% for category in sorted_categories %}
+  {% assign category_name = site.data.publication_category | where: 'id', category.name | first %}
+  <h2>{{ category_name.category | upcase }}</h2>
+  <strong>{{ category_name.desc }}</strong>
+  <ol>
+    {% assign sorted_publications = category.items | sort: 'tag' %}
+    {% assign sorted_publications = sorted_publications | sort: 'year' | reverse %}
+    {% for publication in sorted_publications %}
+      <li>{{ publication.tag | markdownify | remove: '<p>' | remove: '</p>' }} <br/><a href="{{ publication.link }}">{{ publication.link }}</a></li>
+    {% endfor %}
+  </ol>
+{% endfor %}

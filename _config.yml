@@ -11,13 +11,17 @@ title: Mansur Arief
 # Your name to show in the footer
 author: Mansur Arief
 
+
+
 # --- List of links in the navigation bar --- #
 
-# navbar-links:
-#  About Me: "aboutme"
-#  External Links:
-#    - Safe AI Lab: "https://safeai-lab.github.io/"
-#    - Mechanical Engineering: "https://www.meche.engineering.cmu.edu/"
+navbar-links:
+  Home: "index"
+  Publications: "publications"
+  Teaching: "teaching"
+  External Links:
+    - SISL: "https://sisl.stanford.edu"
+    - CMU Safe AI: "https://safeai-lab.github.io/"
 
 # --- Logo --- #
 
@@ -40,7 +44,7 @@ author: Mansur Arief
 social-network-links:
   email: "mansur.arief@stanford.edu"
   github: mansurarief
-  twitter: mansurmarief
+#  twitter: mansurmarief
 #  patreon: DeanAttali
 #  youtube: c/daattali
 #  medium: yourname
@@ -49,7 +53,7 @@ social-network-links:
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
-  instagram: mansur.m.arief
+#  instagram: mansur.m.arief
 #  spotify: yourname
 #  telephone: +14159998888
 #  steam: deanat78
@@ -58,7 +62,7 @@ social-network-links:
 #  telegram: yourname
 #  calendly: yourname
 #  mastodon: instance.url/@username
-  ORCID: 0000-0002-4636-3451
+#  ORCID: 0000-0002-4636-3451
   google-scholar: citations?user=VbJC_9kAAAAJ
 
 # If you want to show a link to an RSS in the footer, add the site description here.
@@ -185,7 +189,7 @@ date_format: "%B %-d, %Y"
 # --- You don't need to touch anything below here (but you can if you want) --- #
 
 # Output options (more information on Jekyll's site)
-timezone: "America/Los Angeles"
+timezone: "America/Los_Angeles"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
