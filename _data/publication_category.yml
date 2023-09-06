@@ -6,7 +6,7 @@
   id: 1
   desc: Development of efficient verification and validation algorithms for autonomous systems.
 
-- category: 'Decision-making under Uncertainty'
+- category: 'Optimization under Uncertainty'
   id: 4
   desc: Exploration of optimization and simulation techniques for in the context of decision-making under uncertainty.
 

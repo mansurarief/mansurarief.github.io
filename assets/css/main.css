@@ -68,3 +68,39 @@ em {
     orphans: 3;
 }
 
+.slide-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.slide {
+    width: 100%;
+    height: auto;
+    min-height: 64vh;
+    max-height: 80vh; /* Adjust as needed */
+    border: none;
+}
+
+.slide-notes {
+    width: 100%;
+    padding-top: 10px;
+    font-size: 0.6em;
+}
+
+@media (min-width: 768px) { /* Adjust breakpoint as needed */
+    .slide-container {
+        flex-direction: row;
+    }
+
+    .slide {
+        width: 80%;
+    }
+
+    .slide-notes {
+        width: 20%;
+        padding-left: 10px;
+        padding-top: 0;
+    }
+}
+
+
