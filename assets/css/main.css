@@ -76,9 +76,14 @@ em {
 .slide {
     width: 100%;
     height: auto;
-    min-height: 64vh;
-    max-height: 80vh; /* Adjust as needed */
+    max-height: 64vh; /* Adjust as needed */
     border: none;
+}
+
+@media (min-width: 768px) { /* Adjust breakpoint as needed */
+    .slide {
+        min-height: 64vh;
+    }
 }
 
 .slide-notes {
