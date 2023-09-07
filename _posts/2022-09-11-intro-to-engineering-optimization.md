@@ -2,7 +2,7 @@
 layout: post
 title: Introduction to Engineering Optimization
 permalink: intro-to-engineering-optimization
-tags: [engineering, optimization]
+tags: [optimization]
 header-includes:
     - \usepackage{xcolor}
 ---

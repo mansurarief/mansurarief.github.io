@@ -7,22 +7,20 @@ tags: [pomdp]
 
 # Decision Making Under Uncertainty
 
-
 {% include pdf_slide.html name="POMDP_intro_1.pdf" id="intro_slide"
 notes="
-**Intro to POMDP**: In this slide deck, I will briefly introduce a framework that allows us to make decisions under uncertainty called *Partially Observable Markov Decision Process (POMDP)*. In POMDP, the *state* (which is the representation of the world) is not directly observable, but only inferred through a belief that is constantly updated using *observations*. This is what distinguishes POMDP from other decision-making frameworks such as Markov Decision Process (MDP), which assumes that the state is directly observable.
+**Intro to POMDP**: In this presentation, I will briefly introduce a framework that allows us to make decisions under uncertainty called *Partially Observable Markov Decision Process (POMDP)*. In POMDP, the *state* (which is the representation of the world) is not directly observable, but only inferred through a belief that is constantly updated using *observations*. This is what distinguishes POMDP from other decision-making frameworks such as Markov Decision Process (MDP), which assumes that the state is directly observable.
 
-The full slide of this presentation is available [here](/assets/slides/POMDP_intro_all.pdf). 
+The full slide of this presentation is available [here](/assets/slides/POMDP_intro_all.pdf).
 
-This presentation is based on [JuliaAcademy course](https://juliaacademy.com/p/decision-making-under-uncertainty-with-pomdps-jl) by [Robert Moss](https://web.stanford.edu/~mossr/)." 
-
-
+This presentation is based on [JuliaAcademy course](https://juliaacademy.com/p/decision-making-under-uncertainty-with-pomdps-jl) by [Robert Moss](https://web.stanford.edu/~mossr/)."
 %}
 
 {% include pdf_slide.html name="POMDP_intro_2.pdf" id="pomdp_components"
 notes="
-**POMDP components**: A POMDP is a tuple of 7 elements: 
-- $\mathcal S$ is the set of states, 
+**POMDP components**: A POMDP is a tuple of 7 elements:
+
+- $\mathcal S$ is the set of states,
 - $\mathcal A$ is the set of actions,
 - $\mathcal O$ is the set of observations,
 - $T$ is the transition function, describing the probability of transitioning to state $s^\prime$ from state $s$ by taking action $a$
@@ -78,5 +76,5 @@ notes="**Simulating the future**: In order to find the optimal policy, many POMD
 notes="
 **Closing remarks**: In this short presentation, I have briefly introduced the POMDP framework and how it can be used to make decisions under uncertainty. I have also briefly introduced how POMDP solvers work. While the example I used is very simple, POMDPs can be used to solve many real-world problems, such as autonomous driving, robotics, and healthcare. Having had the opportunity to work in [SISL](https://sisl.stanford.edu/), I am very grateful to work with experts who developed the [ACAS X collision avoidance system](https://www.ll.mit.edu/r-d/projects/airborne-collision-avoidance-system-x), used in modern commercial aircraft, which is an example of POMDP that has been deployed in the real world.
 
-I hope that this presentation has piqued your interest in POMDP. If you are interested in learning more about POMDP, I highly recommend the [Algorithms for Decision Making book](https://algorithmsbook.com/) by [Mykel J. Kochenderfer](https://mykel.kochenderfer.com/). The book is available for free online, and it is a great resource for learning about POMDPs.
-"%}
+I hope that this presentation has piqued your interest in POMDP. If you are interested in learning more about POMDP, I highly recommend the [Algorithms for Decision Making book](https://algorithmsbook.com/) by [Mykel J. Kochenderfer](https://mykel.kochenderfer.com/). The book is available for free online, and it is a great resource for learning about POMDPs."
+%}

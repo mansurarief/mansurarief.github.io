@@ -2,7 +2,8 @@
 layout: post
 title: Unconstrained Univariate Optimization
 permalink: unconstrained-univariate-optimization
-tags: [engineering, optimization]
+tags: [optimization]
+published: false
 ---
 
 Suppose for now $x \in \mathbb R$, i.e. $x$ is univariate. We can approximate the value of function $f(x)$ using <span class="sidenote">
@@ -27,6 +28,10 @@ df &= \underbrace{\frac{d f(x_0)}{d x} \Delta x}_{\text{First-order term}} + \un
 \end{align}
 $$
 <br>
+Below is an example!
+
+![Cylinder](/assets/img/taylor_approximation_plot.svg){:height="240px"}
+
 For small positive $\Delta x$, we must have $\Delta x > \Delta x^2 > \Delta x^3 > \cdots$. Hence, if $\frac{df(x_0)}{dx} \ne 0$, then the first-order term dominates (\ref{eq:derivation_univariate}). Thus,
 $$
 \begin{align}
