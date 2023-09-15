@@ -1,16 +1,18 @@
 ---
-layout: post
-title: Hazard and Operability Study (HAZOP)
+layout: default
+title: Hazard and Operability (HAZOP) Study
 permalink: hazard-and-operability-study-hazop
 tags: [safety]
 published: true
 ---
 
-In the rapidly evolving landscape of autonomous vehicles (AV) development, various atypical situations may occur, raising the significance of Hazard and Operability Study (HAZOP). This proactive tool ensures that potential hazards, like those arising when AV encounters foggy conditions, are identified and addressed during the vehicle's design phase. Given the inherent complexities and high stakes associated with AVs, HAZOP's role in ensuring vehicles not only perform optimally but also navigate unpredicted scenarios safely is indispensable. It represents an industry's commitment to marrying technological advancement with safety as priority.
+# Hazard and Operability (HAZOP) Study
+
+In the rapidly evolving landscape of autonomous vehicles (AV) development, various atypical situations may occur, raising the significance of Hazard and Operability (HAZOP) study. This proactive tool ensures that potential hazards, like those arising when AV encounters foggy conditions, are identified and addressed during the vehicle's design phase. Given the inherent complexities and high stakes associated with AVs, HAZOP's role in ensuring vehicles not only perform optimally but also navigate unpredicted scenarios safely is indispensable. It represents an industry's commitment to marrying technological advancement with safety as priority.
 
 #### What is HAZOP?
 
-*Hazard and Operability Analysis (HAZOP)* is a proactive prevention tool applied to identify hazards and operational issues within a system or process. Its main objective is to ensure that adequate measures are in place to prevent undesirable outcomes.
+*Hazard and Operability (HAZOP)* is a proactive prevention tool applied to identify hazards and operational issues within a system or process. Its main objective is to ensure that adequate measures are in place to prevent undesirable outcomes.
 
 #### Why is it essential?
 
@@ -29,7 +31,7 @@ HAZOP is typically applied during the final design stage before construction or 
 - **Risk**: Represents the *chance* of valuable assets being damaged or individuals being harmed. It underscores the possible dangers which might not have manifested yet but holds the potential.
 
 Even if hazards and risks are only possibilities and not yet manifested realities, it is essential to have mitigation plans through *three guiding principles* (that compensates its inherent probabilistic nature)
-1. **So Far As Is Reasonably Practicable (SFAIRP)**: This principle asserts that measures should be taken up to the point where the effort and costs of further measures become disproportionate to the benefits.
+1. **So Far As Is Reasonably Practicable (SFAIRP)**: This principle asserts that proactive measures should be taken, unless the effort and costs becomes unreasonable and disproportionate to the benefits.
    - **Implementation in Practice**:
         - **Risk Evaluation**: Organizations first evaluate the risks associated with their processes or products.
         - **Identification of Mitigation Methods**: They will then identify various methods to mitigate these risks.
@@ -49,32 +51,19 @@ Even if hazards and risks are only possibilities and not yet manifested realitie
         - **Feedback Loops**: Companies often establish feedback loops to monitor the real-world performance of their systems and use this data to inform their ALARA efforts.
 
 
-#### Practical Implementation with AV Example
+#### Implementation Example in Autonomous Vehicle Development
 In the context of AV, suppose an AV maker identifies a risk: "*Potential for front-end collisions during foggy conditions.*" We can propose the following thinking process:
 
-1. **Start**
-2. **Identification of the Hazard**
-   - Example: "Potential for front-end collisions during foggy conditions."
-3. **Evaluation of Current Risk Level**
-   - Measure the current probability and consequence of the identified hazard.
-4. **Determine Tolerable Risk Level**
-   - This can be based on industry standards, regulatory guidelines, or historical data.
-5. **Is current risk <= Tolerable Risk Level?**
-   - If **YES**, proceed to Step 9.
-   - If **NO**, proceed to Step 6.
-6. **Identify Risk Reduction Measures**
-   - Example: Implement LiDAR and radar system for fog conditions.
-7. **Evaluate Cost & Feasibility of Each Measure**
-   - Measure the cost, technical feasibility, and potential risk reduction for each identified measure.
-8. **Decide on Implementation based on Principles**
-   - **SFAIRP**: Implement measures that provide risk reduction without imposing excessive or unreasonable costs.
-   - **ALARP**: Evaluate if the cost of further risk reduction is disproportionate to the benefit.
-   - **ALARA**: Continually seek to minimize risks, even if they are already low, considering societal benefits.
-9. **Implement Decided Measures**
-10. **Monitor and Review**
-    - After implementation, monitor the real-world performance of the systems, collect data, and periodically review the HAZOP.
-11. **End**
-
+{% include pdf_slide.html name="hazop-flowchart.pdf" id="hazop"
+notes="
+- **Identification of the Hazard.** Example: Potential for front-end collisions during foggy conditions.
+- **Evaluation of Current Risk Level.** Measure the current probability and consequence of the identified hazard.
+- **Determine Tolerable Risk Level.** This can be based on industry standards, regulatory guidelines, or historical data.
+- **Identify Risk Reduction Measures.** Example: Implement LiDAR and radar system for fog conditions.
+- **Evaluate Cost & Feasibility of Each Measure.** Measure the cost, technical feasibility, and potential risk reduction for each identified measure.
+- **Decide on Implementation based on SFAIRP, ALARP, and ALARA**
+-  **Monitor and Review.** After implementation, monitor the real-world performance of the systems, collect data, and periodically review the HAZOP.
+"%}
 
 It is important to document the reasoning behind each decision. This documentation becomes important in regulatory audits or in case of litigations. The following example illustrates how the three principles can be applied and documented in practice.
 
@@ -85,7 +74,7 @@ It is important to document the reasoning behind each decision. This documentati
 - **Risk Evaluation**:
   - Current system reduces the risk of collision by 95%.
   - An advanced system that provides a 96% risk reduction is available but costs $100,000 per vehicle.
-- **Decision**: Given the 10-fold cost increase to achieve only an additional 1% risk reduction, the current system is deemed safe "So Far As Is Reasonably Practicable."
+- **Decision**: Given the 10-fold cost increase to achieve only an additional 1% risk reduction, and if the measures are implemented the product becomes not viable due to excessive cost, the current system is deemed safe "So Far As Is Reasonably Practicable."
 
 #### 2. As Low As Reasonably Practicable (ALARP)
 - **Objective**: Evaluate if further risk reduction measures are justifiable in terms of cost and benefit.
@@ -105,6 +94,17 @@ It is important to document the reasoning behind each decision. This documentati
   - Feedback system setup: $5,000 one-time setup cost.
 - **Decision**: Despite the system already meeting regulatory standards and the additional costs, continuous improvements are deemed worthwhile for ensuring maximal safety, adhering to the "As Low As Reasonably Achievable" principle.
 
+#### What's the main difference between SFAIRP and ALARP?
+
+While SFAIRP and ALARP principle may sound similar, they have subtle differences.
+
+| Characteristic | SFAIRP | ALARP |
+| --- | --- | --- |
+| Philosophy | Takes proactive measures to reduce risks | Reduces risk to a tolerable level, then evaluates if further reduction is justifiable |
+| Viewpoint | "Let's try this to improve the product. It works. Why don't we implement it?" | "The product works. Requirements achieved to tolerable level. Should we still do something else?" |
+| Focus on Cost-Benefit Analysis | Reduces risks as long as the cost and effort are not grossly disproportionate to the benefits | Reduces risks to a level where the cost and effort of further reduction are balanced against the benefits |
+| Risk Acceptance | Does not explicitly define a level of risk that is considered acceptable. Risks should be reduced as far as is reasonably practicable | Operates on the premise that there is a certain level of risk that is tolerable, and efforts should be made to reduce risks to at least this level |
+
 #### Conclusion
 HAZOP is a proactive tool that ensures that potential hazards are identified and addressed during the design phase. It is a critical component of the AV industry's commitment to safety. The three principles of SFAIRP, ALARP, and ALARA guide the decision-making process, ensuring that risks are minimized to an acceptable level. HAZOP is a continuous process that requires periodic review and documentation of decisions.
 
@@ -122,15 +122,15 @@ HAZOP is a proactive tool that ensures that potential hazards are identified and
    - [ ] As Low As Reasonably Achievable (ALARA)
    - [ ] None of the above
 
-3. Which principle of HAZOP asserts that risks should be reduced to a level where the costs and challenges of further reduction are balanced against the benefits?
+3. Which principle of HAZOP asserts that risks should be reduced to an acceptable level where the costs and challenges of further reduction are balanced against the benefits?
    - [ ] So Far As Is Reasonably Practicable (SFAIRP)
    - [x] As Low As Reasonably Practicable (ALARP)
    - [ ] As Low As Reasonably Achievable (ALARA)
    - [ ] None of the above
 
-4. In the context of autonomous vehicles, if a safety feature provides a 0.1% improvement but increases the vehicle cost by 40%, which principle would most likely be invoked?
-   - [x] So Far As Is Reasonably Practicable (SFAIRP)
-   - [ ] As Low As Reasonably Practicable (ALARP)
+4. Suppose the National Highway Traffic Safety Administration (NHTSA) sets a requirement that the false negative rate of Autonomous Vehicle (AV) perception should be less than 0.00001. The current rate is 0.01. To achieve this, the company would need to install additional redundant sensors and an ensemble of robust detectors and classifiers, which would increase the cost by $20,000 per vehicle. The company decides to implement these changes despite the high cost, in order to meet the NHTSA requirement. Which principle of HAZOP is the company adhering to in this scenario?
+   - [ ] So Far As Is Reasonably Practicable (SFAIRP)
+   - [x] As Low As Reasonably Practicable (ALARP)
    - [ ] As Low As Reasonably Achievable (ALARA)
    - [ ] None of the above
 
@@ -169,3 +169,8 @@ HAZOP is a proactive tool that ensures that potential hazards are identified and
    - [ ] Designing a more aerodynamic shape.
    - [x] Integrating a camera system with polarized filters to reduce glare effects.
    - [ ] Changing the color of the vehicle.
+
+
+#### References
+- [Stamatis, Diomidis H. Introduction to risk and failures: tools and methodologies. CRC Press, 2014.](https://books.google.com/books?id=Jo3SBQAAQBAJ)
+- [https://www.sciencedirect.com/topics/engineering/hazard-and-operability-study](https://www.sciencedirect.com/topics/engineering/hazard-and-operability-study)
