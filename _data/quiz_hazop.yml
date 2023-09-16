@@ -1,0 +1,117 @@
+- id: 1
+  question: "What is the primary objective of HAZOP?"
+  options:
+    - text: "To ensure that adequate measures are in place to prevent undesirable outcomes."
+      note: "This is the correct answer."
+    - text: "To ensure that the system is designed to be as safe as possible."
+      note: ""
+    - text: "To ensure that the system is designed to be as reliable as possible."
+      note: ""
+    - text: "To ensure that the system is designed to be as efficient as possible."
+      note: ""
+- id: 2
+  question: "Which principle of HAZOP asserts that measures should be taken up to the point where the effort and costs of further measures become disproportionate to the benefits?"
+  options:
+    - text: "So Far As Is Reasonably Practicable (SFAIRP)"
+      note: "This is the correct answer."
+    - text: "As Low As Reasonably Practicable (ALARP)"
+      note: ""
+    - text: "As Low As Reasonably Achievable (ALARA)"
+      note: ""
+    - text: "None of the above"
+      note: ""
+- id: 3
+  question: "Which principle of HAZOP asserts that risks should be reduced to an acceptable level where the costs and challenges of further reduction are balanced against the benefits?"
+  options:
+    - text: "So Far As Is Reasonably Practicable (SFAIRP)"
+      note: ""
+    - text: "As Low As Reasonably Practicable (ALARP)"
+      note: "This is the correct answer."
+    - text: "As Low As Reasonably Achievable (ALARA)"
+      note: ""
+    - text: "None of the above"
+      note: ""
+
+- id: 4
+  question: "Suppose the National Highway Traffic Safety Administration (NHTSA) sets a requirement that the false negative rate of Autonomous Vehicle (AV) perception should be less than 0.00001. The current rate is 0.01. To achieve this, the company would need to install additional redundant sensors and an ensemble of robust detectors and classifiers, which would increase the cost by $20,000 per vehicle. The company decides to implement these changes despite the high cost, in order to meet the NHTSA requirement. Which principle of HAZOP is the company adhering to in this scenario?"
+  options:
+    - text: "So Far As Is Reasonably Practicable (SFAIRP)"
+      note: ""
+    - text: "As Low As Reasonably Practicable (ALARP)"
+      note: "This is the correct answer."
+    - text: "As Low As Reasonably Achievable (ALARA)"
+      note: ""
+    - text: "None of the above"
+      note: ""
+
+- id: 5
+  question: "When considering continual improvements in safety, which principle highlights consistent efforts, taking into account technological advances?"
+  options:
+    - text: "So Far As Is Reasonably Practicable (SFAIRP)"
+      note: ""
+    - text: "As Low As Reasonably Practicable (ALARP)"
+      note: ""
+    - text: "As Low As Reasonably Achievable (ALARA)"
+      note: "This is the correct answer."
+    - text: "None of the above"
+      note: ""      
+
+- id: 6
+  question: "Which phase of design does HAZOP typically get applied to?"
+  options:
+    - text: "Initial conceptualization"
+      note: ""
+    - text: "Prototyping"
+      note: ""
+    - text: "Final design stage, before construction or implementation"
+      note: "This is the correct answer."
+    - text: "Post-implementation"
+      note: ""
+
+- id: 7
+  question: "In a HAZOP study, why is it essential to identify potential hazards?"
+  options:
+    - text: "To formulate control measures and prevent undesirable outcomes."
+      note: "This is the correct answer."
+    - text: "To increase the efficiency of the system."
+      note: ""
+    - text: "To reduce the cost of implementation."
+      note: ""
+    - text: "To improve the aesthetics of the system."
+      note: ""
+
+- id: 8
+  question: "For an autonomous vehicle to safely navigate a foggy environment, which element of HAZOP ensures control measures are in place?"
+  options:
+    - text: "Functional safety measures like LiDAR and radar systems."
+      note: "This is the correct answer."
+    - text: "Efficient battery management."
+      note: ""
+    - text: "Aesthetic design of the vehicle."
+      note: ""
+    - text: "User interface design."
+      note: ""
+
+- id: 9
+  question: "HAZOP emphasizes both identification and control. Why is the combination of both crucial?"
+  options:
+    - text: "To ensure the system looks good."
+      note: ""
+    - text: "To ensure efficient power consumption."
+      note: ""
+    - text: "To identify potential hazards and then implement measures to mitigate them."
+      note: "This is the correct answer."
+    - text: "To maximize the speed of the system."
+      note: ""
+
+- id: 10
+  question: "A potential hazard in an autonomous vehicle could be \"misinterpreting a stop sign due to glare.\" What would be an effective control measure?"
+  options:
+    - text: "Increasing the vehicle's speed."
+      note: ""
+    - text: "Designing a more aerodynamic shape."
+      note: ""
+    - text: "Integrating a camera system with polarized filters to reduce glare effects."
+      note: "This is the correct answer."
+    - text: "Changing the color of the vehicle."
+      note: ""                  
