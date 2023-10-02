@@ -2,7 +2,7 @@
 layout: default
 title: Research Assistantship (Part-Time)
 permalink: research-assistant-part-time
-published: true
+published: false
 ---
 
 # Research Assistantship Opportunity (Indonesian residents only)
