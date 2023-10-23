@@ -19,6 +19,7 @@ navbar-links:
   Home: "index"
   Publications: "publications"
   Teaching: "teaching"
+  Calendar: "calendar"
   CV: "/assets/pdf/vita-mansur-m-arief.pdf"
   Contact: "contact"
 #  External Links:
