@@ -24,7 +24,8 @@ li {
 }
 
 .old_news {
-    margin-top:-16px;
+    /* margin-top:-16px; */
+    margin-bottom: 0px;
 }
 
 .text-center {
@@ -109,3 +110,123 @@ em {
 }
 
 
+#timeline {
+    margin-top: 1rem;
+    position: relative;
+    display: table;
+    margin-left:24px;
+}
+
+/* New container for timeline sections */
+.timeline-container {
+    position: relative;
+}
+
+
+#timeline div:after {
+    content: '';
+    width: 2px;
+    position: absolute;
+    top: .5rem;
+    bottom: 0rem;
+    left: 67px;
+    z-index: 1;
+    background: #969696
+}
+
+#timeline h3 {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5rem;
+    color: #969696;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 1em;
+    font-weight: 400
+}
+
+#timeline section.year {
+    position: relative;
+    float: left
+}
+
+#timeline section.year:first-child section {
+    margin-top: -1.3em;
+    padding-bottom: 0px
+}
+
+#timeline section.year section {
+    position: relative;
+    padding-bottom: 1.25em;
+    margin-bottom: 2em;
+    top: -5px;
+    right: -8px
+}
+
+#timeline section.year section h4 {
+    position: absolute;
+    bottom: 0;
+    font-weight: 400;
+    line-height: 1.4em;
+    margin: 0;
+    padding: 0 0 0 82px;
+    color: #969696
+}
+
+#timeline section.year section ul {
+    list-style-type: none;
+    padding: 0 0 0 75px;
+    margin: -1.35rem 0 1em;
+    max-width: 50rem
+}
+
+@media (min-width: 62em) {
+    #timeline section.year section ul {
+        padding:0 0 0 81px
+    }
+}
+
+#timeline section.year section ul:last-child {
+    margin-bottom: 0
+}
+
+#timeline section.year section ul:first-of-type:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #969696;
+    border: 1px solid #969696;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    left: 55px;
+    top: 9px;
+    z-index: 2
+}
+
+#timeline section.year section ul li {
+    margin-left: 0rem
+}
+
+#timeline section.year section ul li:before {
+    content: '';
+    margin-left: -.25rem;
+    padding-right: .3rem
+}
+
+#timeline section.year section ul li:not(:first-child) {
+    margin-top: .5rem
+}
+
+.footnotes {
+    margin-top: -1.5rem !important;
+}
+
+.footnotes li {
+    margin-bottom: -1.5rem !important;
+    font-size: 0.7em !important;
+}

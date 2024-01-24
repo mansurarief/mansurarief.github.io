@@ -1,0 +1,103 @@
+- year: 2024
+  events:
+    - date: 01/10/24
+      content: One paper from a group of research mentees on integrated medical decision making for stroke diagnosis and treatment is submitted and accepted for [Intelligent Medicine and Image Processing (IMIP 2024) conference](https://www.imip.org/) in Bali.
+
+    - date: 01/04/24
+      content: I won a (mini) research grant from the [Institute for International Indonesian Scholars (I-4)](https://i4indonesia.org/) on AI-driven support systems for healthcare applications.
+      
+
+- year: 2023
+  events:
+    - date: 12/21/23
+      content: I discussed [Intelligent Systems for High-Stakes Business Applications](/assets/pdf/SIMT2023.pdf) to [SIMT ITS students and faculty](https://www.its.ac.id/simt/en/home/) and public.
+
+    - date: 11/08/23
+      content: I presented [ISE Methods in Building Reliable AI Systems](/assets/pdf/DTSI2023.pdf) to graduate students and faculty at [ISE ITS](https://www.its.ac.id/tindustri/en/home/).
+
+    - date: 10/12/23
+      content: I joined [NPA International Taskforce](https://www.nationalpostdoc.org/) as a volunteer to help international postdocs in the US.
+
+    - date: 10/01/23
+      content: Our initial study on [POMDP for studying the design of critical mineral supply chains](https://github.com/yalonso03/LiSCPOMDP) was accepted at [AGU 2023](https://www.agu.org/fall-meeting).
+
+    - date: 09/30/23
+      content: I presented my PhD research on [Safety Evaluation of Self-Driving Cars](/assets/pdf/TeachTalks41.pdf) at TeachTalk organized by the [Indonesian Lecturer Association](https://adi.or.id/) to 180+ faculty members from various universities across Indonesia.
+
+    - date: 09/16/23
+      content: I founded IndoSTEELERS (Indonesian Scholars Thriving in Excellence in Education, Learning, and Research) with a bunch of great Indonesian scholars in Pittsburgh encompassing various disciplines.
+
+    - date: 09/15/23
+      content: One [paper](https://arxiv.org/abs/2309.08851) was submitted to [ICRA 2023](https://2024.ieee-icra.org).
+
+    - date: 07/31/23
+      content: We submitted an abstract to [AGU 2023](https://www.agu.org/fall-meeting)
+
+    - date: 07/01/23
+      content: I presented Artificial Intelligence for Smart Logistics in the International Webinar of Business and Industrial Application Division, hosted by [BRAIN, IPB University](https://brain.ipb.ac.id/).  
+
+    - date: 06/01/23
+      content: I joined [SISL](https://sisl.stanford.edu/) as a postdoc.
+
+    - date: 05/12/23
+      content: I graduated from [CMU](https://www.cmu.edu/).
+
+    - date: 04/19/23
+      content: I successfully defended my dissertation "Certifiable Evaluation for Safe Intelligent Autonomy".
+
+- year: 2022
+  events:
+    - date: 09/27/22
+      content: I presented Deep IS work at [ITSC 2022](https://www.ieee-itsc2022.org/).
+
+    - date: 09/25/22
+      content: I started volunteering at [AFS USA](https://www.afsusa.org/).
+
+    - date: 08/01/22
+      content: I submitted the journal version of our Deep IS work.
+
+    - date: 06/15/22
+      content: Two other papers I co-authored were accepted at [ITSC 2022](https://www.ieee-itsc2022.org/).
+
+    - date: 06/15/22
+      content: Deep IS paper accepted at [ITSC 2022](https://www.ieee-itsc2022.org/).
+
+    - date: 03/15/22
+      content: I helped colleagues from [KTH Royal Institute of Technology (Sweden)](https://www.kth.se/), [ITS (Indonesia)](https://www.its.ac.id/), and [CMU ESTP (USA)](https://www.cmu.edu/engineering/estp/) and submitted two more papers to [ITSC 2022](https://www.ieee-itsc2022.org/).
+
+    - date: 03/02/22
+      content: We submitted a survey paper on safety-critical driving scenario generation for journal publication.
+
+    - date: 03/01/22
+      content: I submitted one paper to [ITSC 2022](https://www.ieee-itsc2022.org/).
+
+    - date: 01/31/22
+      content: I presented a summary of our past work on "Certifiable Deep Importance Sampling for Rare-Event Simulation of Black-Box Systems" to [SISL lab meeting (Stanford)](https://web.stanford.edu/group/sisl/cgi-bin/wordpress/).
+
+- year: 2021
+  events:
+    - date: 11/07/21
+      content: I presented at SkolaTalk with [Aditya (Digital Skola CEO)](https://digitalskola.com/tim-kami) about the comparison in tech education between Indonesia & US.
+
+    - date: 11/02/21
+      content: We submitted [the journal version of our Deep-PrAE work](https://arxiv.org/abs/2111.02204).
+
+    - date: 08/29/21
+      content: Together with [Sabrina](https://www.linkedin.com/in/sitidarasabrina/), I shared some insights regarding How to be a Global Student and Student Life as an Exchange Student to [ITS ISE Undergraduate Students](https://www.its.ac.id/study-at-its/faculties-and-departments/faculty-of-industrial-technology-and-systems-engineering/industrial-and-systems-engineering/).
+
+    - date: 05/27/21
+      content: I presented Research Opportunities for ISE Graduate Students to [ITS ISE Graduate Students](https://www.its.ac.id/study-at-its/faculties-and-departments/faculty-of-industrial-technology-and-systems-engineering/industrial-and-systems-engineering/).
+
+    - date: 05/21/21
+      content: I started an internship at Bosch as a Machine Learning/Computer Vision Research Intern.
+
+    - date: 03/03/21
+      content: I presented Deep-PrAE work at [SIAM CSE 2021](https://www.siam.org/conferences/cm/conference/cse21).
+
+    - date: 01/22/21
+      content: '[One paper](https://arxiv.org/abs/2006.15722) accepted to [AISTATS 2021](https://aistats.org/aistats2021).'
+
+- year: 2020
+  events:
+    - date: 11/09/20
+      content: I presented a work on certifiable efficiency for rare-event probability estimation and its relaxation at [INFORMS Annual Meeting 2020](http://meetings2.informs.org/wordpress/).

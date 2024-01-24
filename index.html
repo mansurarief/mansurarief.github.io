@@ -28,21 +28,40 @@ For full publications list, see the <a href="publications">publication page</a>.
 </ul>
 
 <i class="fa fa-info-circle"></i> News & updates:
-<ul>
-{% for news in site.data.news | reverse | limit:5 %}
-    <li>{{ news.date }}: {{ news.content | markdownify | remove: '<p>' | remove: '</p>'}}</li>
-{% endfor %}
-</ul>
 
-<div class="collapse no-return old_news" id="oldnews">
-<ul>
-{% for news in site.data.news | reverse | offset:5 %}
-    <li>{{ news.date }}: {{ news.content | markdownify | remove: '<p>' | remove: '</p>'}}</li>
-{% endfor %}
-</ul>
+<div id="timeline">
+    <div>
+        <section class="year"></section>
+        {% for events in site.data.news_year | limit:1 %}
+        <section class="year">
+            <h3>{{ events.year }}</h3>
+            {% for event in events.events %}
+            <section>
+                <h4>{{ event.date }}</h4>
+                <ul>
+                    <li>{{ event.content | markdownify | remove: '<p>' | remove: '</p>'}}</li>
+                </ul>
+            </section>
+            {% endfor %}
+        </section>
+        {% endfor %}
+        <div class="collapse no-return old_news" id="oldnews">
+            <section class="year"></section>
+            {% for events in site.data.news_year | offset:1 %}
+            <section class="year">
+                <h3>{{ events.year }}</h3>
+                {% for event in events.events %}
+                <section>
+                    <h4>{{ event.date }}</h4>
+                    <ul>
+                        <li>{{ event.content | markdownify | remove: '<p>' | remove: '</p>'}}</li>
+                    </ul>
+                </section>
+                {% endfor %}
+            </section>
+            {% endfor %}
+        </div>
+        <a href="#oldnews" data-toggle="collapse" style="margin-left:5.5rem;">Older news</a>               
+    </div>
 </div>
-    
-
-
-<a href="#oldnews" data-toggle="collapse">Older news</a>
 
