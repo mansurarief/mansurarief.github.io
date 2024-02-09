@@ -230,3 +230,17 @@ em {
     margin-bottom: -1.5rem !important;
     font-size: 0.7em !important;
 }
+
+a.anchor-link {
+    display: none;
+  }
+
+.jp-InputPrompt {
+    display: none;
+}  
+  
+.jp-OutputArea-output  {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
