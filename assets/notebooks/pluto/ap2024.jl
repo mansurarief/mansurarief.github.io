@@ -104,7 +104,7 @@ md"""
 
 # ╔═╡ ee97365d-668b-43fc-a0d3-5279ac4646c4
 md"""
-## Office Hours
+## Office hours
 
 Office hours are Saturday, 8am-9am WIB. During this time, feel free to use the provided Zoom link to chat with me.
 """
@@ -123,7 +123,7 @@ A great additional resource is the **Engineering Design Optimization (Joaquim Ma
 
 # ╔═╡ 78a0601f-b649-4e0e-8ca2-b0a0d858c581
 md"""
-## Grading and Assignments
+## Grading and assignments
 
 Here is the grade breakdown for this course
 
