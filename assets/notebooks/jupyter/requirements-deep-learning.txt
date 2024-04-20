@@ -1,0 +1,10 @@
+torch
+wandb
+tqdm
+matplotlib
+datasets
+jupyter
+ipykernel
+roboflow 
+supervision 
+opencv-python

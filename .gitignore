@@ -8,6 +8,10 @@ _site
 Thumbs.db
 ehthumbs.db
 
+#assets
+assets/notebooks/checkpoints/
+assets/notebooks/wandb/
+
 Gemfile.lock
 
 beautiful-jekyll-theme-*.gem
