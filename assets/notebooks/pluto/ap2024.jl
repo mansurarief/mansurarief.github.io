@@ -146,8 +146,8 @@ md"""
 
 | Week |  Date    | Session Details                             | Assignment Due* |
 |:----:|:--------:|:--------------------------------------------|:----------------|
-|  9   | May 3    | Course (part 2) overview and intro          | Reflection 1    |
-|  10  | May 10   | Optimization and decision-making review     | -               |
+|  9   | May 3    | [Course (part 2) overview and intro](#)          | Reflection 1    |
+|  10  | May 10   | [Optimization and decision-making review](https://mansurarief.github.io/courses/ap2024/opt-dm-review)    | -               |
 |  11  | May 17   | Group 1 & 2 (Proposal)                      | -               |
 |  12  | May 24   | Group 3 & 4 (Proposal)                      | Midterm report  |  
 |  13  | May 31   | Group 5 (Proposal) + General in-class Q&A   | Peer review     |
@@ -772,7 +772,7 @@ version = "0.13.1+0"
 # ╟─ee97365d-668b-43fc-a0d3-5279ac4646c4
 # ╟─f6f2d1b3-fc6c-4af8-8e20-b81687ebb591
 # ╟─78a0601f-b649-4e0e-8ca2-b0a0d858c581
-# ╟─590c941c-86a9-43a6-beb7-4ff6e080b6d5
+# ╠═590c941c-86a9-43a6-beb7-4ff6e080b6d5
 # ╟─690cc65a-2d23-451b-bb43-6ed4d847ca64
 # ╟─e4442912-0bc7-46e9-8f17-e2c5319228ac
 # ╟─d93080fa-952f-41c3-96cc-ed662d4530d1

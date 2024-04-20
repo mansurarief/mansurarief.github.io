@@ -84,13 +84,91 @@ md"""
 md"""
 ### Optimization process
 
+We can view optimization as an engineering design process as follows:
+
+![Optimization Process](https://mansurarief.github.io/assets/img/opt1/opt_process.svg)
+
+"""
+
+# ╔═╡ 54353ceb-c71c-42cf-8063-98b1767a730b
+md"""
+### Basic optimization problem
+
+In general, we have the following:
+
+$\begin{aligned}
+& \underset{x}{\text{minimize}}
+& & f(x) \\
+& \text{subject to}
+& & x \in \mathcal{X}
+\end{aligned}$
+
+Here is what the notations mean:
+-  $x$ is called a design variable or a decision variable, 
+-  $f$ is the objective function that we want to minimize, 
+-  $\mathcal X$ is the feasible set. 
+The solution is often called the minimizer $x^*$. Here is a 1d (univariate) problem. 
+
+![Basic optimization problem](https://mansurarief.github.io/assets/img/opt1//basic_opt_problem.svg)
+
+"""
+
+# ╔═╡ ab18eded-0f5b-4cb9-a024-66e51167f8be
+md"""
+We may also have a multivariate problem.
+
+$\begin{aligned}
+& \underset{x_1, x_2}{\text{minimize}} & & f(x_1, x_2) \\
+& \text{subject to} & & x_1 \geq 0 \\
+&                   & & x_2 \geq 0 \\
+&                   & & x_1 + x_2 \leq 1
+\end{aligned}$
+
+![Basic constrained optimization problem](https://mansurarief.github.io/assets/img/opt1/basic_constrained_opt_problem.svg)
+
+"""
+
+# ╔═╡ 5cab3948-750c-471b-8768-4df89f0fb75c
+md"""
+### Contour plot
+
+If we have a 2d decision variables, we can show use contour plot and show the iso-objective (same-objective-valued) lines.
+
+![Contour plot](https://mansurarief.github.io/assets/img/opt1/contour_plots.svg)
+
+"""
+
+# ╔═╡ b8265b69-0a8a-4a7c-996f-e725f8536de9
+md"""
+### Critical points
+A few types of points to note:
+- Global/local minimizer
+- Strong/local minimizer
+- Inflection point
+
+![Critical points](https://mansurarief.github.io/assets/img/opt1//critical_points.svg)
+
+"""
+
+# ╔═╡ dd428a39-5c41-4095-b2ad-8235b435c631
+md"""
+### Characteristics of a local minima
+
+A design point $x^*$ is a local minimizer if:
+
+- For a univariate problem, 
+  - First-order necessary condition: $f^\prime(x^*) = 0$
+  - Second-order sufficient condition: $f^{\prime \prime}(x^*) > 0$
+- For a multivariate problem, 
+  - First-order necessary condition: $\underbrace{\nabla f(x^*)}_{\text{a vector}} = \mathbf{0}$ $\leftarrow$ this is a vector of zeros
+  - Second-order sufficient condition: $\underbrace{\nabla^2 f(x^*)}_{\text{a matrix}} \succ \mathbf{0}$ $\leftarrow$ this means positive definite
 
 
 """
 
 # ╔═╡ 80d0240d-a3f2-48fe-9e49-91059b2bbfbe
 md"""
-## Linear Programming (LP)
+## Linear programming (LP) examples
 
   - Optimization: a mathematical discipline that deals with finding *the best solution* from all *feasible solutions*. 
   - The best solution is defined by an *objective function*, which we typically *minimize*. 
@@ -109,7 +187,7 @@ $$\begin{align*}
 
 # ╔═╡ 120da94b-fddf-45f0-a710-c02e75223bcc
 md"""
-### [Toy Example](#linprog-example)
+### Toy problem
 
 For concreteness, let's assume a 2D problem, i.e. $n=2$, with the following parameters: 
 $$\begin{align}
@@ -199,7 +277,7 @@ These provide an easy way for us to solve a linear programming problem.
 
 # ╔═╡ 30a579fa-2c06-4338-8d8b-973df299cde2
 md"""
-## [Transportation Example](#transportation-example)
+### Transportation Example
 Consider a simple 3-echelon transportation network problem that includes suppliers, distribution centers, and retailers. The goal is to determine how to transport goods from the suppliers to retailers to fulfil all the demands at the lowest transportation costs.
 """
 
@@ -1987,8 +2065,13 @@ version = "17.4.0+0"
 # ╟─b428a2e9-afc5-405d-a0e0-11141e41b409
 # ╟─9b55fbf1-8c3d-40b4-b45a-eabb5ce64e1b
 # ╟─76a24bc0-e429-11ee-322b-258b37c466eb
-# ╠═dfbbf0f3-0b93-4e21-bc07-4ef99e8e9560
-# ╠═80d0240d-a3f2-48fe-9e49-91059b2bbfbe
+# ╟─dfbbf0f3-0b93-4e21-bc07-4ef99e8e9560
+# ╟─54353ceb-c71c-42cf-8063-98b1767a730b
+# ╟─ab18eded-0f5b-4cb9-a024-66e51167f8be
+# ╟─5cab3948-750c-471b-8768-4df89f0fb75c
+# ╟─b8265b69-0a8a-4a7c-996f-e725f8536de9
+# ╟─dd428a39-5c41-4095-b2ad-8235b435c631
+# ╟─80d0240d-a3f2-48fe-9e49-91059b2bbfbe
 # ╟─120da94b-fddf-45f0-a710-c02e75223bcc
 # ╟─37dba268-5315-4ddd-a6e7-233983d37401
 # ╠═56dc21ad-b2cf-4e0d-8b69-d12be2720df9
