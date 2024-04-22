@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.40
+# v0.19.41
 
 using Markdown
 using InteractiveUtils
@@ -42,6 +42,40 @@ md"""
 
 A quick recap of what have been discussed so far in this [Analytics Project (U) Part 2](https://mansurarief.github.io/courses/ap2024/) class:
 """
+
+# ╔═╡ 3bbe1c3a-f9f5-4f88-91d1-d78f581c0039
+TikzPicture("""
+\\begin{tikzpicture}[>=stealth, node distance=4cm, auto]
+	\\useasboundingbox (-1, -2) rectangle (15, 9);
+	
+	% Define styles
+	\\tikzstyle{pred}=[circle, thick, draw=black!75, fill=blue!20, minimum size=50mm, align=center, label=below:, draw opacity=0.1, fill opacity=0.5]
+	\\tikzstyle{pres}=[circle, thick, draw=black!75, fill=red!20, minimum size=50mm, align=center, label=below:, draw opacity=0.1, fill opacity=0.5]
+	\\tikzstyle{desc}=[circle, thick, draw=black!75, fill=yellow!20, minimum size=50mm, align=center, label=below:, draw opacity=0.1, fill opacity=0.5]
+
+ 	\\node[pred, label=below:Predictive (Part 1)] (A) at (4,0) {};	
+  	\\node[desc, label=below:Descriptive (Part 1)] (C) at (8,0) {};
+	\\node[pres, label=above:Prescriptive (Part 2)] (B) at (6,3.4) {};
+
+	 %\\node at (4,0) {Predictive Analytics (Part 1)};
+		 \\node at (4,-0.5) {Decision trees};
+		 \\node at (4,-1) {Random forest};
+		 \\node at (4,-1.5) {...};
+	 %\\node at (6,3.4) {Prescriptive Analytics (Part 2)};
+		 \\node at (6,3.9) {Linear Programming};
+		 \\node at (6,4.4) {Markov Decision Processes};
+		 \\node at (6,3.4) {...};
+     %\\node at (8,0) {Descriptive Analytics (Part 1)};
+		 \\node at (8,-0.5) {Exploratory Data Analysis};
+		 \\node at (8,-1) {Principal Component Analysis};
+		 \\node at (8,-1.5) {...};
+
+	 \\node at (6,1.2) {NeuralNet};
+	 \\node at (7.8,1.8) {Rule-based};
+	 \\node at (4.6,1.8) {Simulation};
+	 \\node at (6,0.4) {Clustering};
+
+	\\end{tikzpicture}""", options="scale=1.0", preamble="")
 
 # ╔═╡ b428a2e9-afc5-405d-a0e0-11141e41b409
 md"""
@@ -163,6 +197,12 @@ A design point $x^*$ is a local minimizer if:
   - First-order necessary condition: $\underbrace{\nabla f(x^*)}_{\text{a vector}} = \mathbf{0}$ $\leftarrow$ this is a vector of zeros
   - Second-order sufficient condition: $\underbrace{\nabla^2 f(x^*)}_{\text{a matrix}} \succ \mathbf{0}$ $\leftarrow$ this means positive definite
 
+
+"""
+
+# ╔═╡ 3f7a74e1-040c-40f8-9089-e839fcd4bce7
+md"""
+### Gradient-based optimization algorithms
 
 """
 
@@ -2096,6 +2136,7 @@ version = "17.4.0+0"
 # ╟─207ba875-82ee-4af7-97ca-abe37d5977e4
 # ╟─91c7e066-587c-4bc1-b6ba-b8124a880631
 # ╟─8da84304-d8e9-47ac-9d74-261d50c83ec6
+# ╟─3bbe1c3a-f9f5-4f88-91d1-d78f581c0039
 # ╟─b428a2e9-afc5-405d-a0e0-11141e41b409
 # ╟─9b55fbf1-8c3d-40b4-b45a-eabb5ce64e1b
 # ╟─76a24bc0-e429-11ee-322b-258b37c466eb
@@ -2105,6 +2146,7 @@ version = "17.4.0+0"
 # ╟─5cab3948-750c-471b-8768-4df89f0fb75c
 # ╟─b8265b69-0a8a-4a7c-996f-e725f8536de9
 # ╟─dd428a39-5c41-4095-b2ad-8235b435c631
+# ╠═3f7a74e1-040c-40f8-9089-e839fcd4bce7
 # ╟─c27294de-27c3-401e-8e1b-f0aaedee9248
 # ╟─80d0240d-a3f2-48fe-9e49-91059b2bbfbe
 # ╟─120da94b-fddf-45f0-a710-c02e75223bcc
@@ -2133,7 +2175,7 @@ version = "17.4.0+0"
 # ╟─fa89588f-21e8-400b-a6c4-285a80454c61
 # ╠═dbaef7b1-2b21-4117-913b-dc24080324da
 # ╟─c46ac554-8558-4df2-ad3c-04cbf3769961
-# ╠═2facec98-5a55-4952-a113-7b04b85ced3d
+# ╟─2facec98-5a55-4952-a113-7b04b85ced3d
 # ╟─a9a30626-5ef4-43a1-91a8-97f2acb48b2a
 # ╟─61db4b18-5187-4b00-b44e-797dbf3dcd35
 # ╟─00000000-0000-0000-0000-000000000001

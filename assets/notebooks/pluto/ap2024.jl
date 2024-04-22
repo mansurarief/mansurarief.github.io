@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.40
+# v0.19.41
 
 using Markdown
 using InteractiveUtils
@@ -146,15 +146,15 @@ md"""
 
 | Week |  Date    | Session Details                             | Assignment Due* |
 |:----:|:--------:|:--------------------------------------------|:----------------|
-|  9   | May 3    | [Course (part 2) overview and intro](#)          | Reflection 1    |
-|  10  | May 10   | [Optimization and decision-making review](https://mansurarief.github.io/courses/ap2024/opt-dm-review)    | -               |
+|  9   | May 3    | [Course (part 2) intro](#) and [review](https://mansurarief.github.io/courses/ap2024/opt-dm-review)          | [Reflection 1](https://forms.gle/mRzRnwfRrNxStrwZ8)    |
+|  10  | May 10   | Prescriptive analytics case studies    | -               |
 |  11  | May 17   | Group 1 & 2 (Proposal)                      | -               |
-|  12  | May 24   | Group 3 & 4 (Proposal)                      | Midterm report  |  
-|  13  | May 31   | Group 5 (Proposal) + General in-class Q&A   | Peer review     |
-|  14  | June 7   | Breakout room, in-class office hours        | Midterm feedback|
+|  12  | May 24   | Group 3 & 4 (Proposal)                      | [Midterm report](https://forms.gle/AhCbnq9dmj2puEnVA)  |  
+|  13  | May 31   | Group 5 (Proposal) + General in-class Q&A   | [Peer review](https://forms.gle/uUxBYcpxFgCkkK557)     |
+|  14  | June 7   | Breakout room, in-class office hours        | [Midterm feedback](https://stanforduniversity.qualtrics.com/jfe/form/SV_6G3t4EqGkQDn80e)|
 |  15  | June 14  | Group 1 & 2 (Final)                         | -               |
 |  16  | June 21  | Group 3 & 4 (Final)                         | -               |
-|  17  | June 28  | Group 5 (Final)                  | Final report, Reflection 2 |
+|  17  | June 28  | Group 5 (Final)                  | [Final report](https://forms.gle/9ZgusdP6srDgTXet6), [Reflection 2](https://forms.gle/p9MMmJriLDF63eXt5) |
 |  18  | -        | Advanced topics (Tentative)      | Project repo/website       |
 
 *All assignments are due at 11:59pm (WIB).
