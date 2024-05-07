@@ -244,3 +244,30 @@ a.anchor-link {
     margin-right: auto;
     display: block;
 }
+
+
+.talk {
+display: flex;
+align-items: center; /* Adjusts vertical alignment for multiple lines */
+margin-bottom: 10px; 
+margin-left: -16px;
+}
+.talk img {
+width: 80px; 
+height: 80px; 
+border-radius: 50%; /* Makes the image circular */
+margin-right: 10px;
+/* object-fit: cover; Prevents image from stretching */
+}
+.talk-content {
+flex: 1; /* Takes up remaining space, pushing content next to the image */
+}
+
+
+@media (max-width: 768px) { /* Adjusts for devices with width 768px or less */
+.talk img {
+    margin-left: 0px;
+    display: block; /* Hides the image on smaller devices */
+    object-fit: cover; /* Prevents image from stretching */
+}
+}

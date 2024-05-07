@@ -6,7 +6,9 @@ using InteractiveUtils
 
 # ╔═╡ 207ba875-82ee-4af7-97ca-abe37d5977e4
 begin
+	using JuMP
 	using Polynomials
+	using GLPK
 	using TikzPictures
 	using PGFPlots
 	using PGFPlotsX
@@ -36,510 +38,358 @@ html"""
 
 # ╔═╡ 8da84304-d8e9-47ac-9d74-261d50c83ec6
 md"""
-# Optimization and Decision Making Review
+# Linear Programming Review
 
 **Instructor**: [Mansur M. Arief, Ph.D.](https://mansurarief.github.io/)
-
-A quick recap of what have been discussed so far in this [Analytics Project (U) Part 2](https://mansurarief.github.io/courses/ap2024/) class:
 """
 
-# ╔═╡ 3bbe1c3a-f9f5-4f88-91d1-d78f581c0039
-TikzPictures.TikzPicture("""
-\\begin{tikzpicture}[>=stealth, node distance=4cm, auto]
-	\\useasboundingbox (-1, -2) rectangle (15, 9);
+# ╔═╡ 80d0240d-a3f2-48fe-9e49-91059b2bbfbe
+md"""
+  - Optimization: a mathematical discipline that deals with finding *the best solution* from all *feasible solutions*. 
+  - The best solution is defined by an *objective function*, which we typically *minimize*. 
+  - The feasible solutions are defined by *a set of constraints*. 
+  - We will focus on *linear* optimization problems, 
+    - a *linear* objective function
+    - *linear* constraints. 
+  - Here is an example:
+$$\begin{align*}
+\text{minimize}~ \quad & C x \\
+\text{s.t.} \quad & A x \leq B \\
+& x \in \mathbb{R}^n
+\end{align*}$$
+
+"""
+
+# ╔═╡ 120da94b-fddf-45f0-a710-c02e75223bcc
+md"""
+## Toy problem
+
+For concreteness, let's assume a 2D problem, i.e. $n=2$, with the following parameters: 
+$$\begin{align}
+A = \begin{bmatrix}-1 & -2 \\ -2 & 1 \\ 0 & -1 \\ 2 & 1\end{bmatrix}, \quad
+B &= \begin{bmatrix}8\\1\\-1\\20\end{bmatrix}, \quad 
+C = \begin{bmatrix}1 & 2\end{bmatrix}.
+\end{align}$$
+
+Note that this gives a full linear programming problem as follows:
+
+$$\begin{align}
+\text{minimize} &\quad x_1 + 2 x_2 \\
+\text{s.t.} & -x_1 -x_2 \leq 8 \\
+& -2 x_1 + x_2 \leq 1 \\
+& x_2 \leq -1 \\
+& 2 x_1 + x_2 \leq 20 \\
+& x_1, x_2 \in \mathbb R
+\end{align}$$
+
+"""
+
+# ╔═╡ 37dba268-5315-4ddd-a6e7-233983d37401
+md"""
+We can write all the known parameters as follows.
+"""
+
+# ╔═╡ 56dc21ad-b2cf-4e0d-8b69-d12be2720df9
+begin
+	n = 2
+	m = 4	
+	A = [-1 2; -2 1; 0 -1; 2 1]
+	B = [8, 1, -1, 20]
+	C = [1, 2] 
+end;
+
+# ╔═╡ e6e0ffb9-ab52-4184-bafe-bae6433e57ea
+md"""
+We can then formulate it as a linear programming.
+"""
+
+# ╔═╡ 575522a1-c753-43c5-9288-b180537b141b
+begin
+	P1 = Model(GLPK.Optimizer)
+	
+	@JuMP.variable(P1, x[1:n])
+	@objective(P1, Min, sum(C[i]*x[i] for i in 1:n))
+	for j in 1:m
+		@constraint(P1, sum(A[j,i]*x[i] for i in 1:n) <= B[j])
+	end
+	
+	print(P1)
+end
+
+# ╔═╡ f0928538-a192-4f0e-8983-89b1b405ed79
+md"""
+We can use GPLK solver to solve the problem.
+"""
+
+# ╔═╡ ff24cc9a-a88c-4077-a87b-240b143ca8da
+optimize!(P1)
+
+# ╔═╡ d73bb766-f9c0-4fad-b251-e44e40eb9fe6
+md"""
+The solution, if the problem is solvable, can be extracted as follows.
+"""
+
+# ╔═╡ 531c4858-21f0-4638-87bd-bd821af3c3fe
+begin
+	# Check if a solution is found
+	if termination_status(P1) == MOI.OPTIMAL
+	    optimal_values = [value(x[i]) for i in 1:n]
+	    println("Solution found: x = $optimal_values")
+	    println("Optimal objective value: ", objective_value(P1))
+	else
+	    println("No optimal solution found.")
+	end
+end
+
+# ╔═╡ 6d2a8f70-85e4-42f7-bcbd-1b602ed67606
+md"""
+Here, we use `JuMP` modeling framework and `GLPK` solver. There are lots of available solvers to use, e.g.
+- Open-source (free): `GLPK`, `Clp`, or `Cbc`
+- Commercial: `Gurobi`, `CPLEX`
+
+These provide an easy way for us to solve a linear programming problem.
+"""
+
+# ╔═╡ 30a579fa-2c06-4338-8d8b-973df299cde2
+md"""
+## Transportation problem
+Consider a simple 3-echelon transportation network problem that includes suppliers, distribution centers, and retailers. The goal is to determine how to transport goods from the suppliers to retailers to fulfil all the demands at the lowest transportation costs.
+"""
+
+# ╔═╡ 58ce5de6-2d4d-449c-9e0b-70b23ffea357
+begin
+	tikZnetwork1 = TikzPictures.TikzPicture("""
+	\\begin{tikzpicture}[>=stealth, node distance=4cm, auto]
+	\\useasboundingbox (-1, -4) rectangle (15, 9);
 	
 	% Define styles
-	\\tikzstyle{pred}=[circle, thick, draw=black!75, fill=blue!20, minimum size=50mm, align=center, label=below:, draw opacity=0.1, fill opacity=0.5]
-	\\tikzstyle{pres}=[circle, thick, draw=black!75, fill=red!20, minimum size=50mm, align=center, label=below:, draw opacity=0.1, fill opacity=0.5]
-	\\tikzstyle{desc}=[circle, thick, draw=black!75, fill=yellow!20, minimum size=50mm, align=center, label=below:, draw opacity=0.1, fill opacity=0.5]
-
- 	\\node[pred, label=below:Predictive (Part 1)] (A) at (4,0) {};	
-  	\\node[desc, label=below:Descriptive (Part 1)] (C) at (8,0) {};
-	\\node[pres, label=above:Prescriptive (Part 2)] (B) at (6,3.4) {};
-
-	 %\\node at (4,0) {Predictive Analytics (Part 1)};
-		 \\node at (4,-0.5) {Decision trees};
-		 \\node at (4,-1) {Random forest};
-		 \\node at (4,-1.5) {...};
-	 %\\node at (6,3.4) {Prescriptive Analytics (Part 2)};
-		 \\node at (6,3.9) {Linear Programming};
-		 \\node at (6,4.4) {Markov Decision Processes};
-		 \\node at (6,3.4) {...};
-     %\\node at (8,0) {Descriptive Analytics (Part 1)};
-		 \\node at (8,-0.5) {Exploratory Data Analysis};
-		 \\node at (8,-1) {Principal Component Analysis};
-		 \\node at (8,-1.5) {...};
-
-	 \\node at (6,1.2) {NeuralNet};
-	 \\node at (7.8,1.8) {Rule-based};
-	 \\node at (4.6,1.8) {Simulation};
-	 \\node at (6,0.4) {Clustering};
-
-	\\end{tikzpicture}""", options="scale=1.0", preamble="")
-
-# ╔═╡ b428a2e9-afc5-405d-a0e0-11141e41b409
-md"""
-## Descriptive analytics
-  - **Focus:** Understanding past and current data to identify trends and patterns.
-  - **Methods:** Data aggregation, clustering, data visualization, and basic statistical analysis.
-  - **Use cases:** Sales performance analysis, customer behavior analysis, inventory management.
-  - **Benefits:** Helps in understanding the basic dynamics of the business; easy to implement and interpret.
-  - **Limitations:** Purely historical perspective; doesn't forecast or predict future outcomes.
-"""
-
-# ╔═╡ 9b55fbf1-8c3d-40b4-b45a-eabb5ce64e1b
-md"""
-## Predictive analytics
-  - **Focus:** Using historical data to predict future outcomes.
-  - **Methods:** Regression analysis, machine learning models, forecasting techniques.
-  - **Use cases:** Forecasting sales, risk assessment, demand forecasting.
-  - **Benefits:** Assists in strategic planning by predicting future trends; can be a competitive advantage.
-  - **Limitations:** Accuracy depends on the quality of data and models; predictions are probabilistic, not certain.
-
-"""
-
-# ╔═╡ 76a24bc0-e429-11ee-322b-258b37c466eb
-md"""
-
-## Prescriptive analytics
-
-- **Focus:** Advising on possible outcomes to guide decision-making.
-- **Methods:** Optimization, simulation, decision analysis.
-- **Use cases:** Supply chain optimization, resource allocation, operational efficiency.
-- **Benefits:** Helps in making informed decisions by considering future risks and opportunities; maximizes efficiency and effectiveness.
-- **Limitations:** Complex to implement; requires sophisticated tools and expertise.
-- **Scope**:
-    - **One-time decisions**: Linear programming (LP) and nonlinear programming (NLP)
-    - **Sequential decisions**: Markov Decision Process (MDP) 
-	 
-"""
-
-# ╔═╡ dfbbf0f3-0b93-4e21-bc07-4ef99e8e9560
-md"""
-### Optimization process
-
-We can view optimization as an engineering design process as follows:
-
-![Optimization Process](https://mansurarief.github.io/assets/img/opt1/opt_process.svg)
-
-"""
-
-# ╔═╡ 54353ceb-c71c-42cf-8063-98b1767a730b
-md"""
-### Basic optimization setup
-
-In general, we have the following:
-
-$\begin{aligned}
-& \underset{x}{\text{minimize}}
-& & f(x) \\
-& \text{subject to}
-& & x \in \mathcal{X}
-\end{aligned}$
-
-Here is what the notations mean:
--  $x$ is called a design variable or a decision variable, 
--  $f$ is the objective function that we want to minimize, 
--  $\mathcal X$ is the feasible set. 
-The solution is often called the minimizer $x^*$. Here is a 1d (univariate) problem. 
-
-![Basic optimization problem](https://mansurarief.github.io/assets/img/opt1//basic_opt_problem.svg)
-
-"""
-
-# ╔═╡ ab18eded-0f5b-4cb9-a024-66e51167f8be
-md"""
-We may also have a multivariate problem.
-
-$\begin{aligned}
-& \underset{x_1, x_2}{\text{minimize}} & & f(x_1, x_2) \\
-& \text{subject to} & & x_1 \geq 0 \\
-&                   & & x_2 \geq 0 \\
-&                   & & x_1 + x_2 \leq 1
-\end{aligned}$
-
-![Basic constrained optimization problem](https://mansurarief.github.io/assets/img/opt1/basic_constrained_opt_problem.svg)
-
-"""
-
-# ╔═╡ 5cab3948-750c-471b-8768-4df89f0fb75c
-md"""
-### Contour plot
-
-If we have a 2d decision variables, we can show use contour plot and show the iso-objective (same-objective-valued) lines.
-
-![Contour plot](https://mansurarief.github.io/assets/img/opt1/contour_plots.svg)
-
-"""
-
-# ╔═╡ b8265b69-0a8a-4a7c-996f-e725f8536de9
-md"""
-### Critical points
-A few types of points to note:
-- Global/local minimizer
-- Strong/local minimizer
-- Inflection point
-
-![Critical points](https://mansurarief.github.io/assets/img/opt1//critical_points.svg)
-
-"""
-
-# ╔═╡ 4d789f9f-e457-4082-9ca5-6af2fb69e1ba
-md"""
-### Identifying the minima
-"""
-
-# ╔═╡ 4cb741e5-70ac-489a-96be-6d8813ff5ad3
-md"""
-If we know $f(x)$, we just have to make sure to sufficiently cover the domain of $x$ to get a good picture of how $f(x)$ behaves.
-"""
-
-# ╔═╡ d25ce24f-370e-48f8-b64d-b320ec95c60e
-begin
-	f(x) = x * (2*x-1) * (x+1) * (x-2) * (x+2) * (x-3)
-	xs = -2.5:0.01:3.5
-	x_partial = -0.2:0.01:1
-	y_min, y_max = minimum(f.(x_partial)), maximum(f.(x_partial))
-	y_min_offset = (6, 0.15)
-	xstar_partial = 0.26
-	xstar_full = [-1.7, 0.26, 2.7]
+	\\tikzstyle{supplier}=[circle, thick, draw=blue!75, fill=blue!20, minimum size=20mm, align=center, label=below:]
+	\\tikzstyle{dc}=[circle, thick, draw=green!75, fill=green!20, minimum size=20mm, align=center, label=below:]
+	\\tikzstyle{retailer}=[circle, thick, draw=red!75, fill=red!20, minimum size=20mm, align=center, label=below:]
+	\\tikzstyle{line}=[->, thick]
 	
-	@pgf PGFPlotsX.GroupPlot(
-	    {
-	        group_style = {
-	            group_size = "2 by 1",
-	            horizontal_sep = "2cm",
-	        },
-			legend_style = {
-				at = Coordinate(1.15, -0.15),
-				anchor = "north",
-				legend_columns = -1
-	        },
-			ylabel = "\$f(x)\$",
-	        xlabel ="\$x\$",
-	    },
-	    {
-	        title = "Too narrow",  
-			title_style = "{font=\\fontsize{12}{14}\\selectfont}",
-	        xmajorgrids,
-	        ymajorgrids,
-	    },
-	    PGFPlotsX.Plot(
-	        {
-	            no_marks,
-	            style = "{line width=2pt}",
-	        },
-	        Table(x = x_partial, y = f.(x_partial))
-	    ),
-		PGFPlotsX.Plot(
-		        {
-		            style = "{draw=red, very thick, dashed}",  
-		            forget_plot,  
-		        },
-		        Coordinates(
-					[(-0.2, y_min-y_min_offset[2]), (1, y_min-y_min_offset[2]), (1, y_max), (-0.2, y_max), (-0.2, y_min-y_min_offset[2])]
-				)
-		),
-		PGFPlotsX.Plot(
-			{
-				only_marks,
-				style = "{draw=blue, line width=2pt}",
-			},
-			Table(x = xstar_partial, y = f.(xstar_partial))
-		),
-		PGFPlotsX.Legend(
-			["True function", "Minimizer"]
-		),
-	    {
-	        title = "Good coverage",  
-			title_style = "{font=\\fontsize{12}{14}\\selectfont}",
-	        xmajorgrids,
-	        ymajorgrids,
-	    },
-	    PGFPlotsX.Plot(
-	        {
-	            no_marks,
-	            style = "{line width=2pt}",
-	        },
-	        Table(x = xs, y = f.(xs))
-	    ),
-		PGFPlotsX.Plot(
-	        {
-	            style = "{draw=red, very thick, dashed}",  
-	            forget_plot,  
-	        },
-	        Coordinates(
-				[(-0.2, y_min-y_min_offset[1]), (1, y_min-y_min_offset[1]), (1, y_max), (-0.2, y_max), (-0.2, y_min-y_min_offset[1])]
-			)
-	    ),
-		PGFPlotsX.Plot(
-			{
-				only_marks,
-				style = "{draw=blue, line width=2pt}",
-			},
-			Table(x = xstar_full, y = f.(xstar_full))
-		),
-
-	)
+	% Nodes with capacities inside and names outside
+	\\node[supplier, label=below:\$S1\$] (S1) at (0, 2) {100};
+	\\node[supplier, label=below:\$S2\$] (S2) at (0,-2) {150};
+	
+	\\node[dc, label=below:\$DC1\$] (DC1) at (6, 3) {80};
+	\\node[dc, label=below:\$DC2\$] (DC2) at (6, 0) {90};
+	\\node[dc, label=below:\$DC3\$] (DC3) at (6,-3) {80};
+	
+	\\node[retailer, label=below:\$R1\$] (R1) at (12, 4) {50};
+	\\node[retailer, label=below:\$R2\$] (R2) at (12, 0) {110};
+	\\node[retailer, label=below:\$R3\$] (R3) at (12, -4) {90};
+	
+	% Paths with costs
+	\\draw[line] (S1) -- (DC1) node[near start, above, sloped] {5000};
+	\\draw[line] (S1) -- (DC2) node[near start, above, sloped] {6000};
+	\\draw[line] (S1) -- (DC3) node[near start, above, sloped] {4500};
+	\\draw[line] (S2) -- (DC1) node[near start, above, sloped] {5500};
+	\\draw[line] (S2) -- (DC2) node[near start, above, sloped] {5000};
+	\\draw[line] (S2) -- (DC3) node[near start, above, sloped] {6500};
+	
+	\\draw[line] (DC1) -- (R1) node[near start, above, sloped] {2000};
+	\\draw[line] (DC1) -- (R2) node[near start, above, sloped] {2500};
+	\\draw[line] (DC1) -- (R3) node[near end, above, sloped] {3000};
+	\\draw[line] (DC2) -- (R1) node[near end, above, sloped] {1500};
+	\\draw[line] (DC2) -- (R2) node[near end, above, sloped] {2000};
+	\\draw[line] (DC2) -- (R3) node[near end, above, sloped] {2500};
+	\\draw[line] (DC3) -- (R1) node[near end, above, sloped] {1800};
+	\\draw[line] (DC3) -- (R2) node[near start, above, sloped] {2200};
+	\\draw[line] (DC3) -- (R3) node[near start, above, sloped] {2600};
+	\\end{tikzpicture}
+	""", options="scale=1.0", preamble="")
 end
 
-# ╔═╡ 5f826d90-162c-466a-b7b3-05ea81b7186f
+
+
+# ╔═╡ 3c1a989b-e455-4741-bd39-196bd1dd69d8
 md"""
-If we do not know $f(x)$ and only have samples, what can we do? Be careful! Different samples may lead to a different conclusion.
+#### Problem description
+
+Consider a network with 2 suppliers, 3 distribution centers (DCs), and 3 retailers, each with different cost and capacity.
+
+#### Parameters
+
+- **Suppliers**: $I = \{S_1, S_2\}$
+  - Capacities: $S_1 = 100$ units, $S_2 = 150$ units
+- **Distribution Centers (DCs)**: $J = \{DC_1, DC_2, DC_3\}$
+  - Capacities: $DC_1 = 80$ units, $DC_2 = 90$ units, $DC_3 = 80$ units
+- **Retailers**: $K = \{ R_1, R_2, R_3 \}$
+  - Demands: $R_1 = 50$ units, $R_2 = 100$ units, $R_3 = 90$ units
 """
 
-# ╔═╡ 224fb7b8-0761-4506-aaa0-0727680ff379
+# ╔═╡ 79c5fe75-070c-43da-9dd6-5f9ccb0dc2ec
 begin
-	x_sample1 = [-2.2, -1.2, 0.5, 2.2, 3.2]
-	x_sample2 = [-2, 0, 2, 3]
+	nS, nD, nR = (2, 3, 3) #(num suppliers, num DCs, num retailers)
+	CostS = [5000 6000 4500; 5500 5000 6000]
+	CostD = [2000 2500 3000; 1500 2000 2500; 1800 2200 2600]
+	CapacityS = [100; 150]
+	CapacityD = [80; 90; 80]
+	DemandR = [50; 110; 90]
+end;
+
+# ╔═╡ 9cf021f4-f62c-48b2-91b1-95d30ff1727a
+md"""
+#### Math formulation
+
+**Objective**: Minimize the total transportation cost.
+
+**Decision Variables**: Let $x_{ij}$ be the number of units transported from supplier $i$ to DC $j$, and $y_{jk}$ be the number of units transported from DC $j$ to retailer $k$.
+
+**Constraints**:
+
+1. Supply capacity constraints for each supplier.
+2. Capacity constraints for each DC.
+3. Balance flow of goods (total in = total out) at DCs
+4. Demand satisfaction constraints for each retailer.
+4. Non-negativity constraints for all decision variables.
+
+Minimize: $\underbrace{\sum_{i,j} Cost_{ij}^S \cdot x_{ij}}_{\text{Transportation cost from suppliers to DCs}} + \underbrace{\sum_{j,k} Cost_{jk}^D \cdot y_{jk}}_{\text{Transportation cost from DCs to retailers}}$
+
+Subject to:
+
+- $\sum_{j \in J} x_{ij} \leq Capacity_i^S, \quad \forall i \in I$
+- $\sum_{i \in I} x_{ij}  \leq Capacity_j^D, \quad \forall j \in J$
+- $\sum_{i \in I} x_{ij}  = \sum_{k \in K} y_{jk}, \quad \forall j \in J$
+- $\sum_{j \in J} y_{jk} \geq Demand_k^R, \quad \forall k \in K$
+- $x_{ij}, y_{jk} \geq 0, \quad \forall I \in I, j \in J, k \in K$
+
+"""
+
+# ╔═╡ 0c4a08f0-5a20-43f6-8310-acd24a4e12e3
+md"""
+We can write this model as follows.
+"""
+
+# ╔═╡ 237da817-9fa3-4de8-bf9f-f95448bc4bf6
+begin
+	P0 = Model(GLPK.Optimizer)
+	@JuMP.variable(P0, x_[1:nS, 1:nD] >= 0)
+	@JuMP.variable(P0, y_[1:nD, 1:nR] >= 0)
+	@objective(P0, Min, sum(CostS .* x_) + sum(CostD .* y_))
+	@constraint(P0, suppliers_cap[i in 1:nS], sum(x_[i, :]) <= CapacityS[i])
+	@constraint(P0, dcs_cap[j in 1:nD], sum(x_[:,j]) <= CapacityD[j])
+	@constraint(P0, inout_flow[j in 1:nD], sum(x_[:, j]) - sum(y_[j, :]) == 0)
+	@constraint(P0, demand[k in 1:nR], sum(y_[:, k]) >= DemandR[k])
 	
-	@pgf PGFPlotsX.GroupPlot(
-	    {
-	        group_style = {
-	            group_size = "2 by 1",
-	            horizontal_sep = "2cm",
-	        },
-			legend_style = {
-	            at = Coordinate(1.15, -0.15),
-	            anchor = "north",
-	            legend_columns = -1
-	        },
-			ylabel = "\$f(x)\$",
-	        xlabel ="\$x\$",
-	    },
-	    {
-	        title = "Samples 1",  
-			title_style = "{font=\\fontsize{12}{14}\\selectfont}",
-	        xmajorgrids,
-	        ymajorgrids,
-	    },
-	    PGFPlotsX.Plot(
-	        {
-	            only_marks,
-	            style = "{line width=2pt}",
-	        },
-	        Table(x = x_sample1, y = f.(x_sample1))
-	    ),
-		PGFPlotsX.Plot(
-	        {
-	            no_marks,
-	            style = "{line width=2pt, opacity=0.3}",
-	        },
-	        Table(x = xs, y = f.(xs))
-	    ),
-		PGFPlotsX.Legend(
-			["Samples", "True function"]
-		),
-						
-	    {
-	        title = "Samples 2",  
-			title_style = "{font=\\fontsize{12}{14}\\selectfont}",
-	        xmajorgrids,
-	        ymajorgrids,
-	    },
-	    PGFPlotsX.Plot(
-	        {
-	            only_marks,
-	            style = "{line width=2pt}",
-	        },
-	        Table(x = x_sample2, y = f.(x_sample2))
-	    ),
-		PGFPlotsX.Plot(
-	        {
-	            no_marks,
-	            style = "{line width=2pt, opacity=0.3}",
-	        },
-	        Table(x = xs, y = f.(xs))
-	    ),
-	)
+	print(P0)
 end
 
-# ╔═╡ 92164a19-d337-4fb8-88ac-c85cdb12eacc
+# ╔═╡ 336015cd-c7bc-44ea-a165-ded72a5bf91f
 md"""
-A simple way is to run predictive analytics and fit a function to the samples, then find its minima. Once again we see here, different set of samples may lead to different conclusion.
+We can solve using our solver of choice (here we still use `GLPK`).
 """
 
-# ╔═╡ c727f343-2313-4c46-9bb1-aaae3ecb1989
+# ╔═╡ 18620f30-2744-4984-b370-e41b214ba05e
+JuMP.optimize!(P0)
+
+# ╔═╡ 893262b8-0e18-4732-926d-35d1b771f3b3
+md"""
+We can extract and visualize the optimal solution as follows.
+"""
+
+# ╔═╡ 3ea70098-d23c-4689-8f18-b71172d1410f
+begin	
+	xx_opt = JuMP.value.(x_)
+	yy_opt = JuMP.value.(y_)
+	qS = sum(xx_opt[:, j] for j in 1:nD)
+	qD = sum(xx_opt[i, :] for i in 1:nS)
+	qR = sum(yy_opt[j, :] for j in 1:nD)
+end;
+
+# ╔═╡ 04bdbc98-946c-4c6c-a9f3-ba116cc7f023
 begin
-	fhat = fit(x_sample1, f.(x_sample1), 4);	
-	fhat2 = fit(x_sample2, f.(x_sample2), 2);	
-	
-	@pgf PGFPlotsX.GroupPlot(
-	    {
-	        group_style = {
-	            group_size = "2 by 1",
-	            horizontal_sep = "2cm",
-	        },				
-			legend_style = {
-	            at = Coordinate(1.2, -0.15),
-	            anchor = "north",
-	            legend_columns = -1
-	        },
-	        ylabel = "\$f(x)\$",
-	        xlabel ="\$x\$",
-				
-	    },
-	    {
-	        title = "Samples 1",  
-			title_style = "{font=\\fontsize{12}{14}\\selectfont}",
-	        xmajorgrids,
-	        ymajorgrids,
-	    },
-	    PGFPlotsX.Plot(
-	        {
-	            only_marks,
-	            style = "{line width=2pt}",
-	        },
-	        Table(x = x_sample1, y = f.(x_sample1))
-	    ),
-		PGFPlotsX.Plot(
-		        {
-		            no_marks,
-		            style = "{line width=2pt, opacity=0.3}",
-		        },
-		        Table(x = xs, y = f.(xs))
-		    ),
-		PGFPlotsX.Plot(
-	        {
-	            no_marks,
-	            style = "{draw=blue, dashed, line width=2pt, opacity=1}",
-	        },
-	        Table(x = xs, y = fhat.(xs))
-	    ),
-		PGFPlotsX.Legend(
-			["Samples", "True function", "Fitted function"]
-		),
-						
-	    {
-	        title = "Samples 2",  
-			title_style = "{font=\\fontsize{12}{14}\\selectfont}",
-	        xmajorgrids,
-	        ymajorgrids,
-	    },
-	    PGFPlotsX.Plot(
-	        {
-	            only_marks,
-	            style = "{line width=2pt}",
-	        },
-	        Table(x = x_sample2, y = f.(x_sample2))
-	    ),
-		PGFPlotsX.Plot(
-	        {
-	            no_marks,
-	            style = "{line width=2pt, opacity=0.3}",
-	        },
-	        Table(x = xs, y = f.(xs))
-	    ),
-		PGFPlotsX.Plot(
-	        {
-	            no_marks,
-	            style = "{draw=blue, dashed, line width=2pt, opacity=1}",
-	        },
-	        Table(x = xs, y = fhat2.(xs))
-	    ),
-	)
+	println("Optimal Solutions:")		
+	println("x = ", xx_opt)
+	println("y = ", yy_opt)
 end
 
-# ╔═╡ dd428a39-5c41-4095-b2ad-8235b435c631
-# md"""
-# ### Characteristics of local minima
+# ╔═╡ ccafde48-24b2-412b-9b8e-1bdf4b5bbc42
+begin
+	# Placeholder arrays for suppliers, DCs, and retailers positions
+	suppliers_pos = [("0", "2"), ("0", "-2")]
+	dcs_pos = [("6", "3"), ("6", "0"), ("6", "-3")]
+	retailers_pos = [("12", "4"), ("12", "0"), ("12", "-4")]
+	
+	
+	# Start constructing the TikZ code
+	tikz_code = "\\begin{tikzpicture}[>=stealth, node distance=4cm, auto]\n\\useasboundingbox (-1, -4) rectangle (15, 9);\n"
+	
+	# Add styles
+	tikz_code *= """
+	% Define styles
+	\\tikzstyle{supplier}=[circle, thick, draw=blue!75, fill=blue!20, minimum size=20mm, align=center, label=below:]
+	\\tikzstyle{dc}=[circle, thick, draw=green!75, fill=green!20, minimum size=20mm, align=center, label=below:]
+	\\tikzstyle{retailer}=[circle, thick, draw=red!75, fill=red!20, minimum size=20mm, align=center, label=below:]
+	\\tikzstyle{line}=[->, thick]
+	"""
+	
+	# Function to add nodes and edges with non-zero flow
+	function add_nodes_edges(tikz_code, xx_opt, yy_opt, suppliers_pos, dcs_pos, retailers_pos)
+	    # Add supplier nodes
+	    for (i, pos) in enumerate(suppliers_pos)
+	        tikz_code *= "\\node[supplier, label=below:\$S$i\$] (S$i) at ($(pos[1]), $(pos[2])) {$(qS[i])};\n"
+	    end
+	    # Add DC nodes
+	    for (j, pos) in enumerate(dcs_pos)
+	        tikz_code *= "\\node[dc, label=below:\$DC$j\$] (DC$j) at ($(pos[1]), $(pos[2])) {$(qD[j])};\n"
+	    end
+	    # Add retailer nodes
+	    for (k, pos) in enumerate(retailers_pos)
+	        tikz_code *= "\\node[retailer, label=below:\$R$k\$] (R$k) at ($(pos[1]), $(pos[2])) {$(qR[k])};\n"
+	    end
+	    
+	    # Add edges with non-zero flow from suppliers to DCs
+	    for i in 1:size(xx_opt, 1)
+	        for j in 1:size(xx_opt, 2)
+	            if xx_opt[i, j] > 0
+	                tikz_code *= "\\draw[line] (S$i) -- (DC$j) node[near start, above, sloped] {$(xx_opt[i, j])};\n"
+	            end
+	        end
+	    end
+	    # Add edges with non-zero flow from DCs to retailers
+	    for j in 1:size(yy_opt, 1)
+	        for k in 1:size(yy_opt, 2)
+	            if yy_opt[j, k] > 0
+	                tikz_code *= "\\draw[line] (DC$j) -- (R$k) node[near start, above, sloped] {$(yy_opt[j, k])};\n"
+	            end
+	        end
+	    end
+	    return tikz_code
+	end
+	
+	
+	# Generate the full TikZ code with non-zero flows
+	tikz_code = add_nodes_edges(tikz_code, xx_opt, yy_opt, suppliers_pos, dcs_pos, retailers_pos)
 
-# A design point $x^*$ is a local minimizer if:
+	# Finish the TikZ code
+	tikz_code *= "\\end{tikzpicture}\n"
+		
+	# println(tikz_code)
+	tikZnetwork_solution2 = TikzPictures.TikzPicture("""$(tikz_code)""", options="scale=1.0", preamble="")
+end
 
-# - For a univariate problem, 
-#   - First-order necessary condition: $f^\prime(x^*) = 0$
-#   - Second-order sufficient condition: $f^{\prime \prime}(x^*) > 0$
-# - For a multivariate problem, 
-#   - First-order necessary condition: $\underbrace{\nabla f(x^*)}_{\text{a vector}} = \mathbf{0}$ $\leftarrow$ this is a vector of zeros
-#   - Second-order sufficient condition: $\underbrace{\nabla^2 f(x^*)}_{\text{a matrix}} \succ \mathbf{0}$ $\leftarrow$ this means positive definite
-
-
-# """
-
-# ╔═╡ 3f7a74e1-040c-40f8-9089-e839fcd4bce7
+# ╔═╡ fa89588f-21e8-400b-a6c4-285a80454c61
 md"""
-## Activity #1: Budgeted black-box optimization
-
-- Discuss with your group members!
-- Objective: locate the global minimizer of the (black-box) $f(x)$!
-- You may only query up to 10 decision points before deciding.
-- Post your (group) answer in the chat!
-- Choose one representative to explain your strategy to the class!
-
-**Link: [AnalyticsProject2024-Budgeted black-box optimization](https://bit.ly/BudgetedBlackBoxOpt1)**
-
-![Instruction](https://mansurarief.github.io/assets/img/opt1/blackbox_opt_instruction.svg)
+### Remarks 
+1. In this example, the variable should've been modeled using *integer linear programming* (since $x$ and $y$ are integers), but for this instance, we can simply use a (continuous-variable) linear programming model and it works just fine (this is **NOT** always the case!).
+2. In general, you want to use the model that is **suitable** for your problem (if the variables are integer, use integer programming). However, if you can simplify the problem, use the simplest (and useful) model  possible. This will allow your model to scale better (if we use integer programming here and the problem size is much larger, it may take substantially longer to solve).
+3. Note also here that both problems are feasible. In many instances, you may find the problem infeasible or unbounded, and thus simply not solvable. If that's the case, check your constraint and objective functions.
+4. If you are curious, you can extract the dual variables of the above problem.
 """
 
-# ╔═╡ f1835c5c-76f2-4724-b787-fd52331e1216
+# ╔═╡ dbaef7b1-2b21-4117-913b-dc24080324da
+begin
+	println("Dual variables (for capacities constraints)")
+	println("\tSuppliers: ", [round(JuMP.shadow_price(suppliers_cap[i])) for i in 1:nS])
+	println("\tDCs: ", [round(JuMP.shadow_price(dcs_cap[j])) for j in 1:nD])
+	println("\tRetailers: ", [round(JuMP.shadow_price(demand[k])) for k in 1:nR])
+end
+
+# ╔═╡ c46ac554-8558-4df2-ad3c-04cbf3769961
 md"""
-## Activity #2: Optimizing black-box + budget
-How would your strategy change if:
-- you are still given up to 10 queries, but each has value
-- so, your new objective is  
-$$\begin{align}
-\underset{x, queries}{\text{minimize}}~\underbrace{f(x)}_{\text{original objective}} - \bigg( \underbrace{(10-\text{length}(queries))}_{\text{your remaining queries}} \times 10 \bigg)
-\end{align}$$
-- we'll also show you all the collective samples thus far
-
-**Link: [AnalyticsProject2024-Optimizing black-box budget](https://bit.ly/BudgetedBlackBoxOpt2)**
-"""
-
-# ╔═╡ c27294de-27c3-401e-8e1b-f0aaedee9248
-md"""
-## Discussion
-"""
-
-# ╔═╡ 99f15baa-2283-4875-bae9-a0c5ea1ab986
-md"""
-1. What is the main difference between the task in Activity #1 vs Activity #2?
-    - Which one is more challenging? Why?
-    - Which one is more often you encounter in your work (real life)?
-"""
-
-# ╔═╡ 1f6d17e7-cee5-40dc-b92f-32b694808a54
-md"""
-2. Give an example from your work (real life) where you have to minimize/maximize some unknown objective function, but only have samples or datasets?
-    - How would you approach such a problem?
-    - What challenges you might encounter?
-"""
-
-# ╔═╡ 2dc169c1-67f6-4385-afc2-d8cd74592bb9
-md"""
-3. Let's tie this all back within analytics perspectives. How does descriptive, predictive, and presciptive analytics approaches help you solve black-box optimization problem (specifically when you do not know the objective function exactly)?
-"""
-
-# ╔═╡ 76a7235b-06da-4a8a-8027-debfb8991ff0
-md"""
-## Conclusion
-
-1. Basic categorization of analytics methods:
-    - Descriptive analytics (Part 1)
-    - Predictive analytics (Part 1)
-    - Prescriptive analytics (Part 2)
-
-2. General optimization setup:
-    - One-shot decision: a single decision epoch
-    - Sequential decision: multiple decisions over a single long-run objective
-
-3. If the objective function is unknown, it is more challenging. But, we can combine our analytics methods to approach the problem.
-    - Read more about Surrogate Modeling ([Algorithms for Optimization](https://algorithmsbook.com/optimization/), Chapter 14)
-"""
-
-# ╔═╡ eafdcc08-86b4-4984-aa0a-08b66bd874ec
-md"""
-## (Optional) reading materials
-
-We did not discuss solution methods, yet. Refer to various algorithms in these optional reading materials:
-
-- [Algorithms for Optimization book](https://algorithmsbook.com/optimization/):
-    - Zero-th order method (Chapter 3), 
-    - First order method (Chapter 5), 
-    - Second order method (Chapter 6)
-    - Population-based approach (Chapter 9)
-
-- Linear programming formulation and solver in [Python](https://mansurarief.github.io/deterministic-optimization-with-pyomo-and-gurobi.html) and [Julia](linear-programming.html)
-- [Linear programming with uncertain constraints and solver in Python](https://mansurarief.github.io/optimization-under-uncertainty.html)
+As a review question, what do these **dual variables** tell you?
 """
 
 # ╔═╡ a9a30626-5ef4-43a1-91a8-97f2acb48b2a
@@ -547,10 +397,9 @@ md"""
 ## Acknowledgment
 
 - Some contents are generated by ChatGPT with the prompts 
-  - "*summarize and differentiate prescriptive, predictive, and descriptive analytics*" and 
   - "*summarize and improve clarity*"
   - "*clean up and structure the code better*"
-- The basic optimization materials are borrowed from [Stanford AA222 course materials by Mykel Kochenderfer](https://aa222.stanford.edu/). 
+
 """
 
 # ╔═╡ 61db4b18-5187-4b00-b44e-797dbf3dcd35
@@ -561,6 +410,8 @@ md"""
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
+GLPK = "60bf3e95-4087-53dc-ae20-288a0d20c6a6"
+JuMP = "4076af6c-e467-56ae-b986-b466b2749572"
 PGFPlots = "3b7a836e-365b-5785-a47d-02c71176b4aa"
 PGFPlotsX = "8314cec4-20b6-5062-9cdb-752b83310925"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
@@ -568,6 +419,8 @@ Polynomials = "f27b6e38-b328-58d1-80ce-0feddd5e7a45"
 TikzPictures = "37f6aa50-8035-52d0-81c2-5a1d08754b2d"
 
 [compat]
+GLPK = "~1.1.3"
+JuMP = "~1.20.0"
 PGFPlots = "~3.4.4"
 PGFPlotsX = "~1.6.1"
 PlutoUI = "~0.7.58"
@@ -581,7 +434,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.9.0"
 manifest_format = "2.0"
-project_hash = "f58439e0ceb79d4e36a5c1486e5fa28b8d1b1293"
+project_hash = "0c9d35238b074dbacbee317cdd265c38e5352678"
 
 [[deps.AbstractFFTs]]
 deps = ["LinearAlgebra"]
@@ -665,6 +518,12 @@ version = "0.4.7"
 [[deps.Base64]]
 uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
+[[deps.BenchmarkTools]]
+deps = ["JSON", "Logging", "Printf", "Profile", "Statistics", "UUIDs"]
+git-tree-sha1 = "f1dff6729bc61f4d49e140da1af55dcd1ac97b2f"
+uuid = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+version = "1.5.0"
+
 [[deps.BitTwiddlingConvenienceFunctions]]
 deps = ["Static"]
 git-tree-sha1 = "0c5f81f47bbbcf4aea7b2959135713459170798b"
@@ -722,6 +581,18 @@ git-tree-sha1 = "9ebb045901e9bbf58767a9f34ff89831ed711aae"
 uuid = "aaaa29a8-35af-508c-8bc3-b662a17a0fe5"
 version = "0.15.7"
 
+[[deps.CodecBzip2]]
+deps = ["Bzip2_jll", "Libdl", "TranscodingStreams"]
+git-tree-sha1 = "9b1ca1aa6ce3f71b3d1840c538a8210a043625eb"
+uuid = "523fee87-0ab8-5b00-afb7-3ecf72e48cfd"
+version = "0.8.2"
+
+[[deps.CodecZlib]]
+deps = ["TranscodingStreams", "Zlib_jll"]
+git-tree-sha1 = "59939d8a997469ee05c4b4944560a820f9ba0d73"
+uuid = "944b1d66-785c-5afd-91f1-9de20f533193"
+version = "0.7.4"
+
 [[deps.ColorBrewer]]
 deps = ["Colors", "JSON", "Test"]
 git-tree-sha1 = "61c5334f33d91e570e1d0c3eb5465835242582c4"
@@ -751,6 +622,12 @@ deps = ["ColorTypes", "FixedPointNumbers", "Reexport"]
 git-tree-sha1 = "fc08e5930ee9a4e03f84bfb5211cb54e7769758a"
 uuid = "5ae59095-9a9b-59fe-a467-6f913c188581"
 version = "0.12.10"
+
+[[deps.CommonSubexpressions]]
+deps = ["MacroTools", "Test"]
+git-tree-sha1 = "7b8a93dba8af7e3b42fecabf646260105ac373f7"
+uuid = "bbf7d656-a473-5ed7-a52c-81e309532950"
+version = "0.3.0"
 
 [[deps.Compat]]
 deps = ["TOML", "UUIDs"]
@@ -837,6 +714,18 @@ git-tree-sha1 = "9e2f36d3c96a820c678f2f1f1782582fcf685bae"
 uuid = "8bb1440f-4735-579b-a4ab-409b98df4dab"
 version = "1.9.1"
 
+[[deps.DiffResults]]
+deps = ["StaticArraysCore"]
+git-tree-sha1 = "782dd5f4561f5d267313f23853baaaa4c52ea621"
+uuid = "163ba53b-c6d8-5494-b064-1a9d43ac40c5"
+version = "1.1.0"
+
+[[deps.DiffRules]]
+deps = ["IrrationalConstants", "LogExpFunctions", "NaNMath", "Random", "SpecialFunctions"]
+git-tree-sha1 = "23163d55f885173722d1e4cf0f6110cdbaf7e272"
+uuid = "b552c78f-8df3-52c6-915a-8e097449b14b"
+version = "1.15.1"
+
 [[deps.Discretizers]]
 deps = ["DataStructures", "SpecialFunctions", "Statistics", "StatsBase"]
 git-tree-sha1 = "88fd187ed6a84a6f1892ab883484f8ec765108ec"
@@ -914,6 +803,16 @@ git-tree-sha1 = "21efd19106a55620a188615da6d3d06cd7f6ee03"
 uuid = "a3f928ae-7b40-5064-980b-68af3947d34b"
 version = "2.13.93+0"
 
+[[deps.ForwardDiff]]
+deps = ["CommonSubexpressions", "DiffResults", "DiffRules", "LinearAlgebra", "LogExpFunctions", "NaNMath", "Preferences", "Printf", "Random", "SpecialFunctions"]
+git-tree-sha1 = "cf0fe81336da9fb90944683b8c41984b08793dad"
+uuid = "f6369f11-7733-5829-9624-2563aa707210"
+version = "0.10.36"
+weakdeps = ["StaticArrays"]
+
+    [deps.ForwardDiff.extensions]
+    ForwardDiffStaticArraysExt = "StaticArrays"
+
 [[deps.FreeType2_jll]]
 deps = ["Artifacts", "Bzip2_jll", "JLLWrappers", "Libdl", "Zlib_jll"]
 git-tree-sha1 = "d8db6a5a2fe1381c1ea4ef2cab7c69c2de7f9ea0"
@@ -923,6 +822,23 @@ version = "2.13.1+0"
 [[deps.Future]]
 deps = ["Random"]
 uuid = "9fa8497b-333b-5362-9e8d-4d0656e87820"
+
+[[deps.GLPK]]
+deps = ["GLPK_jll", "MathOptInterface"]
+git-tree-sha1 = "e37c68890d71c2e6555d3689a5d5fc75b35990ef"
+uuid = "60bf3e95-4087-53dc-ae20-288a0d20c6a6"
+version = "1.1.3"
+
+[[deps.GLPK_jll]]
+deps = ["Artifacts", "GMP_jll", "JLLWrappers", "Libdl", "Pkg"]
+git-tree-sha1 = "fe68622f32828aa92275895fdb324a85894a5b1b"
+uuid = "e8aa6df9-e6ca-548a-97ff-1f85fc5b8b98"
+version = "5.0.1+0"
+
+[[deps.GMP_jll]]
+deps = ["Artifacts", "Libdl"]
+uuid = "781609d7-10c4-51f6-84f2-b8444358ff6d"
+version = "6.2.1+2"
 
 [[deps.Gettext_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "JLLWrappers", "Libdl", "Libiconv_jll", "Pkg", "XML2_jll"]
@@ -1208,6 +1124,18 @@ git-tree-sha1 = "3336abae9a713d2210bb57ab484b1e065edd7d23"
 uuid = "aacddb02-875f-59d6-b918-886e6ef4fbf8"
 version = "3.0.2+0"
 
+[[deps.JuMP]]
+deps = ["LinearAlgebra", "MacroTools", "MathOptInterface", "MutableArithmetics", "OrderedCollections", "PrecompileTools", "Printf", "SparseArrays"]
+git-tree-sha1 = "4e44cff1595c6c02cdbca4e87ce376e63c33a584"
+uuid = "4076af6c-e467-56ae-b986-b466b2749572"
+version = "1.20.0"
+
+    [deps.JuMP.extensions]
+    JuMPDimensionalDataExt = "DimensionalData"
+
+    [deps.JuMP.weakdeps]
+    DimensionalData = "0703355e-b756-11e9-17c0-8b28908087d0"
+
 [[deps.LERC_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
 git-tree-sha1 = "bf36f528eec6634efc60d7ec062008f171071434"
@@ -1344,15 +1272,11 @@ deps = ["ArrayInterface", "CPUSummary", "CloseOpenIntervals", "DocStringExtensio
 git-tree-sha1 = "8f6786d8b2b3248d79db3ad359ce95382d5a6df8"
 uuid = "bdcacae8-1622-11e9-2a5c-532679323890"
 version = "0.12.170"
+weakdeps = ["ChainRulesCore", "ForwardDiff", "SpecialFunctions"]
 
     [deps.LoopVectorization.extensions]
     ForwardDiffExt = ["ChainRulesCore", "ForwardDiff"]
     SpecialFunctionsExt = "SpecialFunctions"
-
-    [deps.LoopVectorization.weakdeps]
-    ChainRulesCore = "d360d2e6-b24c-11e9-a2a3-2a2ae2dbcce4"
-    ForwardDiff = "f6369f11-7733-5829-9624-2563aa707210"
-    SpecialFunctions = "276daf66-3868-5448-9aa4-cd146d93841b"
 
 [[deps.MIMEs]]
 git-tree-sha1 = "65f28ad4b594aebe22157d6fac869786a255b7eb"
@@ -1385,6 +1309,12 @@ version = "0.4.2"
 deps = ["Base64"]
 uuid = "d6f4376e-aef5-505a-96c1-9c027394607a"
 
+[[deps.MathOptInterface]]
+deps = ["BenchmarkTools", "CodecBzip2", "CodecZlib", "DataStructures", "ForwardDiff", "JSON", "LinearAlgebra", "MutableArithmetics", "NaNMath", "OrderedCollections", "PrecompileTools", "Printf", "SparseArrays", "SpecialFunctions", "Test", "Unicode"]
+git-tree-sha1 = "0958279282984a89e087fca415f01bee443154d5"
+uuid = "b8f27783-ece8-5eb3-8dc8-9495eed66fee"
+version = "1.28.1"
+
 [[deps.MbedTLS_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "c8ffd9c3-330d-5841-b78e-0817d7145fa1"
@@ -1414,6 +1344,12 @@ version = "0.3.4"
 [[deps.MozillaCACerts_jll]]
 uuid = "14a3606d-f60d-562e-9121-12d972cd8159"
 version = "2022.10.11"
+
+[[deps.MutableArithmetics]]
+deps = ["LinearAlgebra", "SparseArrays", "Test"]
+git-tree-sha1 = "c2e2d748aea87f006a87c1654878349baa04aaf0"
+uuid = "d8a4904e-b15c-11e9-3269-09a3773c0cb0"
+version = "1.4.3"
 
 [[deps.NaNMath]]
 deps = ["OpenLibm_jll"]
@@ -1616,6 +1552,10 @@ version = "2.3.1"
 [[deps.Printf]]
 deps = ["Unicode"]
 uuid = "de0858da-6303-5e67-8744-51eddeeeb8d7"
+
+[[deps.Profile]]
+deps = ["Printf"]
+uuid = "9abbd945-dff8-562f-b5e8-e1ebf5ef1b79"
 
 [[deps.ProgressMeter]]
 deps = ["Distributed", "Printf"]
@@ -2051,31 +1991,33 @@ version = "17.4.0+0"
 # ╟─207ba875-82ee-4af7-97ca-abe37d5977e4
 # ╟─91c7e066-587c-4bc1-b6ba-b8124a880631
 # ╟─8da84304-d8e9-47ac-9d74-261d50c83ec6
-# ╟─3bbe1c3a-f9f5-4f88-91d1-d78f581c0039
-# ╟─b428a2e9-afc5-405d-a0e0-11141e41b409
-# ╟─9b55fbf1-8c3d-40b4-b45a-eabb5ce64e1b
-# ╟─76a24bc0-e429-11ee-322b-258b37c466eb
-# ╟─dfbbf0f3-0b93-4e21-bc07-4ef99e8e9560
-# ╟─54353ceb-c71c-42cf-8063-98b1767a730b
-# ╟─ab18eded-0f5b-4cb9-a024-66e51167f8be
-# ╟─5cab3948-750c-471b-8768-4df89f0fb75c
-# ╟─b8265b69-0a8a-4a7c-996f-e725f8536de9
-# ╟─4d789f9f-e457-4082-9ca5-6af2fb69e1ba
-# ╟─4cb741e5-70ac-489a-96be-6d8813ff5ad3
-# ╟─d25ce24f-370e-48f8-b64d-b320ec95c60e
-# ╟─5f826d90-162c-466a-b7b3-05ea81b7186f
-# ╟─224fb7b8-0761-4506-aaa0-0727680ff379
-# ╟─92164a19-d337-4fb8-88ac-c85cdb12eacc
-# ╟─c727f343-2313-4c46-9bb1-aaae3ecb1989
-# ╟─dd428a39-5c41-4095-b2ad-8235b435c631
-# ╟─3f7a74e1-040c-40f8-9089-e839fcd4bce7
-# ╟─f1835c5c-76f2-4724-b787-fd52331e1216
-# ╟─c27294de-27c3-401e-8e1b-f0aaedee9248
-# ╟─99f15baa-2283-4875-bae9-a0c5ea1ab986
-# ╟─1f6d17e7-cee5-40dc-b92f-32b694808a54
-# ╟─2dc169c1-67f6-4385-afc2-d8cd74592bb9
-# ╟─76a7235b-06da-4a8a-8027-debfb8991ff0
-# ╟─eafdcc08-86b4-4984-aa0a-08b66bd874ec
+# ╟─80d0240d-a3f2-48fe-9e49-91059b2bbfbe
+# ╟─120da94b-fddf-45f0-a710-c02e75223bcc
+# ╟─37dba268-5315-4ddd-a6e7-233983d37401
+# ╠═56dc21ad-b2cf-4e0d-8b69-d12be2720df9
+# ╟─e6e0ffb9-ab52-4184-bafe-bae6433e57ea
+# ╠═575522a1-c753-43c5-9288-b180537b141b
+# ╟─f0928538-a192-4f0e-8983-89b1b405ed79
+# ╠═ff24cc9a-a88c-4077-a87b-240b143ca8da
+# ╟─d73bb766-f9c0-4fad-b251-e44e40eb9fe6
+# ╠═531c4858-21f0-4638-87bd-bd821af3c3fe
+# ╟─6d2a8f70-85e4-42f7-bcbd-1b602ed67606
+# ╟─30a579fa-2c06-4338-8d8b-973df299cde2
+# ╟─58ce5de6-2d4d-449c-9e0b-70b23ffea357
+# ╟─3c1a989b-e455-4741-bd39-196bd1dd69d8
+# ╠═79c5fe75-070c-43da-9dd6-5f9ccb0dc2ec
+# ╟─9cf021f4-f62c-48b2-91b1-95d30ff1727a
+# ╟─0c4a08f0-5a20-43f6-8310-acd24a4e12e3
+# ╠═237da817-9fa3-4de8-bf9f-f95448bc4bf6
+# ╟─336015cd-c7bc-44ea-a165-ded72a5bf91f
+# ╠═18620f30-2744-4984-b370-e41b214ba05e
+# ╟─893262b8-0e18-4732-926d-35d1b771f3b3
+# ╠═3ea70098-d23c-4689-8f18-b71172d1410f
+# ╠═04bdbc98-946c-4c6c-a9f3-ba116cc7f023
+# ╟─ccafde48-24b2-412b-9b8e-1bdf4b5bbc42
+# ╟─fa89588f-21e8-400b-a6c4-285a80454c61
+# ╠═dbaef7b1-2b21-4117-913b-dc24080324da
+# ╟─c46ac554-8558-4df2-ad3c-04cbf3769961
 # ╟─a9a30626-5ef4-43a1-91a8-97f2acb48b2a
 # ╟─61db4b18-5187-4b00-b44e-797dbf3dcd35
 # ╟─00000000-0000-0000-0000-000000000001

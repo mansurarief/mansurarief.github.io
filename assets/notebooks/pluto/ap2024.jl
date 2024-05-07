@@ -106,7 +106,7 @@ md"""
 md"""
 ## Office hours
 
-Office hours are Saturday, 8am-9am WIB. During this time, feel free to use the provided Zoom link to chat with me.
+Office hours (optional) are Saturday, 8am-9am WIB. During this time, feel free to use the provided Zoom link to chat with me.
 """
 
 # ╔═╡ f6f2d1b3-fc6c-4af8-8e20-b81687ebb591
@@ -137,7 +137,7 @@ Here is the grade breakdown for this course
 | Final presentation   | 25%    | 95% |
 | Project repo/website | 5%     | 100% |
 
-Please submit your assignments by emailing it to me at **mansur.arief at stanford.edu**. If it is a group assignment, please send just one email and cc all your group members. The rubric for each assignment will be posted in Myclassroom.
+Please submit your assignments by uploading them in the Classroom. If it is a group assignment, only one submission is enough. The rubric for each assignment will be posted in Myclassroom.
 """
 
 # ╔═╡ 590c941c-86a9-43a6-beb7-4ff6e080b6d5
@@ -146,16 +146,15 @@ md"""
 
 | Week |  Date    | Session Details                             | Assignment Due* |
 |:----:|:--------:|:--------------------------------------------|:----------------|
-|  9   | May 3    | [Course (part 2) intro](#) and [review](https://mansurarief.github.io/courses/ap2024/opt-dm-review)          | [Reflection 1](https://forms.gle/mRzRnwfRrNxStrwZ8)    |
+|  9   | May 3    | [Course (part 2) intro](#) and [review](optimization-review.html)          | [Reflection 1](https://forms.gle/mRzRnwfRrNxStrwZ8)    |
 |  10  | May 10   | Prescriptive analytics case studies    | -               |
 |  11  | May 17   | Group 1 & 2 (Proposal)                      | -               |
 |  12  | May 24   | Group 3 & 4 (Proposal)                      | [Midterm report](https://forms.gle/AhCbnq9dmj2puEnVA)  |  
 |  13  | May 31   | Group 5 (Proposal) + General in-class Q&A   | [Peer review](https://forms.gle/uUxBYcpxFgCkkK557)     |
-|  14  | June 7   | Breakout room, in-class office hours        | [Midterm feedback](https://stanforduniversity.qualtrics.com/jfe/form/SV_6G3t4EqGkQDn80e)|
-|  15  | June 14  | Group 1 & 2 (Final)                         | -               |
-|  16  | June 21  | Group 3 & 4 (Final)                         | -               |
-|  17  | June 28  | Group 5 (Final)                  | [Final report](https://forms.gle/9ZgusdP6srDgTXet6), [Reflection 2](https://forms.gle/p9MMmJriLDF63eXt5) |
-|  18  | -        | Advanced topics (Tentative)      | Project repo/website       |
+|  14  | June 7   | Group 1 & 2 (Final)        | [Midterm feedback](https://stanforduniversity.qualtrics.com/jfe/form/SV_6G3t4EqGkQDn80e)|
+|  15  | June 14  | Group 3 & 4 (Final)                         | -               |
+|  16  | June 21  | Group 5 (Final)                  | [Final report](https://forms.gle/9ZgusdP6srDgTXet6), [Reflection 2](https://forms.gle/p9MMmJriLDF63eXt5)                         | -               |
+|    | June 23        |      | Project repo/website       |
 
 *All assignments are due at 11:59pm (WIB).
 
@@ -204,6 +203,79 @@ I'm not very active in the course WhatsApp group, but I'm here to help you! If y
 I look forward to assisting you!
 """
 
+# ╔═╡ f56c3853-d921-463e-abdd-cfe4550a2069
+md"""
+## Reflections
+
+### Pencapaian
+
+1. **Pemahaman Metode Analisis**
+   - Memperoleh wawasan utama bahwa berbagai metode analisis dapat diterapkan pada data yang dimiliki, sebagaimana dipelajari dari mata kuliah Analytics Project. Pemahaman ini membantu dalam menggali data lebih dalam menggunakan aplikasi seperti Microsoft Excel.
+
+2. **Pemahaman Pengaruh Data terhadap Pengambilan Keputusan**
+   - Memahami pentingnya proses pengumpulan data yang konsisten dan bebas dari nilai yang hilang atau outlier untuk mendukung fase analitik. Pengalaman ini mengajarkan pentingnya memilih metode yang tepat berdasarkan penelitian dan pengalaman.
+
+3. **Peningkatan Kemampuan dalam Metode Tertentu**
+   - Memperoleh pemahaman yang lebih baik tentang konsep regresi, terutama analisis seri waktu, yang sering digunakan dalam bidang pekerjaan Anda.
+
+4. **Pengembangan Kemampuan Berpikir**
+   - Mengembangkan cara berpikir yang hierarkis serta fondasi untuk melakukan analisis, melatih kemampuan berpikir kritis dan komputasional.
+
+5. **Pemahaman Tentang Penggunaan Metode Analitis**
+   - Memperoleh kemampuan untuk mengetahui kriteria dan syarat penggunaan sebuah metode secara benar, serta meningkatkan jumlah metode yang diketahui dan bisa diimplementasikan ke berbagai studi kasus.
+
+6. **Harapan untuk Pembelajaran yang Lebih Mendalam**
+   - Mengharapkan untuk memperoleh pelajaran yang benar-benar baru dan insight lebih lanjut dari dosen, bukan hanya dari presentasi mahasiswa lain, untuk memperkaya pengalaman belajar Anda.
+
+
+### Topik yang ingin dipelajari
+
+
+1. **Pemahaman Metode Analisis**
+   - Berencana mempelajari berbagai metode analisis yang digunakan oleh kelompok lain dan menerapkannya dalam pekerjaan jika relevan, terutama untuk mempersiapkan thesis.
+
+2. **Preparasi Data dan Pemilihan Metode**
+   - Ingin memperdalam pemahaman tentang bagaimana memilih metode yang tepat untuk kasus tertentu, seperti penggunaan LSTM RNN untuk prediksi seri waktu, dan berencana mengikuti bootcamp khusus tentang metode machine learning.
+
+3. **Pengembangan Kemampuan Teknis**
+   - Berencana untuk meningkatkan pemahaman tentang berbagai metode analitik dengan cara rajin membaca, latihan coding, dan mencari referensi untuk persiapan thesis.
+
+4. **Pemahaman Mendalam tentang Prescriptive Analytics**
+   - Berharap untuk mendapatkan pemahaman yang lebih dalam tentang prescriptive analytics dan metode deep learning, termasuk mempelajari studi kasus dan membuat model analitik yang sederhana namun efektif.
+
+5. **Analisis Seri Waktu dan Domain Frekuensi**
+   - Ingin mempelajari lebih dalam tentang analisis seri waktu dan domain frekuensi, yang sering digunakan dalam pengukuran listrik, dengan memahami implementasi analisis yang cepat dan efisien mengingat keterbatasan kapasitas komputasi dan memori.
+
+6. **Pemahaman Lebih Lanjut tentang Metode Tertentu**
+   - Tertarik untuk mempelajari lebih dalam tentang metode ARIMA dan Neuron Fuzzy dalam konteks machine learning.
+
+
+### Kendala
+
+1. **Pemahaman Materi Awal**
+   - Mengalami kesulitan dalam memahami beberapa topik yang belum diajarkan di semester sebelumnya namun dibutuhkan untuk mata kuliah Analytics Project.
+
+2. **Persiapan Data**
+   - Kesulitan dalam menangani data yang hilang dan outlier, yang dapat menyebabkan interpretasi yang salah atau berdampak negatif terhadap pengembangan model.
+
+3. **Bahasa**
+   - Kendala dalam menggunakan bahasa Inggris sebagai bahasa utama dalam referensi, memaksa untuk menggunakan Google Translate untuk memahami dan menambah kosakata.
+
+4. **Pencarian Data yang Relevan**
+   - Menghadapi tantangan dalam mencari data yang relevan dan pembuatan program yang sesuai dengan metodologi penelitian.
+
+5. **Pemahaman Konsep Baru**
+   - Kesulitan dalam memahami dan mengimplementasikan konsep teoritis ke dalam praktik dunia nyata, serta menggunakan bahasa akademik untuk menjelaskan konsep tersebut.
+
+6. **Kemampuan Teknis**
+   - Terbatasnya kemampuan teknis dalam melakukan analisis data, memotivasi untuk belajar dari sumber lain seperti YouTube atau diskusi dengan teman.
+
+7. **Kesalahan dalam Coding**
+   - Sering mengalami error saat coding, namun mendapatkan solusi melalui pencarian di GitHub atau bertanya kepada senior.
+
+
+"""
+
 # ╔═╡ 7690ee64-e273-499a-86e0-e2398e787107
 md"""
 ## Acknowledgment
@@ -216,7 +288,7 @@ md"""
 
 # ╔═╡ 4b20f6ef-0b98-4740-a029-f0a90951636a
 md"""
-*Last updated: April 19, 2024*
+*Last updated: May 2, 2024*
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
@@ -777,6 +849,7 @@ version = "0.13.1+0"
 # ╟─e4442912-0bc7-46e9-8f17-e2c5319228ac
 # ╟─d93080fa-952f-41c3-96cc-ed662d4530d1
 # ╟─c3103bab-8c31-4981-a430-b5e50022af31
+# ╟─f56c3853-d921-463e-abdd-cfe4550a2069
 # ╟─7690ee64-e273-499a-86e0-e2398e787107
 # ╟─4b20f6ef-0b98-4740-a029-f0a90951636a
 # ╟─00000000-0000-0000-0000-000000000001
