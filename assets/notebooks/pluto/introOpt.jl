@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.41
+# v0.19.40
 
 using Markdown
 using InteractiveUtils
@@ -30,7 +30,7 @@ html"""
 </style>
 
 <div style="text-align: center;">
-    <img src="https://mansurarief.github.io/assets/img/simt-header.png" alt="header" width="400"/>
+    <a href="https://analytics-project-simt-its.github.io/"><img src="https://mansurarief.github.io/assets/img/simt-header.png" alt="header" width="400"/></a>
 </div>
 """
 
@@ -40,7 +40,7 @@ md"""
 
 **Instructor**: [Mansur M. Arief, Ph.D.](https://mansurarief.github.io/)
 
-A quick recap of what have been discussed so far in this [Analytics Project (U) Part 2](https://mansurarief.github.io/courses/ap2024/) class:
+A quick recap of what have been discussed so far in this [Analytics Project (U) Part 2](https://analytics-project-simt-its.github.io/) class:
 """
 
 # ╔═╡ 3bbe1c3a-f9f5-4f88-91d1-d78f581c0039

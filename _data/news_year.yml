@@ -1,7 +1,13 @@
 - year: 2024
   events:
+    - date: 05/29/24
+      content: I am attending the [CPS Rising Stars 2024 Workshop at the University of Virginia](https://risingstars.linklab.virginia.edu/2024/) by the [LinkLab](https://engineering.virginia.edu/labs-groups/link-lab) and will be presenting my research on [Trustworthy AI for Safe CPS](/assets/pdf/CPS_RisingStars_2024_Trustworthy-AI-for-Safe-CPS.pdf). 
+
+    - date: 05/22/24
+      content: Sofia and I presented our GeothermalPOMDP ongoing work at [2024 SCERF annual meeting](https://scerf.stanford.edu/events/affiliate-meetings/2024-7th-annual-scerf-affiliates-meeting-hybrid). 
+
     - date: 05/15/24
-      content: One paper submitted to [RA-L](https://www.ieee-ras.org/publications/ra-l).
+      content: Two papers submitted to [RA-L](https://www.ieee-ras.org/publications/ra-l).
 
     - date: 05/10/24
       content: One paper accepted to [CBMS 2024](https://eventos.tec.mx/s/lt-event?language=es_MX&id=a5u8X000000Igo9QAC).
@@ -19,7 +25,7 @@
       content: I presented a summary of my research on Developing Safe AI for High-Stakes Applications (with geothermal exploration and energy transition examples) at the [Mineral-X ](https://mineralx.stanford.edu/) meeting. 
 
     - date: 04/08/24
-      content: I was selected as a [2024 CPS Rising Stars Workshop](https://risingstars.linklab.virginia.edu/2024/) participant at the University of Virginia. 
+      content: I was selected as a [2024 CPS Rising Stars Workshop participant](https://risingstars.linklab.virginia.edu/2024/participants/mansur-arief.html) at the University of Virginia. 
 
     - date: 02/03/24
       content: I delivered a keynote speech on "Engineering, Technology, and Society - Collaborative Innovation for Human-centered Designs" at the [8th International Conference on Management of Technology, Innovation, and Project (MOTIP 08)](https://www.its.ac.id/mt/motip08/).

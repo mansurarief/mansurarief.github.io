@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.41
+# v0.19.40
 
 using Markdown
 using InteractiveUtils
@@ -32,7 +32,7 @@ html"""
 </style>
 
 <div style="text-align: center;">
-    <img src="https://mansurarief.github.io/assets/img/simt-header.png" alt="header" width="400"/>
+    <a href="https://analytics-project-simt-its.github.io/"><img src="https://mansurarief.github.io/assets/img/simt-header.png" alt="header" width="400"/></a>
 </div>
 """
 
