@@ -1,7 +1,32 @@
 - year: 2024
   events:
+
+    - date: 08/08/2024
+      content: I will be speaking at the Nanyang Technological University (NTU) in Singapore on "Developing Safe Cyber-Physical Systems for Safety-Critical Applications" on August 20th, 2024. Please join us!
+
+    - date: 08/07/24
+      content: One abstract submitted to [AAAI 2025](https://aaai.org/conference/aaai/aaai-25/).
+
+    - date: 08/02/24
+      content: We also make public our ongoing work on [Geosteerings.jl](https://github.com/mansurarief/GeoSteerings.jl), an MDP and POMDP package for a simple geosteering problem. This is a joint work between [SISL](https://sisl.stanford.edu/) and [Mineral-X](https://mineralx.stanford.edu/), with William Xu, Jihui Ding, Jef Caers, and Mykel Kochenderfer.
+
+    - date: 08/01/24
+      content: We make public our ongoing work on [Lithium Supply Chain POMDP](https://github.com/mansurarief/LiSCPOMDP) for critical mineral supply chain design. This is a joint work between [SISL](https://sisl.stanford.edu/) and [Mineral-X](https://mineralx.stanford.edu/), with Yasmine Alonso, CJ Oshiro, William Xu, Anthony Corso, Jef Caers, and Mykel Kochenderfer.
+
+    - date: 07/30/24
+      content: I will be speaking at the [Indonesia Sustainability Forum's Virtual Academic Dialogue](https://www.ecadin.org/isf2024/) in September 2024. Please join us!
+
+    - date: 07/20/24
+      content: I am serving as a Guest Editor for the [Special Issue on AI, CPS, and Decision Making in OSCM Context](https://journal.oscm-forum.org/ai-cps-special-issue/) for the [OSCM Journal](https://journal.oscm-forum.org/). Please consider submitting your work!
+
+    - date: 07/15/24
+      content: One paper submitted to RA-L.
+
+    - date: 07/06/24
+      content: I presented "AI for Safer and More Efficient Long-Haul Goods Transportation" at the 2024 Supply Chain Innovation Summit by [ISCEA Indonesia](https://isceaindonesia.com/)
+
     - date: 05/29/24
-      content: I am attending the [CPS Rising Stars 2024 Workshop at the University of Virginia](https://risingstars.linklab.virginia.edu/2024/) by the [LinkLab](https://engineering.virginia.edu/labs-groups/link-lab) and will be presenting my research on [Trustworthy AI for Safe CPS](/assets/pdf/CPS_RisingStars_2024_Trustworthy-AI-for-Safe-CPS.pdf). 
+      content: I attended the [CPS Rising Stars 2024 Workshop at the University of Virginia](https://risingstars.linklab.virginia.edu/2024/) by the [LinkLab](https://engineering.virginia.edu/labs-groups/link-lab) and will be presenting my research on [Trustworthy AI for Safe CPS](/assets/pdf/CPS_RisingStars_2024_Trustworthy-AI-for-Safe-CPS.pdf). 
 
     - date: 05/22/24
       content: Sofia and I presented our GeothermalPOMDP ongoing work at [2024 SCERF annual meeting](https://scerf.stanford.edu/events/affiliate-meetings/2024-7th-annual-scerf-affiliates-meeting-hybrid). 

@@ -38,7 +38,7 @@ For full publications list, see the <a href="publications">publication page</a>.
         {% for events in site.data.news_year | limit:1 %}
         <section class="year">
             <h3>{{ events.year }}</h3>
-            {% for event in events.events %}
+            {% for event in events.events | limit:5 %}
             <section>
                 <h4>{{ event.date }}</h4>
                 <ul>
@@ -49,6 +49,20 @@ For full publications list, see the <a href="publications">publication page</a>.
         </section>
         {% endfor %}
         <div class="collapse no-return old_news" id="oldnews">
+            <section class="year"></section>
+            {% for events in site.data.news_year | offset:0 %}
+            <section class="year">
+                <h3>{{ events.year }}</h3>
+                {% for event in events.events | offset:5 %}
+                <section>
+                    <h4>{{ event.date }}</h4>
+                    <ul>
+                        <li>{{ event.content | markdownify | remove: '<p>' | remove: '</p>'}}</li>
+                    </ul>
+                </section>
+                {% endfor %}
+            </section>
+            {% endfor %}
             <section class="year"></section>
             {% for events in site.data.news_year | offset:1 %}
             <section class="year">
