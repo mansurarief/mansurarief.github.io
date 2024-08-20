@@ -1,3 +1,40 @@
+
+- tag: 'Alonso, Yasmine, <u>Mansur Arief</u>, Anthony Corso, Jef Caers, Mykel Kochenderfer "Modeling the US Path to Lithium Self Sufficiency using POMDPs." <i>AGU 2024</i>.'
+  link: 'https://ui.adsabs.harvard.edu/abs/2023AGUFMSY41A1039A/abstract'
+  selected: false
+  category: 3
+  year: 2024
+
+- tag: 'Khatim, Nur A., Azmul A Irfan, Amaliya M Hayah, <u>Mansur Arief</u>. "Toward an Integrated Decision Making Framework for Optimized Stroke Diagnosis with DSA and Treatment under Uncertainty." <i>IMIP 2024</i>.'
+  link: 'https://arxiv.org/abs/2407.15839'
+  selected: false
+  category: 4
+  year: 2024
+
+- tag: 'Gupta, Abhibha, Rully A Hendrawan, <u>Mansur, Arief</u>. "Enhancing Visual Perception in Novel Environments via Incremental Data Augmentation Based on Style Transfer." <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2309.08851'
+  selected: false
+  category: 2
+  year: 2024
+
+- tag: '<u>Arief, Mansur</u>, Mike Timmerman, Jiachen Li, David Isele, Mykel Kochenderfer. "Optimized Guided Meta Training for Intelligent Agents under Highly Interactive Driving Scenarios." <i>Under review</i>.'
+  link: 'https://arxiv.org/abs/2407.15839'
+  selected: true
+  category: 1
+  year: 2024
+
+- tag: 'Ward, Isaac R., Dylan Asmar, <u>Mansur Arief</u>, Jana K Mike, Mykel Kochenderfer. "Optimal Control of Mechanical Ventilators with Learned Respiratory Dynamics." <i>CBMS 2024</i>.'
+  link: 'https://ieeexplore.ieee.org/abstract/document/10600979/'
+  selected: false
+  category: 4
+  year: 2024
+
+- tag: 'Delecki, Harrison, Marc Schlichting, <u>Mansur Arief</u>, Anthony Corso, Marcell Vazquez-Chanlatte, Mykel Kochenderfer. "Diffusion-Based Failure Sampling for Cyber-Physical Systems." <i>Under review</i>.'
+  link: 'https://arxiv.org/abs/2406.14761'
+  selected: true
+  category: 1
+  year: 2024
+  
 - tag: '<u>Arief, Mansur</u>, Yan Akhra, Iwan Vanany. "A Robust and Efficient Optimization Model for Electric Vehicle Charging Stations in Developing Countries under Electricity Uncertainty." <i>Under Review</i>.'
   link: 'https://arxiv.org/abs/2307.05470'
   selected: false

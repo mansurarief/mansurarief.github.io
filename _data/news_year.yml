@@ -1,11 +1,13 @@
 - year: 2024
   events:
+    - date: 08/17/2024
+      content: I received the award for an Outstanding Indonesian Academic Diaspora 2024 from the [Consulate General of the Republic of Indonesia in San Francisco](https://kemlu.go.id/sanfrancisco/en).
 
     - date: 08/08/2024
       content: I will be speaking at the Nanyang Technological University (NTU) in Singapore on "Developing Safe Cyber-Physical Systems for Safety-Critical Applications" on August 20th, 2024. Please join us!
 
     - date: 08/07/24
-      content: One abstract submitted to [AAAI 2025](https://aaai.org/conference/aaai/aaai-25/).
+      content: Two abstracts submitted to [AAAI 2025](https://aaai.org/conference/aaai/aaai-25/).
 
     - date: 08/02/24
       content: We also make public our ongoing work on [Geosteerings.jl](https://github.com/mansurarief/GeoSteerings.jl), an MDP and POMDP package for a simple geosteering problem. This is a joint work between [SISL](https://sisl.stanford.edu/) and [Mineral-X](https://mineralx.stanford.edu/), with William Xu, Jihui Ding, Jef Caers, and Mykel Kochenderfer.
