@@ -1,0 +1,48 @@
+- id: 1
+  question: "What is the main goal of inventory control?"
+  options:
+    - text: "To ensure demand is always met."
+      note: ""
+    - text: "To make sure that the inventory level is always high."
+      note: ""
+    - text: "To maximize service level at all costs."
+      note: ""
+    - text: "To balance costs and service level."
+      note: "Correct! The main goal of inventory control is to balance costs and service level."
+
+
+- id: 2
+  question: "A new company policy is implemented to reduce the inventory level by 20% to cut costs. What is the potential risk of this policy?"
+  options:
+    - text: "Stockout"
+      note: "Correct! Reducing inventory level may lead to stockout."
+    - text: "Overstock"
+      note: ""
+    - text: "Increased service level"
+      note: ""
+    - text: "Decreased ordering cost"
+      note: ""
+
+- id: 3
+  question: "The sales team decides to offer a *FREE TAMBAH DAYA* promotion during August, which is expected to increase demand for new KwH meters. However, no internal communication is made to the regional teams. As a result, the regional teams are caught off guard and the inventory level of KwH meters drops to zero most of the time during August. What is the main issue in this scenario?"
+  options:
+    - text: "Stockout"
+      note: "Correct! The main issue is stockout due to increased demand and lack of communication."
+    - text: "Overstock"
+      note: ""
+    - text: "Increased service level"
+      note: ""
+    - text: "Decreased ordering cost"
+      note: ""
+
+- id: 4
+  question: "In the previous scenario, what could have been done by the inventory control team to prevent the stockout issue?"
+  options:
+    - text: "Blame the sales team for not informing the regional teams."
+      note: ""
+    - text: "Update the demand forecast to reflect the promotion and re-set the reorder point accordingly."
+      note: "Correct! Updating the demand forecast and reorder point can help prevent stockout."
+    - text: "Increase the service level by offering a discount on other products to 'ride the wave'."
+      note: ""    
+    - text: "Increase the inventory holding cost rate to encourage holding more inventory."
+      note: ""

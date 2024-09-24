@@ -1,0 +1,120 @@
+- id: 1
+  question: "Which of the following is NOT associated with service level for spare part inventory control?"
+  options:
+    - text: "Spare-part on-time delivery: the percentage of spare part requests delivered on time"
+      note: ""
+    - text: "Spare-part lead time: the time it takes to deliver a spare part"
+      note: ""
+    - text: "Spare part order cycle time: the time it takes to process a spare part order from UP3 or ULP"
+      note: ""
+    - text: "Spare-part delivery cost: the cost of delivering a spare part"
+      note: "Correct! Spare-part delivery cost is not directly associated with service level, but with cost."
+
+- id: 2
+  question: "Which of the following is NOT related to stockout cost?"
+  options:
+    - text: "Lost sales: the revenue lost due to stockout"
+      note: ""
+    - text: "Backorder cost: the cost of fulfilling backorders"
+      note: ""
+    - text: "Stockout penalty: the cost of stockout"
+      note: ""
+    - text: "Ordering cost: the cost of placing an order"
+      note: "Correct! Ordering cost is not related to stockout cost, but to ordering cost."
+
+- id: 3
+  question: "Which of the following is NOT a key performance indicator (KPI) for inventory control?"
+  options:
+    - text: "Inventory turnover: the number of times inventory is sold or used in a period"
+      note: ""
+    - text: "Stockout rate: the percentage of time inventory is out of stock"
+      note: ""
+    - text: "Service level: the percentage of demand met from stock"
+      note: ""
+    - text: "Ordering cost: the cost of placing an order"
+      note: "Correct! Ordering cost is not a KPI for inventory control, but a cost metric."
+
+
+- id: 4
+  question: "Which of the following is the limitation of using single-run (determistic) metric evaluation?"
+  options:
+    - text: "It does not account for uncertainty in demand and lead time."
+      note: "Correct! Single-run metric evaluation does not account for uncertainty in demand and lead time."
+    - text: "It is computationally expensive."
+      note: ""
+    - text: "It is difficult to implement."
+      note: ""
+    - text: "It is not suitable for spare part inventory control."
+      note: ""
+
+- id: 5
+  question: "Which of the following is NOT a benefit of using multi-run (stochastic) metric evaluation?"
+  options:
+    - text: "It accounts for uncertainty in demand and lead time."
+      note: ""
+    - text: "It is computationally expensive."
+      note: "Correct! Multi-run metric evaluation is computationally more expensive than computing metric using a single data point."
+    - text: "It is suitable for spare part inventory control."
+      note: ""
+    - text: "It provides a more accurate estimate of inventory control performance."
+      note: ""
+
+- id: 6
+  question: "What can make predicted spare-part demand deviate from actual demand?"
+  options:
+    - text: "Incorrect demand forecast"
+      note: ""
+    - text: "Incorrect lead time"
+      note: ""
+    - text: "Unaccounted promotions or natural events"
+      note: ""
+    - text: "All of the above"
+      note: "Correct! All of the above can make predicted spare-part demand deviate from actual demand."
+
+- id: 7
+  question: "Under which scenario is it most beneficial to use a multi-run (stochastic) metric evaluation?"
+  options:
+    - text: "When lead time are deterministic."
+      note: ""
+    - text: "When demand is deterministic."
+      note: ""
+    - text: "When demand and lead time are uncertain."
+      note: "Correct! Multi-run metric evaluation is more beneficial when demand and lead time are uncertain."
+    - text: "When demand and lead time are deterministic."
+      note: ""
+
+- id: 8
+  question: "An inventory control team is confused that their so-called optimal reorder point is not performing well in practice. Stockout is frequent for one item and the inventory level is always high for the other. What could be the reason for this?"
+  options:
+    - text: "The reorder point is set too low for the item with frequent stockout."
+      note: ""
+    - text: "The reorder point is set too high for the item with high inventory level."
+      note: ""
+    - text: "The demand forecast is incorrect."
+      note: ""
+    - text: "All of the above"
+      note: "Correct! All of the above could be the reason for the inventory control team's confusion."
+
+- id: 9
+  question: "An inventory manager is considering increasing the reorder point for a spare part to reduce stockout. What could be the potential risk of this decision?"
+  options:
+    - text: "Increased stockout"
+      note: ""
+    - text: "Increased service level"
+      note: ""
+    - text: "Increased inventory holding cost"
+      note: "Correct! Increasing the reorder point may lead to increased inventory holding cost."
+    - text: "Decreased ordering cost"
+      note: ""
+
+- id: 10
+  question: "Spare-part SKU#123 is a critical component for electricity distribution (with a stockout cost of 10 billion Rupiah). It has an order lead time of 60 days (it is a customized part) and a demand of about 1 unit every 2 weeks. The inventory manager is considering decreasing the reorder point to reduce inventory holding cost, since the item is expensive, hard to store, and has a low demand. What could the manager do to still do this without increasing the risk of stockout?"
+  options:
+    - text: "Nothing, decreasing the reorder point will increase the risk of stockout."
+      note: ""
+    - text: "Work with all the ULPs to reduce the stockout cost."
+      note: ""
+    - text: "Work with the supplier to reduce the lead time."
+      note: "Correct, reducing the lead time can help maintain stockout risk at the same level while reducing inventory holding cost."
+    - text: "Increase the safety stock level."
+      note: ""
