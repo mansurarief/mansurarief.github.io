@@ -1,0 +1,119 @@
+- id: 1
+  question: "What is the main difference between the (s, Q) and (R, S) inventory policies?"
+  options:
+    - text: "(s, Q) is a continuous review policy, while (R, S) is a periodic review policy"
+      note: "Correct! (s, Q) involves continuous monitoring of inventory levels, while (R, S) reviews inventory at fixed intervals."
+    - text: "(s, Q) is used for critical parts, while (R, S) is used for non-critical parts"
+      note: ""
+    - text: "(s, Q) is always more cost-effective than (R, S)"
+      note: ""
+    - text: "(R, S) is always more suitable for stochastic demand"
+      note: ""
+
+- id: 2
+  question: "Which of the following is NOT a typical approach for determining optimal inventory policies?"
+  options:
+    - text: "Expert judgment"
+      note: ""
+    - text: "Analytical methods (e.g., EOQ formula)"
+      note: ""
+    - text: "Mathematical optimization"
+      note: ""
+    - text: "Random guessing"
+      note: "Correct! Random guessing is not a valid approach for determining inventory policies."
+
+- id: 3
+  question: "Why might the EOQ (Economic Order Quantity) model be insufficient for optimizing spare parts inventory?"
+  options:
+    - text: "It assumes constant demand"
+      note: "Correct! The EOQ model assumes constant demand, which is often not the case for spare parts."
+    - text: "It doesn't consider lead time"
+      note: ""
+    - text: "It's too complex to implement"
+      note: ""
+    - text: "It always results in higher costs"
+      note: ""
+
+- id: 4
+  question: "What is the main advantage of using stochastic optimization for spare parts inventory control?"
+  options:
+    - text: "It's always faster than other methods"
+      note: ""
+    - text: "It considers uncertainty in demand and lead time"
+      note: "Correct! Stochastic optimization accounts for variability in demand and lead time, which is crucial for spare parts."
+    - text: "It guarantees a 100% service level"
+      note: ""
+    - text: "It eliminates the need for expert judgment"
+      note: ""
+
+- id: 5
+  question: "In the context of spare parts inventory, what does 'service level' primarily refer to?"
+  options:
+    - text: "The quality of customer service"
+      note: ""
+    - text: "The probability of not experiencing a stockout"
+      note: "Correct! Service level typically refers to the probability of meeting demand from stock."
+    - text: "The speed of delivery"
+      note: ""
+    - text: "The number of parts in stock"
+      note: ""
+
+- id: 6
+  question: "A company is struggling with frequent stockouts of a critical spare part despite using an EOQ model. What could be a potential reason for this?"
+  options:
+    - text: "The EOQ model is always incorrect"
+      note: ""
+    - text: "The demand for the part is likely intermittent or highly variable"
+      note: "Correct! EOQ assumes constant demand, which may not hold for spare parts with intermittent or variable demand."
+    - text: "The company is ordering too frequently"
+      note: ""
+    - text: "The service level is set too high"
+      note: ""
+
+- id: 7
+  question: "What is the main benefit of using a centralized inventory control strategy for spare parts?"
+  options:
+    - text: "It always reduces transportation costs"
+      note: ""
+    - text: "It eliminates the need for forecasting"
+      note: ""
+    - text: "It can help reduce overall inventory costs"
+      note: "Correct! Centralized control can lead to more efficient inventory management and lower overall costs."
+    - text: "It guarantees 100% availability of all parts"
+      note: ""
+
+- id: 8
+  question: "In the context of spare parts inventory, what does VMI stand for and what is its main advantage?"
+  options:
+    - text: "Very Minimal Inventory; it reduces storage costs"
+      note: ""
+    - text: "Vendor-Managed Inventory; it shifts inventory management responsibility to the supplier"
+      note: "Correct! VMI allows suppliers to manage inventory, potentially improving efficiency and reducing costs."
+    - text: "Variable Management Index; it helps in demand forecasting"
+      note: ""
+    - text: "Volumetric Measurement Initiative; it improves space utilization"
+      note: ""
+
+- id: 9
+  question: "A power distribution company is considering implementing a Just-in-Time (JIT) inventory system for all its spare parts. What potential risk should they be most concerned about?"
+  options:
+    - text: "Increased ordering costs"
+      note: ""
+    - text: "Higher storage costs"
+      note: ""
+    - text: "Risk of stockouts for critical parts"
+      note: "Correct! JIT can increase the risk of stockouts, which is particularly concerning for critical spare parts."
+    - text: "Overordering of non-critical parts"
+      note: ""
+
+- id: 10
+  question: "What is the main difference between the inventory policies for critical and non-critical spare parts?"
+  options:
+    - text: "Critical parts often demand higher service levels"
+      note: "Correct! Critical parts typically require higher service levels to avoid costly stockouts."
+    - text: "Non-critical parts are always more expensive"
+      note: ""
+    - text: "Critical parts are never managed using stochastic optimization"
+      note: ""
+    - text: "Non-critical parts are always managed using VMI"
+      note: ""
