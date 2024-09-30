@@ -1,5 +1,11 @@
 - year: 2024
   events:
+    - date: 10/01/24
+      content: Officially starting my Research Engineer appointment at [SISL](https://sisl.stanford.edu/) and [Mineral-X](https://mineralx.stanford.edu/).
+
+    - date: 09/05/2024
+      content: A mentor team won the best presentation award at [IMMAN 2024](https://uinjkt.ac.id/en/the-6th-international-meeting-and-medical-network-imman) for their work on [LLMs for Efficient Electronic Health Record (EHR) data in Indonesia](https://arxiv.org/abs/2409.17054).
+
     - date: 08/17/2024
       content: I received the award for an Outstanding Indonesian Academic Diaspora 2024 from the [Consulate General of the Republic of Indonesia in San Francisco](https://kemlu.go.id/sanfrancisco/en).
 
