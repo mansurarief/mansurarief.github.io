@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.40
+# v0.19.41
 
 using Markdown
 using InteractiveUtils
@@ -50,7 +50,7 @@ html"""
 # ╔═╡ b8c24aa2-6b09-4be7-9d5d-27cfdd92906e
 md"""
 
-# Analytics Project (U) 2024 - Part 2
+# Analytics Project, Gasal 2024 - Part 2
 
 **Instructor**: [Mansur M. Arief, Ph.D.](https://mansurarief.github.io/)
 
@@ -66,9 +66,9 @@ TikzPicture("""
 	\\tikzstyle{pres}=[circle, thick, draw=black!75, fill=red!20, minimum size=50mm, align=center, label=below:, draw opacity=0.1, fill opacity=0.5]
 	\\tikzstyle{desc}=[circle, thick, draw=black!75, fill=yellow!20, minimum size=50mm, align=center, label=below:, draw opacity=0.1, fill opacity=0.5]
 
- 	\\node[pred, label=below:Predictive (Part 1)] (A) at (4,0) {};	
-  	\\node[desc, label=below:Descriptive (Part 1)] (C) at (8,0) {};
-	\\node[pres, label=above:Prescriptive (Part 2)] (B) at (6,3.4) {};
+ 	\\node[pred, label=below:Predictive (Week 1-8)] (A) at (4,0) {};	
+  	\\node[desc, label=below:Descriptive (Week 1-8)] (C) at (8,0) {};
+	\\node[pres, label=above:Prescriptive (Week 9-16)] (B) at (6,3.4) {};
 
 	 %\\node at (4,0) {Predictive Analytics (Part 1)};
 		 \\node at (4,-0.5) {Decision trees};
@@ -76,7 +76,7 @@ TikzPicture("""
 		 \\node at (4,-1.5) {...};
 	 %\\node at (6,3.4) {Prescriptive Analytics (Part 2)};
 		 \\node at (6,3.9) {Linear Programming};
-		 \\node at (6,4.4) {Markov Decision Processes};
+		 \\node at (6,4.4) {Nonlinear Programming};
 		 \\node at (6,3.4) {...};
      %\\node at (8,0) {Descriptive Analytics (Part 1)};
 		 \\node at (8,-0.5) {Exploratory Data Analysis};
@@ -92,7 +92,7 @@ TikzPicture("""
 
 # ╔═╡ cff36f3e-fe45-11ee-10dd-b16376ef96a6
 md"""
-This graduate course delves into the application of analytics to projects based on (semi)realistic datasets, guided by theories and algorithmic principles. In Part 2 of the course, students will focus on **prescriptive analytics approaches** (including linear and nonlinear programming one-shot decisions as well as sequential decisions), with a particular emphasis on optimization and decision-making algorithms. Building on the foundations laid in Part 1, the course continues to prioritize hands-on group projects. This approach creates a sandbox learning environment where students can collaboratively apply their skills in ideation, modeling, and communication to solve complex, real-world challenges. 
+This graduate course digs into the application of analytics to projects based on (semi)realistic datasets, guided by theories and algorithmic principles. In Part 2 of the course, students will focus on **prescriptive analytics approaches** (including linear and nonlinear programming one-shot decisions as well as sequential decisions), with a particular emphasis on optimization and decision-making algorithms. Building on the foundations laid in Part 1 (descriptive and predictive analytics), the course continues to prioritize hands-on group projects. This approach creates a sandbox learning environment where students can collaboratively apply their skills in ideation, modeling, and communication to solve complex, real-world challenges. 
 """
 
 # ╔═╡ 8c54025c-771f-4c97-bfae-816603c3f718
@@ -110,7 +110,7 @@ Upon the completion of the course, the students are able to
 # ╔═╡ 1ba74b45-232e-4e2b-80dd-8a3d568fbfda
 md"""
 ## Lectures
-- The lectures are on Fridays, 6:30-8:10pm WIB in Zoom (link will be available in Myclassroom). 
+- The lectures are on Fridays, 6:30-8:10pm WIB in Zoom (link posted in MyITS classroom). 
 - Attendance is required (by SIMT and ITS).
 - Active participation is highly encouraged.
 """
@@ -119,14 +119,14 @@ md"""
 md"""
 ## Office hours
 
-Office hours (optional) are Saturday, 8am-9am WIB. During this time, feel free to use the provided Zoom link to chat with me.
+Office hours (optional) are Saturday, 8am-9am WIB. During this time, feel free to use the "Office Hours" Zoom link to chat with me. If you want to meet with me outside of these hours, use this [calendar](https://mansurarief.github.io/calendar/).
 """
 
 # ╔═╡ f6f2d1b3-fc6c-4af8-8e20-b81687ebb591
 md"""
 ## Textbooks
 
-NO required textbook for this course. However, we will use materials from  
+NO required textbook for this course. I will provide reading materials in MyITS classrooms from chapters of the book we are currently preparing for this course. It is useful to consult materials from the following sources:
 
 1. **Algorithms for Optimization (M. J. Kochenderfer and T. A. Wheeler) textbook** ([chapters available for free](https://algorithmsbook.com/optimization/)), 
 2. **Algorithms for Decision Making (Mykel J. Kochenderfer, Tim A. Wheeler, and Kyle H. Wray)** [available for free](https://algorithmsbook.com/#download).
@@ -147,29 +147,32 @@ Here is the grade breakdown for this course
 | [Peer review](https://docs.google.com/document/d/16a_A-K7vaBM6H_N6oB1-jLCbn4spvaQKpL03cI7XQ-g)          | 10%    | 30% |
 | [Midterm report](https://docs.google.com/document/d/1cNyAea4Xl-RgAwayCl1EwN4-xF3OD9drA5GSBpF9huo)       | 15%    | 45% |
 | [Final report](https://docs.google.com/document/d/1TCu1Xw7nJJPmGjWG22evxDxiZjPmNxWZwivlEDozZ84)         | 25%    | 70% |
-| [Final presentation](https://docs.google.com/document/d/1YKBGs6npD6Dc4vPZMYA7lskuXOBf0SbuFBmmrvbTtww)   | 25%    | 95% |
-| Project repo/website | 5%     | 100% |
+| [Final presentation](https://docs.google.com/document/d/1YKBGs6npD6Dc4vPZMYA7lskuXOBf0SbuFBmmrvbTtww)   | 30%    | 100% |
+| Project repo/website | 5%      | (extra point) |
 
-Please submit your assignments by uploading them in the Classroom. If it is a group assignment, only one submission is enough. The rubric for each assignment is linked in the table above and is also posted in Classroom.
+Please submit your assignments either by filling the form online or by uploading them in your MyITS. If it is a group assignment, only one submission is enough. The rubric for each assignment is linked in the table above and is also posted in MyITS classroom.
 """
 
 # ╔═╡ 590c941c-86a9-43a6-beb7-4ff6e080b6d5
 md"""
 ## Schedule
 
-| Week |  Date    | Session Details                             | Assignment Due* |
+| Week |  Date    | Session Details*                             | Assignment Due** |
 |:----:|:--------:|:--------------------------------------------|:----------------|
-|  9   | May 3    | [Course (part 2) intro](#) and [review](optimization-review.html)          | [Reflection 1](https://forms.gle/mRzRnwfRrNxStrwZ8)    |
-|  10  | May 10   | [Prescriptive analytics case studies](prescriptive-analytics-case-studies.html)    | -               |
-|  11  | May 17   | Group 1 & 2 (Proposal)                      | -               |
-|  12  | May 24   | Group 3 & 4 (Proposal)                      | [Midterm report](https://forms.gle/AhCbnq9dmj2puEnVA)  |  
-|  13  | May 31   | Group 5 (Proposal) + General in-class Q&A   | [Peer review](https://forms.gle/uUxBYcpxFgCkkK557)     |
-|  14  | June 7   | Group 1 & 2 (Final)        | [Midterm feedback](https://stanforduniversity.qualtrics.com/jfe/form/SV_6G3t4EqGkQDn80e)|
-|  15  | June 14  | Group 3 & 4 (Final)                         | -               |
-|  16  | June 21  | Group 5 (Final)                  | [Final report](https://forms.gle/9ZgusdP6srDgTXet6), [Reflection 2](https://forms.gle/p9MMmJriLDF63eXt5)                         | -               |
-|    | June 23        |      | Project repo/website       |
+|  8   | Oct 18    | [Overview](#), [Prescriptive Analytics Projects](/assets/pdf/2024-week-1-intro.pdf) **(L)**          | -    |
+|  10  | Nov 1   | [Optimization Modeling](/assets/pdf/2024-week-2-opt-model.pdf) **(L)**    | [Reflection 1](https://forms.gle/38kh5oDHYgAkg1MZ9)               |
+|  11  | Nov 8   | Data Collection **(L)**, Discussion **(O)**                      | -               |
+|  12  | Nov 15   | Group 1 & 2 Proposal **(P)**, Discussion **(O)**                      | Midterm report  |  
+|  13  | Nov 22   | Group 3 & 4 Proposal **(P)**, Model Gallery **(L)**     | [Peer review](https://forms.gle/yKfLKLNLf5NNULNp6)     |
+|  14  | Nov 29   | Group 5 Proposal, V&V, Solver, and Eval **(L)**         | [Midterm feedback](https://stanforduniversity.qualtrics.com/jfe/form/SV_cAsySHDev5GTUvc) |
+|  15  | Dec 6  | Monitoring **(L)**, In-class OH **(O)**                        | -               |
+|  16  | Dec 13  | Final Presentation **(P)**                  | Final presentation            | -               |
+|    |          |      | Final report       |
+|    |          |      | Reflection 2       |
 
-*All assignments are due at 11:59pm (WIB).
+*Legend: **(L)** = Lecture, **(P)** = Student Presentation, **(O)** = Open-ended Session
+
+\**All assignments are due at 11:59pm (AOE - Anywhere on Earth) 
 
 """
 
@@ -209,8 +212,8 @@ Students who may require academic accommodations due to a disability are encoura
 md"""
 ## Contact
 
-I'm not very active in the course WhatsApp group, but I'm here to help you! If you have any questions or concerns:
-- please email me at **mansur.arief (at) stanford.edu**, or 
+I'm here to help you! If you have any questions or concerns:
+- please email me at **mansur (dot) maturidi (at) its (dot) ac (dot) id**, or 
 - visit during office hours for a chat on Zoom.
 
 I look forward to assisting you!
@@ -221,14 +224,14 @@ md"""
 ## Acknowledgment
 
 - This page is created using [Pluto notebook](https://plutojl.org/). 
-- Some contents are edited from ChatGPT with the prompts "*revise any grammatical errors and for better clarity*". 
-- Some contents are adopted from [Stanford AA222 course webpage](https://aa222.stanford.edu/). 
+- Some contents are edited from ChatGPT with the prompts "*revise any grammatical errors and for better clarity*" and Github Copilot auto complete. 
+- Most contents are adopted from the previous semester's [Analytics Project course webpage](https://analytics-project-simt-its.github.io/2024-genap). 
 - The AI usage policy section is customized based on [Stanford CTL workshop "AI in Education: Creating Your Course Policy"](https://docs.google.com/presentation/d/1XgN7uLrYvxYrZoKAVrlKL05Ng_uIxl_Y/edit?usp=sharing&ouid=109376912442294374565&rtpof=true&sd=true) by Kenji Ikemoto.
 """
 
 # ╔═╡ 4b20f6ef-0b98-4740-a029-f0a90951636a
 md"""
-*Last updated: May 13, 2024*
+*Last updated: Nov 19, 2024*
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
@@ -252,9 +255,9 @@ project_hash = "7d9caf115c2239cefd77e8c0e5b3bdd29485ff7a"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
-git-tree-sha1 = "297b6b41b66ac7cbbebb4a740844310db9fd7b8c"
+git-tree-sha1 = "6e1d2a35f2f90a4bc7c2ed98079b2ba09c35b83a"
 uuid = "6e696c72-6542-2067-7265-42206c756150"
-version = "1.3.1"
+version = "1.3.2"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -274,9 +277,9 @@ version = "1.0.8+1"
 
 [[deps.Cairo_jll]]
 deps = ["Artifacts", "Bzip2_jll", "CompilerSupportLibraries_jll", "Fontconfig_jll", "FreeType2_jll", "Glib_jll", "JLLWrappers", "LZO_jll", "Libdl", "Pixman_jll", "Xorg_libXext_jll", "Xorg_libXrender_jll", "Zlib_jll", "libpng_jll"]
-git-tree-sha1 = "a4c43f59baa34011e303e76f5c8c91bf58415aaf"
+git-tree-sha1 = "a2f1c8c668c8e3cb4cca4e57a8efdb09067bb3fd"
 uuid = "83423d85-b0ee-5818-9007-b63ccbeb887a"
-version = "1.18.0+1"
+version = "1.18.0+2"
 
 [[deps.ColorTypes]]
 deps = ["FixedPointNumbers", "Random"]
@@ -300,30 +303,30 @@ version = "1.6.0"
 
 [[deps.Expat_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]
-git-tree-sha1 = "4558ab818dcceaab612d1bb8c19cee87eda2b83c"
+git-tree-sha1 = "1c6317308b9dc757616f0b5cb379db10494443a7"
 uuid = "2e619515-83b5-522b-bb60-26c02a35a201"
-version = "2.5.0+0"
+version = "2.6.2+0"
 
 [[deps.FileWatching]]
 uuid = "7b1f6079-737a-58dc-b8bc-7a2ca5c1b5ee"
 
 [[deps.FixedPointNumbers]]
 deps = ["Statistics"]
-git-tree-sha1 = "335bfdceacc84c5cdf16aadc768aa5ddfc5383cc"
+git-tree-sha1 = "05882d6995ae5c12bb5f36dd2ed3f61c98cbb172"
 uuid = "53c48c17-4a7d-5ca2-90c5-79b7896eea93"
-version = "0.8.4"
+version = "0.8.5"
 
 [[deps.Fontconfig_jll]]
-deps = ["Artifacts", "Bzip2_jll", "Expat_jll", "FreeType2_jll", "JLLWrappers", "Libdl", "Libuuid_jll", "Pkg", "Zlib_jll"]
-git-tree-sha1 = "21efd19106a55620a188615da6d3d06cd7f6ee03"
+deps = ["Artifacts", "Bzip2_jll", "Expat_jll", "FreeType2_jll", "JLLWrappers", "Libdl", "Libuuid_jll", "Zlib_jll"]
+git-tree-sha1 = "db16beca600632c95fc8aca29890d83788dd8b23"
 uuid = "a3f928ae-7b40-5064-980b-68af3947d34b"
-version = "2.13.93+0"
+version = "2.13.96+0"
 
 [[deps.FreeType2_jll]]
 deps = ["Artifacts", "Bzip2_jll", "JLLWrappers", "Libdl", "Zlib_jll"]
-git-tree-sha1 = "d8db6a5a2fe1381c1ea4ef2cab7c69c2de7f9ea0"
+git-tree-sha1 = "5c1d8ae0efc6c2e7b1fc502cbe25def8f661b7bc"
 uuid = "d7e528f0-a631-5988-bf34-fe36492bcfd7"
-version = "2.13.1+0"
+version = "2.13.2+0"
 
 [[deps.Gettext_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "JLLWrappers", "Libdl", "Libiconv_jll", "Pkg", "XML2_jll"]
@@ -333,9 +336,9 @@ version = "0.21.0+0"
 
 [[deps.Glib_jll]]
 deps = ["Artifacts", "Gettext_jll", "JLLWrappers", "Libdl", "Libffi_jll", "Libiconv_jll", "Libmount_jll", "PCRE2_jll", "Zlib_jll"]
-git-tree-sha1 = "359a1ba2e320790ddbe4ee8b4d54a305c0ea2aff"
+git-tree-sha1 = "7c82e6a6cd34e9d935e9aa4051b66c6ff3af59ba"
 uuid = "7746bdde-850d-59dc-9ae8-88ece973131d"
-version = "2.80.0+0"
+version = "2.80.2+0"
 
 [[deps.Graphite2_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
@@ -375,9 +378,9 @@ version = "69.1.0+0"
 
 [[deps.IOCapture]]
 deps = ["Logging", "Random"]
-git-tree-sha1 = "8b72179abc660bfab5e28472e019392b97d0985c"
+git-tree-sha1 = "b6d6bfdd7ce25b0f9b2f6b3dd56b2673a66c8770"
 uuid = "b5f81e59-6552-4d32-b1f0-c071b021bf89"
-version = "0.2.4"
+version = "0.2.5"
 
 [[deps.InteractiveUtils]]
 deps = ["Markdown"]
@@ -397,9 +400,9 @@ version = "0.21.4"
 
 [[deps.JpegTurbo_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]
-git-tree-sha1 = "3336abae9a713d2210bb57ab484b1e065edd7d23"
+git-tree-sha1 = "c84a835e1a09b289ffcd2271bf2a337bbdda6637"
 uuid = "aacddb02-875f-59d6-b918-886e6ef4fbf8"
-version = "3.0.2+0"
+version = "3.0.3+0"
 
 [[deps.LERC_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
@@ -409,15 +412,15 @@ version = "3.0.0+1"
 
 [[deps.LLVMOpenMP_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]
-git-tree-sha1 = "d986ce2d884d49126836ea94ed5bfb0f12679713"
+git-tree-sha1 = "e16271d212accd09d52ee0ae98956b8a05c4b626"
 uuid = "1d63c593-3942-5779-bab2-d838dc0a180e"
-version = "15.0.7+0"
+version = "17.0.6+0"
 
 [[deps.LZO_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
-git-tree-sha1 = "e5b909bcf985c5e2605737d2ce278ed791b89be6"
+deps = ["Artifacts", "JLLWrappers", "Libdl"]
+git-tree-sha1 = "70c5da094887fd2cae843b8db33920bac4b6f07d"
 uuid = "dd4b983a-f0e5-5f8d-a1b7-129d4a5fb1ac"
-version = "2.10.1+0"
+version = "2.10.2+0"
 
 [[deps.LaTeXStrings]]
 git-tree-sha1 = "50901ebc375ed41dbf8058da26f9de442febbbec"
@@ -453,16 +456,16 @@ uuid = "e9f186c6-92d2-5b65-8a66-fee21dc1b490"
 version = "3.2.2+1"
 
 [[deps.Libgcrypt_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Libgpg_error_jll", "Pkg"]
-git-tree-sha1 = "64613c82a59c120435c067c2b809fc61cf5166ae"
+deps = ["Artifacts", "JLLWrappers", "Libdl", "Libgpg_error_jll"]
+git-tree-sha1 = "9fd170c4bbfd8b935fdc5f8b7aa33532c991a673"
 uuid = "d4300ac3-e22c-5743-9152-c294e39db1e4"
-version = "1.8.7+0"
+version = "1.8.11+0"
 
 [[deps.Libgpg_error_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
-git-tree-sha1 = "c333716e46366857753e273ce6a69ee0945a6db9"
+deps = ["Artifacts", "JLLWrappers", "Libdl"]
+git-tree-sha1 = "fbb1f2bef882392312feb1ede3615ddc1e9b99ed"
 uuid = "7add5ba3-2f88-524e-9cd5-f83b8a55f7b8"
-version = "1.42.0+0"
+version = "1.49.0+0"
 
 [[deps.Libiconv_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]
@@ -472,9 +475,9 @@ version = "1.17.0+0"
 
 [[deps.Libmount_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]
-git-tree-sha1 = "dae976433497a2f841baadea93d27e68f1a12a97"
+git-tree-sha1 = "0c4f9c4f1a50d8f35048fa0532dabbadf702f81e"
 uuid = "4b2f31a3-9ecc-558c-b454-b3730dcb73e9"
-version = "2.39.3+0"
+version = "2.40.1+0"
 
 [[deps.Libtiff_jll]]
 deps = ["Artifacts", "JLLWrappers", "JpegTurbo_jll", "LERC_jll", "Libdl", "Pkg", "Zlib_jll", "Zstd_jll"]
@@ -484,9 +487,9 @@ version = "4.4.0+0"
 
 [[deps.Libuuid_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]
-git-tree-sha1 = "0a04a1318df1bf510beb2562cf90fb0c386f58c4"
+git-tree-sha1 = "5ee6203157c120d79034c748a2acba45b82b8807"
 uuid = "38a345b3-de98-5d2b-a5d3-14cd9215e700"
-version = "2.39.3+1"
+version = "2.40.1+0"
 
 [[deps.LinearAlgebra]]
 deps = ["Libdl", "OpenBLAS_jll", "libblastrampoline_jll"]
@@ -556,9 +559,9 @@ version = "2.8.1"
 
 [[deps.Pixman_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "JLLWrappers", "LLVMOpenMP_jll", "Libdl"]
-git-tree-sha1 = "64779bc4c9784fee475689a1752ef4d5747c5e87"
+git-tree-sha1 = "35621f10a7531bc8fa58f74610b1bfb70a3cfc6b"
 uuid = "30392449-352a-5448-841d-b1acce4e97dc"
-version = "0.42.2+0"
+version = "0.43.4+0"
 
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "FileWatching", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "REPL", "Random", "SHA", "Serialization", "TOML", "Tar", "UUIDs", "p7zip_jll"]
@@ -567,9 +570,9 @@ version = "1.9.0"
 
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
-git-tree-sha1 = "71a22244e352aa8c5f0f2adde4150f62368a3f2e"
+git-tree-sha1 = "eba4810d5e6a01f612b948c9fa94f905b49087b0"
 uuid = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
-version = "0.7.58"
+version = "0.7.60"
 
 [[deps.Poppler_jll]]
 deps = ["Artifacts", "Cairo_jll", "Fontconfig_jll", "Glib_jll", "JLLWrappers", "JpegTurbo_jll", "Libdl", "Libtiff_jll", "OpenJpeg_jll", "Pkg", "libpng_jll"]
@@ -657,9 +660,9 @@ uuid = "37f6aa50-8035-52d0-81c2-5a1d08754b2d"
 version = "3.5.0"
 
 [[deps.Tricks]]
-git-tree-sha1 = "eae1bb484cd63b36999ee58be2de6c178105112f"
+git-tree-sha1 = "7822b97e99a1672bfb1b49b668a6d46d58d8cbcb"
 uuid = "410a4b4d-49e4-4fbc-ab6d-cb71b17b3775"
-version = "0.1.8"
+version = "0.1.9"
 
 [[deps.URIs]]
 git-tree-sha1 = "67db6cc7b3821e19ebe75791a9dd19c9b1188f2b"
@@ -675,15 +678,15 @@ uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 
 [[deps.XML2_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Libiconv_jll", "Zlib_jll"]
-git-tree-sha1 = "532e22cf7be8462035d092ff21fada7527e2c488"
+git-tree-sha1 = "1165b0443d0eca63ac1e32b8c0eb69ed2f4f8127"
 uuid = "02c8fc9c-b97f-50b9-bbe4-9be30ff0a78a"
-version = "2.12.6+0"
+version = "2.13.3+0"
 
 [[deps.XSLT_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Libgcrypt_jll", "Libgpg_error_jll", "Libiconv_jll", "Pkg", "XML2_jll", "Zlib_jll"]
-git-tree-sha1 = "91844873c4085240b95e795f692c4cec4d805f8a"
+deps = ["Artifacts", "JLLWrappers", "Libdl", "Libgcrypt_jll", "Libgpg_error_jll", "Libiconv_jll", "XML2_jll", "Zlib_jll"]
+git-tree-sha1 = "a54ee957f4c86b526460a720dbc882fa5edcbefc"
 uuid = "aed1982a-8fda-507f-9586-7b0439959a61"
-version = "1.1.34+0"
+version = "1.1.41+0"
 
 [[deps.Xorg_libX11_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Xorg_libxcb_jll", "Xorg_xtrans_jll"]
@@ -704,16 +707,16 @@ uuid = "a3789734-cfe1-5b06-b2d0-1dd0d9d62d05"
 version = "1.1.4+0"
 
 [[deps.Xorg_libXext_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg", "Xorg_libX11_jll"]
-git-tree-sha1 = "b7c0aa8c376b31e4852b360222848637f481f8c3"
+deps = ["Artifacts", "JLLWrappers", "Libdl", "Xorg_libX11_jll"]
+git-tree-sha1 = "d2d1a5c49fae4ba39983f63de6afcbea47194e85"
 uuid = "1082639a-0dae-5f34-9b06-72781eeb8cb3"
-version = "1.3.4+4"
+version = "1.3.6+0"
 
 [[deps.Xorg_libXrender_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg", "Xorg_libX11_jll"]
-git-tree-sha1 = "19560f30fd49f4d4efbe7002a1037f8c43d43b96"
+deps = ["Artifacts", "JLLWrappers", "Libdl", "Xorg_libX11_jll"]
+git-tree-sha1 = "47e45cd78224c53109495b3e324df0c37bb61fbe"
 uuid = "ea2f1a96-1ddc-540d-b46f-429655e07cfa"
-version = "0.9.10+4"
+version = "0.9.11+0"
 
 [[deps.Xorg_libpthread_stubs_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]
@@ -723,9 +726,9 @@ version = "0.1.1+0"
 
 [[deps.Xorg_libxcb_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "XSLT_jll", "Xorg_libXau_jll", "Xorg_libXdmcp_jll", "Xorg_libpthread_stubs_jll"]
-git-tree-sha1 = "b4bfde5d5b652e22b9c790ad00af08b6d042b97d"
+git-tree-sha1 = "bcd466676fef0878338c61e655629fa7bbc69d8e"
 uuid = "c7cfdc94-dc32-55de-ac96-5a1b8d977c5b"
-version = "1.15.0+0"
+version = "1.17.0+0"
 
 [[deps.Xorg_xtrans_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]
