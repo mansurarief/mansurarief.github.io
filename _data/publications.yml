@@ -1,12 +1,38 @@
 
-- tag: 'Alonso, Yasmine, <u>Mansur Arief</u>, Anthony Corso, Jef Caers, Mykel Kochenderfer "Modeling the US Path to Lithium Self Sufficiency using POMDPs." <i>AGU 2024</i>.'
+
+- tag: 'William Xu, Mansur Arief, David Zhen Yin, and Jef Caers. “Designing Mineral Processing Under Uncertainty Using AI: The Case of Phosphogypsum.” <i>AGU 2024<i>.'
+  link: 'https://scholar.google.com/scholar?cluster=8653590290756411593'
+  selected: false
+  category: 3
+  year: 2024
+
+
+- tag: 'Sharma, Armaan, <u>Mansur Arief</u>. "Hydrogen in Aviation: Evaluating the Feasibility and Benefits of a Green Fuel Alternative." <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2412.15137'
+  selected: false
+  category: 3
+  year: 2024
+
+- tag: 'Tzikas, AE, Liam Kruse, <u>Mansur Arief</u>, Mykel Kochenderfer, Stephen Boyd. "Discrete-Time Distribution Steering using Monte Carlo Tree Search." <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2412.06220'
+  selected: false
+  category: 4
+  year: 2024
+
+- tag: 'Irfan, AA, Nur Ahmad Khatim, <u>Mansur Arief</u>. "Using LLM for Real-Time Transcription and Summarization of Doctor-Patient Interactions into ePuskesmas in Indonesia." <i>IMMAN 2024</i>.'
+  link: 'https://arxiv.org/abs/2409.17054'
+  selected: false
+  category: 3
+  year: 2024  
+
+- tag: 'Alonso, Yasmine, <u>Mansur Arief</u>, Anthony Corso, Jef Caers, Mykel Kochenderfer. "Modeling the US Path to Lithium Self Sufficiency using POMDPs." <i>AGU 2024</i>.'
   link: 'https://ui.adsabs.harvard.edu/abs/2023AGUFMSY41A1039A/abstract'
   selected: false
   category: 3
   year: 2024
 
 - tag: 'Khatim, Nur A., Azmul A Irfan, Amaliya M Hayah, <u>Mansur Arief</u>. "Toward an Integrated Decision Making Framework for Optimized Stroke Diagnosis with DSA and Treatment under Uncertainty." <i>IMIP 2024</i>.'
-  link: 'https://arxiv.org/abs/2407.15839'
+  link: 'https://dl.acm.org/doi/abs/10.1145/3669828.3669835'
   selected: false
   category: 4
   year: 2024
@@ -17,8 +43,8 @@
   category: 2
   year: 2024
 
-- tag: '<u>Arief, Mansur</u>, Mike Timmerman, Jiachen Li, David Isele, Mykel Kochenderfer. "Optimized Guided Meta Training for Intelligent Agents under Highly Interactive Driving Scenarios." <i>Under review</i>.'
-  link: 'https://arxiv.org/abs/2407.15839'
+- tag: '<u>Arief, Mansur</u>, Mike Timmerman, Jiachen Li, David Isele, Mykel Kochenderfer. "Optimized Guided Meta Training for Intelligent Agents under Highly Interactive Driving Scenarios." <i>IEEE RA-L</i>.'
+  link: 'https://ieeexplore.ieee.org/abstract/document/10803069'
   selected: true
   category: 1
   year: 2024
@@ -31,7 +57,7 @@
 
 - tag: 'Delecki, Harrison, Marc Schlichting, <u>Mansur Arief</u>, Anthony Corso, Marcell Vazquez-Chanlatte, Mykel Kochenderfer. "Diffusion-Based Failure Sampling for Cyber-Physical Systems." <i>Under review</i>.'
   link: 'https://arxiv.org/abs/2406.14761'
-  selected: true
+  selected: false
   category: 1
   year: 2024
   
