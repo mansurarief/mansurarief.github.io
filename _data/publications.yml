@@ -1,4 +1,20 @@
+- tag: '<u>Mansur Arief</u>, Yasmine Alonso, CJ Oshiro, William Xu, Anthony Corso, David Zhen Yin, Jef Caers, and Mykel Kochenderfer. “Managing Geological Uncertainty in Critical Mineral Supply Chains: A POMDP Approach with Application to US Lithium Resources.” <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2502.05690'
+  selected: true
+  category: 3
+  year: 2025
 
+- tag: 'Liam Kruse, Alexandros Tikas, Harrison Delecki, <u>Mansur Arief</u>, Mykel Kochenderfer. "Enhanced Importance Sampling through Latent Space Exploration in Normalizing Flows." <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2501.03394'
+  selected: true
+  category: 1
+  year: 2025
+
+- tag: 'Chengyue Dong, <u>Mansur Arief</u>. "Morphing Wing Designs in Commercial Aviation" <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2502.07182'
+  selected: false
+  category: 1
+  year: 2025
 
 - tag: 'William Xu, Mansur Arief, David Zhen Yin, and Jef Caers. “Designing Mineral Processing Under Uncertainty Using AI: The Case of Phosphogypsum.” <i>AGU 2024<i>.'
   link: 'https://scholar.google.com/scholar?cluster=8653590290756411593'
@@ -75,7 +91,7 @@
 
 - tag: 'Ding, Wenhao, Chejian Xu, <u>Mansur Arief</u>, Haohong Lin, Bo Li, Ding Zhao. "A Survey on Safety-Critical Driving Scenario Generation—A Methodological Perspective." <i>T-ITS, 2023</i>.'
   link: https://ieeexplore.ieee.org/abstract/document/10089194
-  selected: true
+  selected: false
   category: 1
   year: 2023
   
@@ -106,13 +122,13 @@
 
 - tag: '<u>Arief, Mansur</u>, Zhepeng Cen, Zhenyuan Liu,  Zhiyuan Huang, Bo Li, Henry Lam, and Ding Zhao. "Certifiable Evaluation for Autonomous Vehicle Perception Systems Using Deep Importance Sampling (Deep IS)." <i>ITSC, 2022</i>.'
   link: 'https://ieeexplore.ieee.org/abstract/document/9922202'
-  selected: true
+  selected: false
   category: 1
   year: 2022
 
 - tag: '<u>Arief, Mansur</u>, Zhiyuan Huang, Guru Koushik Senthil Kumar, Yuanlu Bai, Shengyi He, Wenhao Ding, Henry Lam, and Ding Zhao. "Deep Probabilistic Accelerated Evaluation: A Certifiable Rare-Event Simulation Methodology for Black-Box Autonomy. "<i>AISTATS, 2021</i>.'
   link: 'https://proceedings.mlr.press/v130/arief21a/arief21a.pdf'
-  selected: true
+  selected: false
   category: 1
   year: 2021
 

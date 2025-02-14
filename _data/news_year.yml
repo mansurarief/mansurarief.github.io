@@ -1,7 +1,29 @@
+- year: 2025
+  events:
+    - date: 02/13/25
+      content: Took on the Cluster Coordinator for [AFS San Francisco Bay Area team](https://www.afsusa.org/team/san-francisco-bay/). If you are interested in [hosting an AFS student](https://www.afsusa.org/host-family/), please let me know!
+
+    - date: 02/13/25
+      content: Presented [a review on Certifiable Failure Rate Validation (for Autonomous Systems) using Importance Sampling Deep Learning](assets/pdf/2025-Certifiable-Failure-Rate-Validation-using-Importance-Sampling-Deep-Learning-USCD-Safety-for-Autonomous-Systems.pdf) at UCSD MAE207 Safety for Autonomous Systems Seminar.
+
+    - date: 02/10/25
+      content: Our [Lithium supply chain POMDP paper](https://arxiv.org/abs/2502.05690) is submitted for publication.
+
+    - date: 02/03/25
+      content: Presented a work on Geothermal Well Placement Optimization to a sponsor. Stay tune for the paper!
+
+    - date: 01/31/25
+      content: A short [review on morphing design in aviation](https://arxiv.org/abs/2502.07182) by a high-school student mentee is out.
+
+
+
 - year: 2024
   events:
+    - date: 12/30/24
+      content: A short [review on hydrogen fuel in aviation](https://arxiv.org/abs/2412.15137) by a high-school student mentee is out.
+
     - date: 12/16/24
-      content: Our [iterative importance sampling paper](https://ieeexplore.ieee.org/abstract/document/10803069) is accepted and available as an Early Access at [IEE RA-L](https://www.ieee-ras.org/publications/ra-l).
+      content: Our [iterative importance sampling paper](https://ieeexplore.ieee.org/abstract/document/10803069) is accepted and available as an Early Access at [IEEE RA-L](https://www.ieee-ras.org/publications/ra-l).
 
     - date: 12/14/24
       content: One paper submitted at RA-L.
