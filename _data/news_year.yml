@@ -1,225 +1,255 @@
 - year: 2025
   events:
-    - date: 02/13/25
+
+    - date: 2025-07-04
+      content: Excited to see that the agenda for Stanford Center for AI Safety annual meeting 2025 is out! Come join us in September 2025!
+
+    - date: 2025-07-01
+      content: Abstract submission for our AGU 2025 session on [Advancing Toward More Sustainable and Resilient Mineral Supplies-Bridging Earth, Data, and Social Sciences](https://agu.confex.com/agu/agu25/prelim.cgi/Session/251188) is open! Submit your work and see you in New Orleans in December!
+
+    - date: 2025-07-01
+      content: I am excited to be a part of the [AI Safety Indonesia](https://aisafety.id/) community, which is a group of researchers, practitioners, and policymakers dedicated to bulding AI safety capacity in Indonesia.
+
+    - date: 2025-06-17
+      content: Our group at [Mineral-X](https://mineralx.stanford.edu/) hosted the [Silicon Valley Minerals Forum (SVMF 2025)](https://mineralx.stanford.edu/SVMF-2025/Our2025Speakers) with 200+ participants from academia, industry, and government from all over the world!
+
+    - date: 2025-06-10
+      content: Discussed an overview of "Intelligent Transportation Systems" in ULBI Global Lecture Series 2025.
+
+    - date: 2025-05-19
+      content: Presented [Meta RL Importance Sampling paper](https://ieeexplore.ieee.org/abstract/document/10803069) at [ICRA 2025](https://2025.ieee-icra.org/).
+
+    - date: 2025-05-17
+      content: Discussed the ["Paradox of Indonesia's Top AI Optimism Globally - Is it a grounded enthusiasm or blindfolded ignorance?"](https://aisafetyindonesia.substack.com/p/is-indonesias-top-ai-optimism-globally) with Indonesian Academic Faculty Association (ADI) in TeachTalk 47.
+
+    - date: 2025-05-03
+      content: Moderated a panel on [Digitalization and AI Safety in Indonesia](https://lu.ma/j808d2ks) with [AI Safety Indonesia](https://aisafety.id/).
+
+    - date: 2025-04-01
+      content: I am excited to start a new role as Executive Director of the [Stanford Center for AI Safety](https://aisafety.stanford.edu/), coordinating research initiatives on trustworthy AI systems and safety-critical applications across 18+ labs at Stanford.
+
+    - date: 2025-03-01
+      content: I am excited to accept a new role as an Editor-in-Chief for the [Operations and Supply Chain Management-An International Journal (OSCM)](https://journal.oscm-forum.org/), a fast-growing journal in supply chain management with unique model (open access with no/minimal publication fee).
+
+    - date: 2025-02-13
       content: Took on the Cluster Coordinator for [AFS San Francisco Bay Area team](https://www.afsusa.org/team/san-francisco-bay/). If you are interested in [hosting an AFS student](https://www.afsusa.org/host-family/), please let me know!
 
-    - date: 02/13/25
+    - date: 2025-02-13
       content: Presented [a review on Certifiable Failure Rate Validation (for Autonomous Systems) using Importance Sampling Deep Learning](https://www.youtube.com/watch?v=16X62Ss-fPA&list=PLndg610QE25A-7vodCO8jIXyc4JDJrjWq) at UCSD MAE207 Safety for Autonomous Systems Seminar.
 
-    - date: 02/10/25
+    - date: 2025-02-10
       content: Our [Lithium supply chain POMDP paper](https://arxiv.org/abs/2502.05690) is submitted for publication.
 
-    - date: 02/03/25
+    - date: 2025-02-03
       content: Presented a work on Geothermal Well Placement Optimization to a sponsor. Stay tune for the paper!
 
-    - date: 01/31/25
+    - date: 2025-01-31
       content: A short [review on morphing design in aviation](https://arxiv.org/abs/2502.07182) by a high-school student mentee is out.
 
-    - date: 01/03/25
+    - date: 2025-01-03
       content: A short [review on hydrogen fuel in aviation](https://arxiv.org/abs/2412.15137) by a high-school student mentee is out.
-
 
 
 
 - year: 2024
   events:
-    - date: 12/16/24
+    - date: 2024-12-16
       content: Our [iterative importance sampling paper](https://ieeexplore.ieee.org/abstract/document/10803069) is accepted and available as an Early Access at [IEEE RA-L](https://www.ieee-ras.org/publications/ra-l).
 
-    - date: 12/14/24
+    - date: 2024-12-14
       content: One paper submitted at RA-L.
 
-    - date: 12/14/24
+    - date: 2024-12-14
       content: One paper accepted at AAAI 2025.
 
-    - date: 12/13/24
+    - date: 2024-12-13
       content: AGU 2024 was a blast! See you next year!
 
-    - date: 12/10/24
+    - date: 2024-12-10
       content: Chaired poster and oral sessions on "Toward Sustainable Energy Transition Resources-Integrating Earth Science, AI, and Responsible Policymaking". Fascinating talks and ideas!
 
-    - date: 12/09/24
+    - date: 2024-12-09
       content: Attended the Science and Society Luncheon at AGU 2024 and get connected with the [AGU SY community](https://connect.agu.org/scienceandsociety/home).
 
-    - date: 11/14/24
+    - date: 2024-11-14
       content: Finished [IBM AI Developer Specialization](https://www.coursera.org/account/accomplishments/specialization/WBJG1X9AIRX8) and [Imperial College Mathematics for Machine Learning Specialization](https://www.coursera.org/account/accomplishments/specialization/QR0Y91NRQDJ3) in Coursera.
 
-    - date: 10/31/24
+    - date: 2024-10-31
       content: Gave another lecture on Green Jobs and Intelligent Systems for the Net-Zero Heroes program by [Gawirea](https://gawirea.com/) and [AmatiIndonesia](https://amati.id/).
 
-    - date: 10/01/24
+    - date: 2024-10-01
       content: Officially starting my Research Engineer appointment at [SISL](https://sisl.stanford.edu/) and [Mineral-X](https://mineralx.stanford.edu/).
 
-    - date: 09/24/2024
+    - date: 2024-09-24
       content: Led two guest lectures on critical inventory systems for graduate students at the Industrial and Systems Engineering Department, ITS Surabaya.
 
-    - date: 09/05/2024
+    - date: 2024-09-05
       content: A mentor team won the best presentation award at [IMMAN 2024](https://uinjkt.ac.id/en/the-6th-international-meeting-and-medical-network-imman) for their work on [LLMs for Efficient Electronic Health Record (EHR) data in Indonesia](https://arxiv.org/abs/2409.17054).
 
-    - date: 08/17/2024
+    - date: 2024-08-17
       content: I received the award for an Outstanding Indonesian Academic Diaspora 2024 from the [Consulate General of the Republic of Indonesia in San Francisco](https://kemlu.go.id/sanfrancisco/en).
 
-    - date: 08/08/2024
+    - date: 2024-08-08
       content: I will be speaking at the Nanyang Technological University (NTU) in Singapore on "Developing Safe Cyber-Physical Systems for Safety-Critical Applications" on August 20th, 2024. Please join us!
 
-    - date: 08/07/24
+    - date: 2024-08-07
       content: Two abstracts submitted to [AAAI 2025](https://aaai.org/conference/aaai/aaai-25/).
 
-    - date: 08/02/24
+    - date: 2024-08-02
       content: We also make public our ongoing work on [Geosteerings.jl](https://github.com/mansurarief/GeoSteerings.jl), an MDP and POMDP package for a simple geosteering problem. This is a joint work between [SISL](https://sisl.stanford.edu/) and [Mineral-X](https://mineralx.stanford.edu/), with William Xu, Jihui Ding, Jef Caers, and Mykel Kochenderfer.
 
-    - date: 08/01/24
+    - date: 2024-08-01
       content: We make public our ongoing work on [Lithium Supply Chain POMDP](https://github.com/mansurarief/LiSCPOMDP) for critical mineral supply chain design. This is a joint work between [SISL](https://sisl.stanford.edu/) and [Mineral-X](https://mineralx.stanford.edu/), with Yasmine Alonso, CJ Oshiro, William Xu, Anthony Corso, Jef Caers, and Mykel Kochenderfer.
 
-    - date: 07/30/24
+    - date: 2024-07-30
       content: I will be speaking at the [Indonesia Sustainability Forum's Virtual Academic Dialogue](https://www.ecadin.org/isf2024/) in September 2024. Please join us!
 
-    - date: 07/20/24
+    - date: 2024-07-20
       content: I am serving as a Guest Editor for the [Special Issue on AI, CPS, and Decision Making in OSCM Context](https://journal.oscm-forum.org/ai-cps-special-issue/) for the [OSCM Journal](https://journal.oscm-forum.org/). Please consider submitting your work!
 
-    - date: 07/15/24
+    - date: 2024-07-15
       content: One paper submitted to RA-L.
 
-    - date: 07/06/24
+    - date: 2024-07-06
       content: I presented "AI for Safer and More Efficient Long-Haul Goods Transportation" at the 2024 Supply Chain Innovation Summit by [ISCEA Indonesia](https://isceaindonesia.com/)
 
-    - date: 05/29/24
+    - date: 2024-05-29
       content: I attended the [CPS Rising Stars 2024 Workshop at the University of Virginia](https://risingstars.linklab.virginia.edu/2024/) by the [LinkLab](https://engineering.virginia.edu/labs-groups/link-lab) and will be presenting my research on [Trustworthy AI for Safe CPS](/assets/pdf/CPS_RisingStars_2024_Trustworthy-AI-for-Safe-CPS.pdf). 
 
-    - date: 05/22/24
+    - date: 2024-05-22
       content: Sofia and I presented our GeothermalPOMDP ongoing work at [2024 SCERF annual meeting](https://scerf.stanford.edu/events/affiliate-meetings/2024-7th-annual-scerf-affiliates-meeting-hybrid). 
 
-    - date: 05/15/24
+    - date: 2024-05-15
       content: Two papers submitted to [RA-L](https://www.ieee-ras.org/publications/ra-l).
 
-    - date: 05/10/24
+    - date: 2024-05-10
       content: One paper accepted to [CBMS 2024](https://eventos.tec.mx/s/lt-event?language=es_MX&id=a5u8X000000Igo9QAC).
 
-    - date: 05/06/24
+    - date: 2024-05-06
       content: I was invited to give a lecture on Green Jobs and Intelligent Systems to the Net-Zero Heroes participants by [Gawirea](https://gawirea.com/) and [AmatiIndonesia](https://amati.id/).
 
-    - date: 05/02/24
+    - date: 2024-05-02
       content: I gave a talk on Intelligent Systems for Energy Transition at the International Public Guest Lecture by [ISE ITS](https://www.its.ac.id/tindustri/en/home/).
 
-    - date: 05/01/24
+    - date: 2024-05-01
       content: I am a Technical PC for [IAVVC 2024](https://2024.iavvc.org/), which is now accepting submissions. Feel free to submit your verification and validation of automated vehicles research.
 
-    - date: 04/17/24
+    - date: 2024-04-17
       content: I presented a summary of my research on Developing Safe AI for High-Stakes Applications (with geothermal exploration and energy transition examples) at the [Mineral-X ](https://mineralx.stanford.edu/) meeting. 
 
-    - date: 04/08/24
+    - date: 2024-04-08
       content: I was selected as a [2024 CPS Rising Stars Workshop participant](https://risingstars.linklab.virginia.edu/2024/participants/mansur-arief.html) at the University of Virginia. 
 
-    - date: 02/03/24
+    - date: 2024-02-03
       content: I delivered a keynote speech on "Engineering, Technology, and Society - Collaborative Innovation for Human-centered Designs" at the [8th International Conference on Management of Technology, Innovation, and Project (MOTIP 08)](https://www.its.ac.id/mt/motip08/).
 
-    - date: 01/31/24
+    - date: 2024-01-31
       content: Grist published an [article that mentioned my story transitioning into critical mineral and sustainability](https://grist.org/labor/critical-minerals-mining-workforce-shortage/) research, excellently written by [Maddie Stone](https://grist.org/author/maddie-stone/).
 
-    - date: 01/31/24
+    - date: 2024-01-31
       content: The [INTERSECT 2024](https://intersect.id) conference is coming up. Feel free to submit your work related to the conference theme "Indonesia at the crossroad of technology, sustainabilty, and society".
 
-    - date: 01/27/24
+    - date: 2024-01-27
       content: I was invited by [MINDSTEM.id](https://www.mindstem.id) to give a talk on research collaboration and publication for Indonesian scholars. The talk was attended by 50+ scholars from various disciplines in Indonesia.
 
-    - date: 01/10/24
+    - date: 2024-01-10
       content: One paper from a group of research mentees on integrated medical decision making for stroke diagnosis and treatment is submitted and accepted for [Intelligent Medicine and Image Processing (IMIP 2024) conference](https://www.imip.org/) in Bali.
 
-    - date: 01/04/24
+    - date: 2024-01-04
       content: I won a (mini) research grant from the [Institute for International Indonesian Scholars (I-4)](https://i4indonesia.org/) on AI-driven support systems for healthcare applications.
       
 
 - year: 2023
   events:
-    - date: 12/21/23
+    - date: 2023-12-21
       content: I discussed [Intelligent Systems for High-Stakes Business Applications](/assets/pdf/SIMT2023.pdf) to [SIMT ITS students and faculty](https://www.its.ac.id/simt/en/home/) and public.
 
-    - date: 11/08/23
+    - date: 2023-11-08
       content: I presented [ISE Methods in Building Reliable AI Systems](/assets/pdf/DTSI2023.pdf) to graduate students and faculty at [ISE ITS](https://www.its.ac.id/tindustri/en/home/).
 
-    - date: 10/12/23
+    - date: 2023-10-12
       content: I joined [NPA International Taskforce](https://www.nationalpostdoc.org/) as a volunteer to help international postdocs in the US.
 
-    - date: 10/01/23
+    - date: 2023-10-01
       content: Our initial study on [POMDP for studying the design of critical mineral supply chains](https://github.com/yalonso03/LiSCPOMDP) was accepted at [AGU 2023](https://www.agu.org/fall-meeting).
 
-    - date: 09/30/23
+    - date: 2023-09-30
       content: I presented my PhD research on [Safety Evaluation of Self-Driving Cars](/assets/pdf/TeachTalks41.pdf) at TeachTalk organized by the [Indonesian Lecturer Association](https://adi.or.id/) to 180+ faculty members from various universities across Indonesia.
 
-    - date: 09/16/23
+    - date: 2023-09-16
       content: I founded IndoSTEELERS (Indonesian Scholars Thriving in Excellence in Education, Learning, and Research) with a bunch of great Indonesian scholars in Pittsburgh encompassing various disciplines.
 
-    - date: 09/15/23
+    - date: 2023-09-15
       content: One [paper](https://arxiv.org/abs/2309.08851) was submitted to [ICRA 2023](https://2024.ieee-icra.org).
 
-    - date: 07/31/23
+    - date: 2023-07-31
       content: We submitted an abstract to [AGU 2023](https://www.agu.org/fall-meeting)
 
-    - date: 07/01/23
+    - date: 2023-07-01
       content: I presented Artificial Intelligence for Smart Logistics in the International Webinar of Business and Industrial Application Division, hosted by [BRAIN, IPB University](https://brain.ipb.ac.id/).  
 
-    - date: 06/01/23
+    - date: 2023-06-01
       content: I joined [SISL](https://sisl.stanford.edu/) as a postdoc.
 
-    - date: 05/12/23
+    - date: 2023-05-12
       content: I graduated from [CMU](https://www.cmu.edu/).
 
-    - date: 04/19/23
+    - date: 2023-04-19
       content: I successfully defended my dissertation "Certifiable Evaluation for Safe Intelligent Autonomy".
 
 - year: 2022
   events:
-    - date: 09/27/22
+    - date: 2022-09-27
       content: I presented Deep IS work at [ITSC 2022](https://www.ieee-itsc2022.org/).
 
-    - date: 09/25/22
+    - date: 2022-09-25
       content: I started volunteering at [AFS USA](https://www.afsusa.org/).
 
-    - date: 08/01/22
+    - date: 2022-08-01
       content: I submitted the journal version of our Deep IS work.
 
-    - date: 06/15/22
+    - date: 2022-06-15
       content: Two other papers I co-authored were accepted at [ITSC 2022](https://www.ieee-itsc2022.org/).
 
-    - date: 06/15/22
+    - date: 2022-06-15
       content: Deep IS paper accepted at [ITSC 2022](https://www.ieee-itsc2022.org/).
 
-    - date: 03/15/22
+    - date: 2022-03-15
       content: I helped colleagues from [KTH Royal Institute of Technology (Sweden)](https://www.kth.se/), [ITS (Indonesia)](https://www.its.ac.id/), and [CMU ESTP (USA)](https://www.cmu.edu/engineering/estp/) and submitted two more papers to [ITSC 2022](https://www.ieee-itsc2022.org/).
 
-    - date: 03/02/22
+    - date: 2022-03-02
       content: We submitted a survey paper on safety-critical driving scenario generation for journal publication.
 
-    - date: 03/01/22
+    - date: 2022-03-01
       content: I submitted one paper to [ITSC 2022](https://www.ieee-itsc2022.org/).
 
-    - date: 01/31/22
+    - date: 2022-01-31
       content: I presented a summary of our past work on "Certifiable Deep Importance Sampling for Rare-Event Simulation of Black-Box Systems" to [SISL lab meeting (Stanford)](https://web.stanford.edu/group/sisl/cgi-bin/wordpress/).
 
 - year: 2021
   events:
-    - date: 11/07/21
+    - date: 2021-11-07
       content: I presented at SkolaTalk with [Aditya (Digital Skola CEO)](https://digitalskola.com/tim-kami) about the comparison in tech education between Indonesia & US.
 
-    - date: 11/02/21
+    - date: 2021-11-02
       content: We submitted [the journal version of our Deep-PrAE work](https://arxiv.org/abs/2111.02204).
 
-    - date: 08/29/21
+    - date: 2021-08-29
       content: Together with [Sabrina](https://www.linkedin.com/in/sitidarasabrina/), I shared some insights regarding How to be a Global Student and Student Life as an Exchange Student to [ITS ISE Undergraduate Students](https://www.its.ac.id/study-at-its/faculties-and-departments/faculty-of-industrial-technology-and-systems-engineering/industrial-and-systems-engineering/).
 
-    - date: 05/27/21
+    - date: 2021-05-27
       content: I presented Research Opportunities for ISE Graduate Students to [ITS ISE Graduate Students](https://www.its.ac.id/study-at-its/faculties-and-departments/faculty-of-industrial-technology-and-systems-engineering/industrial-and-systems-engineering/).
 
-    - date: 05/21/21
+    - date: 2021-05-21
       content: I started an internship at Bosch as a Machine Learning/Computer Vision Research Intern.
 
-    - date: 03/03/21
+    - date: 2021-03-03
       content: I presented Deep-PrAE work at [SIAM CSE 2021](https://www.siam.org/conferences/cm/conference/cse21).
 
-    - date: 01/22/21
+    - date: 2021-01-22
       content: '[One paper](https://arxiv.org/abs/2006.15722) accepted to [AISTATS 2021](https://aistats.org/aistats2021).'
 
 - year: 2020
   events:
-    - date: 11/09/20
+    - date: 2020-11-09
       content: I presented a work on certifiable efficiency for rare-event probability estimation and its relaxation at [INFORMS Annual Meeting 2020](http://meetings2.informs.org/wordpress/).

@@ -1,22 +1,21 @@
 ---
 layout: home
 title: Mansur M. Arief
-subtitle: Research Engineer, SISL and Mineral-X at Stanford
+subtitle: Executive Director, Stanford Center for AI Safety
 circle-img: /assets/img/mansurarief.jpg
+share-description: Executive Director of Stanford Center for AI Safety specializing in trustworthy AI systems, machine learning, and optimization for safety-critical applications.
 ---
 
 
 
-<p>I am a full-time research engineer at the <a href="https://sisl.stanford.edu/">Stanford Intelligent Systems Lab (SISL)</a> advised by <a href="https://mykel.kochenderfer.com/">Mykel Kochenderfer</a> with a joint appointment at <a href="https://mineralx.stanford.edu/">Mineral-X</a> working with <a href="https://profiles.stanford.edu/jef-caers">Jef Caers</a>. I am also <a href="https://www.ulbi.ac.id/p/international-adjunct-professor-2025_24.html">appointed as an Adjunct Professor</a> at <a href="https://www.ulbi.ac.id//">ULBI</a>, Indonesia, to help accelerate innovation in logistics and supply chains through the responsible use of AI and automation. I completed my Ph.D. in Mechanical Engineering from <a href="https://www.cmu.edu/">Carnegie Mellon University</a> advised by Ding Zhao in the <a href="https://safeai-lab.github.io/">Safe AI</a> lab. Prior to that, I completed my Bachelor's degree in Industrial and Systems Engineering at <a href="https://www.its.ac.id/">ITS, Indonesia</a> and my Master's degree in Industrial and Operations Engineering at the <a href="https://www.umich.edu/">University of Michigan, Ann Arbor</a>.</p>
+<p>I am an AI safety and sustainability researcher with executive leadership responsibilities at Stanford University, serving as Executive Director of the <a href="https://aisafety.stanford.edu/">Stanford Center for AI Safety</a> and Research Engineer at both the <a href="https://sisl.stanford.edu/">Stanford Intelligent Systems Lab (SISL)</a> and <a href="https://mineralx.stanford.edu/">Mineral-X</a>. I earned my Ph.D. in Mechanical Engineering from <a href="https://www.cmu.edu/">Carnegie Mellon University</a> under Ding Zhao in the <a href="https://safeai-lab.github.io/">Safe AI</a> lab, and also serve as <a href="https://www.ulbi.ac.id/p/international-adjunct-professor-2025_24.html">Adjunct Professor</a> at <a href="https://www.ulbi.ac.id//">ULBI</a>, Indonesia.</p>
 
-<p><a href="https://scholar.google.com/citations?user=VbJC_9kAAAAJ">My research</a> primarily integrates machine learning, optimization, and sample-efficient simulation methods to assist with scalable decision-making under catastrophic failure risks. This approach is particularly useful for <a href="https://vandvaiproducts.github.io/">V&V of AI-based systems</a> and earth resources supply chain management. For a full list of publications, see the <a href="publications">publication page</a>.</p>
+<p>My research integrates machine learning, optimization, and simulation to create <a href="https://scholar.google.com/citations?user=VbJC_9kAAAAJ">trustworthy AI systems</a> for high-stakes applications in both safety and sustainability domains. I focus on ensuring equitable and just energy transitions through resilient critical mineral supply chains, safety-aware geothermal and subsurface applications, and robust <a href="https://vandvaiproducts.github.io/">AI system verification and validation</a> methods that can manage catastrophic failure risks in critical infrastructure.</p>
 
-<p>I also enjoy <a href="teaching">teaching</a> and mentoring students, as well as volunteering on various occasions. I have co-instructed courses to help students structure their ideas and plans for <a href="https://analyticsprojects.id/">data-driven analytics projects</a>. I work with students (graduate, undergraduate, and high school) in various research mentorship capacities. I also serve as a <a href="https://www.webofscience.com/wos/author/record/ITT-7819-2023">reviewer and program committee member</a> for various journals and conferences in transportation, AI, and sustainability fields. Additionally, I am a Guest Editor for <a href="https://journal.oscm-forum.org/ai-cps-special-issue/">the Special Issue on AI, CPS, and DM in OSCM</a>.</p>
-
-<p>I am grateful to be surrounded by great mentors, collaborators, students, and colleagues on various occasions and am constantly learning from them every single day. I am open to exploring potential collaborations. Here is the link to <a href="/assets/pdf/vita-mansur-m-arief.pdf">my CV</a> for further information.</p>
+<p>Beyond research, I enjoy <a href="teaching">teaching</a> and mentoring students at all levels, having co-instructed courses on <a href="https://analyticsprojects.id/">data-driven analytics</a> and guided numerous research projects. I serve as Editor-in-Chief for <a href="https://journal.oscm-forum.org/">OSCM Journal</a> and as a <a href="https://www.webofscience.com/wos/author/record/ITT-7819-2023">reviewer</a> for leading AI, transportation, and sustainability venues. I'm always interested in collaborating on AI safety research and welcome discussions about potential partnerships—you can find more details in my <a href="/assets/pdf/vita-mansur-m-arief.pdf">CV</a> or explore my <a href="publications">publications</a> below.</p>
 
 
-Here is a short list of my most recent papers:    
+<h2>Recent Publications</h2>    
 <ul>
     {% for item in site.data.publications %}
     {% if item.selected %}
@@ -25,55 +24,96 @@ Here is a short list of my most recent papers:
     {% endfor %}
 </ul>
 
-<i class="fa fa-info-circle"></i> News & updates:
+<h2>Recent News</h2>
 
-<div id="timeline">
-    <div>
-        <section class="year"></section>
-        {% for events in site.data.news_year | limit:1 %}
-        <section class="year">
-            <h3>{{ events.year }}</h3>
-            {% for event in events.events | limit:5 %}
-            <section>
-                <h4>{{ event.date }}</h4>
-                <ul>
-                    <li>{{ event.content | markdownify | remove: '<p>' | remove: '</p>'}}</li>
-                </ul>
-            </section>
-            {% endfor %}
-        </section>
+<div class="news-timeline">
+    {% for year_data in site.data.news_year %}
+        {% if forloop.first %}
+            <!-- Current year (always visible) -->
+            <div class="year-section current-year">
+                <h3 class="year-header">{{ year_data.year }}</h3>
+                <div class="year-events">
+                    {% for news in year_data.events limit:5 %}
+                    <div class="news-item">
+                        <div class="news-date">{{ news.date | date: "%b %-d" }}</div>
+                        <div class="news-content">{{ news.content | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+                    </div>
+                    {% endfor %}
+                    
+                    {% if year_data.events.size > 5 %}
+                    <div class="collapse year-collapse" id="year-{{ year_data.year }}-more">
+                        {% for news in year_data.events offset:5 %}
+                        <div class="news-item">
+                            <div class="news-date">{{ news.date | date: "%b %-d" }}</div>
+                            <div class="news-content">{{ news.content | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button type="button" class="btn btn-outline-secondary btn-sm mt-2 current-year-toggle" data-target="#year-{{ year_data.year }}-more" data-year="{{ year_data.year }}">
+                        <span class="show-more">Show more from {{ year_data.year }}</span>
+                        <span class="show-less" style="display: none;">Show less</span>
+                    </button>
+                    {% endif %}
+                </div>
+            </div>
+        {% else %}
+            <!-- Previous years (collapsible) -->
+            <div class="year-section previous-year collapse" id="year-{{ year_data.year }}">
+                <h3 class="year-header">{{ year_data.year }}</h3>
+                <div class="year-events">
+                    {% for news in year_data.events %}
+                    <div class="news-item">
+                        <div class="news-date">{{ news.date | date: "%b %-d" }}</div>
+                        <div class="news-content">{{ news.content | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+    
+    <!-- Show previous years buttons -->
+    {% assign previous_years = site.data.news_year | slice: 1, 10 %}
+    {% if previous_years.size > 0 %}
+    <div class="expand-years">
+        {% for year_data in previous_years %}
+        <button type="button" class="btn btn-outline-secondary btn-sm mt-3 expand-year-btn" 
+                data-target="#year-{{ year_data.year }}" 
+                data-year="{{ year_data.year }}"
+                style="display: none;">
+            <span class="expand-text">Show {{ year_data.year }}</span>
+        </button>
         {% endfor %}
-        <div class="collapse no-return old_news" id="oldnews">
-            <section class="year"></section>
-            {% for events in site.data.news_year | offset:0 %}
-            <section class="year">
-                <h3>{{ events.year }}</h3>
-                {% for event in events.events | offset:5 %}
-                <section>
-                    <h4>{{ event.date }}</h4>
-                    <ul>
-                        <li>{{ event.content | markdownify | remove: '<p>' | remove: '</p>'}}</li>
-                    </ul>
-                </section>
-                {% endfor %}
-            </section>
-            {% endfor %}
-            <section class="year"></section>
-            {% for events in site.data.news_year | offset:1 %}
-            <section class="year">
-                <h3>{{ events.year }}</h3>
-                {% for event in events.events %}
-                <section>
-                    <h4>{{ event.date }}</h4>
-                    <ul>
-                        <li>{{ event.content | markdownify | remove: '<p>' | remove: '</p>'}}</li>
-                    </ul>
-                </section>
-                {% endfor %}
-            </section>
-            {% endfor %}
-        </div>
-        <a href="#oldnews" data-toggle="collapse" style="margin-left:5.5rem;">Older news</a>               
+    </div>
+    {% endif %}
+</div>
+
+<!-- Floating Action Buttons -->
+<div class="floating-buttons">
+    <div class="fab-group">
+        <div class="fab-label">Research Affiliations</div>
+        <a href="https://aisafety.stanford.edu/" class="fab" target="_blank" rel="noopener" title="Stanford Center for AI Safety">
+            <span class="fab-text">SAFE AI</span>
+        </a>
+        <a href="https://mineralx.stanford.edu/" class="fab" target="_blank" rel="noopener" title="Mineral-X">
+            <span class="fab-text">Mineral-X</span>
+        </a>
+        <a href="https://sisl.stanford.edu/" class="fab" target="_blank" rel="noopener" title="SISL">
+            <span class="fab-text">SISL</span>
+        </a>
+    </div>
+    
+    <div class="fab-group">
+        <div class="fab-label">Upcoming Events</div>
+        <a href="https://aisafety.stanford.edu" class="fab event-fab" title="AI Safety Annual Meeting - Sept 22, Stanford" data-event-title="AI Safety Annual Meeting">
+            <span class="fab-text">Sep 22</span>
+        </a>
+        <a href="https://intersect.id/" class="fab event-fab" title="INTERSECT 2025 - Nov 19, Stanford" data-event-title="INTERSECT 2025">
+            <span class="fab-text">Nov 19</span>
+        </a>
+        <a href="https://agu.confex.com/agu/agu25/prelim.cgi/Session/251188" class="fab event-fab" title="AGU Fall Meeting 2025 - Dec 15, New Orleans" data-event-title="AGU Fall Meeting 2025">
+            <span class="fab-text">Dec 15</span>
+        </a>
     </div>
 </div>
 

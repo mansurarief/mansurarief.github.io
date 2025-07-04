@@ -3,6 +3,27 @@
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
       {% include social-networks-links.html %}
+      
+      <!-- Mobile footer links -->
+      <div class="mobile-footer-links">
+        <div class="mobile-section">
+          <h4>Research Centers</h4>
+          <div class="mobile-links">
+            <a href="https://aisafety.stanford.edu/" class="mobile-link" target="_blank" rel="noopener">SAFE AI</a>
+            <a href="https://mineralx.stanford.edu/" class="mobile-link" target="_blank" rel="noopener">Mineral-X</a>
+            <a href="https://sisl.stanford.edu/" class="mobile-link" target="_blank" rel="noopener">SISL</a>
+          </div>
+        </div>
+        
+        <div class="mobile-section">
+          <h4>Upcoming Events</h4>
+          <div class="mobile-links">
+            <a href="/events/ai-safety-annual-meeting-2025" class="mobile-link">AI Safety Meeting (Sep 22)</a>
+            <a href="/events/intersect-2025" class="mobile-link">INTERSECT (Nov 19)</a>
+            <a href="/events/agu-2025" class="mobile-link">AGU 2025 (Dec 15)</a>
+          </div>
+        </div>
+      </div>
       {% if page.footer-extra %}
         <div class="footer-custom-content">
           {% for file in page.footer-extra %}
