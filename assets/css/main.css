@@ -553,7 +553,7 @@ a.anchor-link {
     color: #555;
 }
 
-/* Clean footer social icons */
+/* Footer link badges */
 .footer-links {
     text-align: center;
     margin: 1rem 0;
@@ -561,25 +561,26 @@ a.anchor-link {
 
 .footer-links .list-inline-item {
     display: inline-block;
-    margin: 0 8px;
+    margin: 0 4px 6px;
 }
 
 .footer-links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
+    padding: 0.3rem 0.7rem;
     background-color: #555;
-    border-radius: 50%;
+    border-radius: 14px;
     color: #fff;
     text-decoration: none;
     transition: all 0.3s ease;
-    font-size: 1.2rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
 .footer-links a:hover {
-    background-color: #b00;
+    background-color: #333;
     transform: translateY(-2px);
     color: #fff;
     text-decoration: none;
@@ -590,31 +591,37 @@ a.anchor-link {
     display: none;
 }
 
-/* Show simple monochrome symbols instead */
+/* Badge text labels */
 .footer-links a[href*="mailto"]:after {
-    content: "@";
-    font-size: 1.4rem;
-    font-weight: bold;
+    content: "Email";
 }
 
 .footer-links a[href*="github"]:after {
-    content: "{ }";
-    font-size: 1rem;
-    font-weight: bold;
-    font-family: monospace;
+    content: "GitHub";
 }
 
 .footer-links a[href*="linkedin"]:after {
-    content: "in";
-    font-size: 1rem;
-    font-weight: bold;
-    font-family: sans-serif;
+    content: "LinkedIn";
 }
 
 .footer-links a[href*="scholar.google"]:after {
-    content: "∂";
-    font-size: 1.3rem;
-    font-weight: bold;
+    content: "Scholar";
+}
+
+.footer-links a[href*="calendly"]:after {
+    content: "Calendly";
+}
+
+.footer-links a[href*="orcid"]:after {
+    content: "ORCID";
+}
+
+.footer-links a[href*="irc-sml"]:after {
+    content: "IRC-SML";
+}
+
+.footer-links a[href*="jrcai"]:after {
+    content: "JRC-AI";
 }
 
 /* Mobile responsive improvements */
@@ -636,58 +643,8 @@ a.anchor-link {
         font-weight: 600;
     }
     
-    /* Mobile footer additions */
-    .mobile-footer-links {
-        display: block;
-        margin-top: 2rem;
-        padding-top: 1rem;
-        border-top: 1px solid #e0e0e0;
-    }
-    
-    .mobile-section {
-        margin-bottom: 1.5rem;
-    }
-    
-    .mobile-section h4 {
-        font-size: 1rem;
-        margin-bottom: 0.75rem;
-        color: #555;
-        text-align: center;
-    }
-    
-    .mobile-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.75rem;
-    }
-    
-    .mobile-link {
-        display: inline-block;
-        padding: 0.5rem 1rem;
-        background: #f8f9fa;
-        border: 1px solid #dee2e6;
-        border-radius: 20px;
-        text-decoration: none;
-        color: #555;
-        font-size: 0.85rem;
-        font-weight: 500;
-        transition: all 0.2s ease;
-    }
-    
-    .mobile-link:hover {
-        background: #e9ecef;
-        color: #333;
-        text-decoration: none;
-    }
 }
 
-/* Hide mobile footer on desktop */
-@media (min-width: 769px) {
-    .mobile-footer-links {
-        display: none;
-    }
-}
 
 /* Modern Navigation Styling */
 .navbar-custom {
