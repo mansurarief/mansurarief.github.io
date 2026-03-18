@@ -1,12 +1,48 @@
+- tag: 'Saleh Afroogh, Seyd Ishtiaque Ahmed, Petra Ahrweiler, David Alvarez-Melis, <u>Mansur Arief</u>, Emilia Barakova, Falco J. Bargagli-Stoffi, Erdem Biyik, et al. “Beyond Explainable AI (XAI): An Overdue Paradigm Shift and Post-XAI Research Directions.” <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2602.24176'
+  selected: true
+  category: 4
+  year: 2026
+
+- tag: 'Nur Ahmad Khatim, <u>Mansur Arief</u>. “Optimized Human-Robot Co-Dispatch Planning for Petro-Site Surveillance under Varying Criticalities.” <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2602.07924'
+  selected: true
+  category: 4
+  year: 2026
+
+- tag: 'Bernard Lange, Anil Yildiz, <u>Mansur Arief</u>, Shehryar Khattak, Mykel Kochenderfer, Georgios Georgakis. “General-Purpose Robotic Navigation via LVLM-Orchestrated Perception, Reasoning, and Acting.” <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2506.17462'
+  selected: false
+  category: 4
+  year: 2025
+
+- tag: 'Alexandros E. Tzikas, Nazim Kemal Ure, <u>Mansur Arief</u>, Mykel J. Kochenderfer, Stephen P. Boyd. “Resource Allocation under Stochastic Demands using Shrinking Horizon Optimization.” <i>American Control Conference, 2026</i>.'
+  link: 'https://arxiv.org/abs/2509.25412'
+  selected: false
+  category: 4
+  year: 2025
+
+- tag: 'William Xu, Amir Eskanlou, <u>Mansur Arief</u>, David Zhen Yin, Jef K. Caers. “AI-Driven Optimization under Uncertainty for Mineral Processing Operations.” <i>Sustainable Earth Resources Communications, 1(2): 100-112, 2025</i>.'
+  link: 'https://doi.org/10.46690/serc.2025.02.07'
+  selected: true
+  category: 3
+  year: 2025
+
+- tag: 'Riya Kinnarkar, <u>Mansur Arief</u>. “Optimized Renewable Energy Planning MDP for Socially-Equitable Electricity Coverage in the US.” <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2509.00008'
+  selected: false
+  category: 3
+  year: 2025
+
 - tag: '<u>Mansur Arief</u>, Yasmine Alonso, CJ Oshiro, William Xu, Anthony Corso, David Zhen Yin, Jef Caers, and Mykel Kochenderfer. “Managing Geological Uncertainty in Critical Mineral Supply Chains: A POMDP Approach with Application to US Lithium Resources.” <i>arXiv preprint</i>.'
   link: 'https://arxiv.org/abs/2502.05690'
-  selected: true
+  selected: false
   category: 3
   year: 2025
 
 - tag: 'Liam Kruse, Alexandros Tikas, Harrison Delecki, <u>Mansur Arief</u>, Mykel Kochenderfer. "Enhanced Importance Sampling through Latent Space Exploration in Normalizing Flows." <i>arXiv preprint</i>.'
   link: 'https://arxiv.org/abs/2501.03394'
-  selected: true
+  selected: false
   category: 1
   year: 2025
 
@@ -61,7 +97,7 @@
 
 - tag: '<u>Arief, Mansur</u>, Mike Timmerman, Jiachen Li, David Isele, Mykel Kochenderfer. "Optimized Guided Meta Training for Intelligent Agents under Highly Interactive Driving Scenarios." <i>IEEE RA-L</i>.'
   link: 'https://ieeexplore.ieee.org/abstract/document/10803069'
-  selected: true
+  selected: false
   category: 1
   year: 2024
 
@@ -71,11 +107,11 @@
   category: 4
   year: 2024
 
-- tag: 'Delecki, Harrison, Marc Schlichting, <u>Mansur Arief</u>, Anthony Corso, Marcell Vazquez-Chanlatte, Mykel Kochenderfer. "Diffusion-Based Failure Sampling for Cyber-Physical Systems." <i>Under review</i>.'
+- tag: 'Delecki, Harrison, Marc Schlichting, <u>Mansur Arief</u>, Anthony Corso, Marcell Vazquez-Chanlatte, Mykel Kochenderfer. "Diffusion-Based Failure Sampling for Evaluating Safety-Critical Autonomous Systems." <i>IEEE ERAS, 2025</i>.'
   link: 'https://arxiv.org/abs/2406.14761'
   selected: false
   category: 1
-  year: 2024
+  year: 2025
   
 - tag: '<u>Arief, Mansur</u>, Yan Akhra, Iwan Vanany. "A Robust and Efficient Optimization Model for Electric Vehicle Charging Stations in Developing Countries under Electricity Uncertainty." <i>Under Review</i>.'
   link: 'https://arxiv.org/abs/2307.05470'
