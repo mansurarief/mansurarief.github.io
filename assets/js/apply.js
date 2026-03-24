@@ -252,10 +252,10 @@
     var cfg = POS[posType];
     if (!cfg) return;
 
-    // 1. Show welcome message (translated)
+    // 1. Show welcome message in right sidebar tip
     var msgKey = 'pos_msg_' + cfg.short;
-    $('#positionMsgText').text(t(msgKey) || cfg.msg);
-    $('#positionMsg').stop(true).fadeIn(300);
+    var msgText = t(msgKey) || cfg.msg;
+    $('#sideTipPosMsg').text(msgText).fadeIn(200);
     $('#preselectHint').stop(true).fadeOut(200);
 
     // 2. Cascade-reveal gated sections + show topbar

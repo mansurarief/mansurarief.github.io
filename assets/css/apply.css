@@ -40,18 +40,9 @@ body .intro-header {
   display: none !important;
 }
 
-/* --- Topbar (sticky progress + steps) --- */
+/* --- Topbar (hidden for now — using sidebar nav) --- */
 .apply-topbar {
-  position: sticky;
-  top: 56px; /* below Beautiful Jekyll fixed navbar */
-  z-index: 100;
-  background: rgba(250, 250, 250, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  padding: 12px 0 0;
-  margin: 0 -16px;
-  animation: fadeSlideDown 0.3s ease;
+  display: none;
 }
 @keyframes fadeSlideDown {
   from { opacity: 0; transform: translateY(-10px); }
@@ -90,8 +81,8 @@ body .intro-header {
   background: var(--accent-light);
 }
 .apply-step.done {
-  color: #16a34a;
-  background: #f0fdf4;
+  color: var(--text);
+  background: #f3f4f6;
 }
 .apply-progress {
   height: 3px;
@@ -111,7 +102,7 @@ body .intro-header {
 .apply-hero {
   max-width: 800px;
   margin: 0 auto;
-  padding: 64px 0 48px;
+  padding: 80px 0 48px;
   text-align: center;
 }
 .apply-hero__badge {
@@ -272,7 +263,7 @@ body .intro-header {
 }
 .apply-input::placeholder { color: var(--text-tertiary); }
 .apply-input--sm { max-width: 200px; }
-.apply-input--error { border-color: #dc2626; }
+.apply-input--error { border-color: var(--accent); }
 select.apply-input {
   cursor: pointer;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
@@ -344,12 +335,11 @@ select.apply-input {
   transition: color var(--transition);
 }
 .apply-role-card input:checked + .apply-role-card__inner {
-  border-color: var(--accent);
-  background: var(--accent-light);
-  box-shadow: 0 0 0 3px rgba(187, 0, 0, 0.08);
+  border-color: var(--text);
+  background: var(--bg);
 }
-.apply-role-card input:checked + .apply-role-card__inner .apply-role-card__icon { color: var(--accent); }
-.apply-role-card input:checked + .apply-role-card__inner .apply-role-card__label { color: var(--accent); font-weight: 600; }
+.apply-role-card input:checked + .apply-role-card__inner .apply-role-card__icon { color: var(--text); }
+.apply-role-card input:checked + .apply-role-card__inner .apply-role-card__label { color: var(--text); font-weight: 600; }
 .apply-role-card__inner:hover {
   border-color: #d1d5db;
   background: #f9fafb;
@@ -747,7 +737,7 @@ select.apply-input {
 /* --- Error messages --- */
 .apply-error-msg {
   font-size: 0.75rem;
-  color: #dc2626;
+  color: var(--accent);
   margin-top: 4px;
 }
 
@@ -756,7 +746,7 @@ select.apply-input {
   max-width: 800px;
   margin: 0 auto 16px;
   background: var(--card);
-  border: 1.5px solid #3b82f6;
+  border: 1.5px solid var(--border);
   border-radius: var(--radius);
   padding: 14px 24px;
   display: flex;
@@ -764,7 +754,7 @@ select.apply-input {
   justify-content: space-between;
   gap: 16px;
   font-size: 0.88rem;
-  color: #1d4ed8;
+  color: var(--text-secondary);
 }
 .apply-draft-banner button {
   font-family: var(--font);
@@ -776,7 +766,7 @@ select.apply-input {
   transition: all var(--transition);
 }
 .apply-draft-banner .restore {
-  background: #3b82f6;
+  background: var(--accent);
   color: #fff;
   border: none;
 }
@@ -794,7 +784,7 @@ select.apply-input {
   border: 1px solid #fca5a5;
   border-radius: var(--radius-sm);
   padding: 14px 20px;
-  color: #dc2626;
+  color: var(--accent);
   font-size: 0.9rem;
 }
 
@@ -805,24 +795,12 @@ select.apply-input {
   font-weight: 400;
 }
 .apply-role-card input:checked + .apply-role-card__inner .apply-role-card__sub {
-  color: var(--accent);
+  color: var(--text-secondary);
 }
 
-/* --- Position message --- */
+/* --- Position message (hidden — shown in right sidebar tip instead) --- */
 .apply-position-msg {
-  margin-top: 24px;
-  padding: 20px 24px;
-  background: linear-gradient(135deg, #fafafa 0%, #f3f4f6 100%);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  animation: fadeSlideUp 0.4s ease;
-}
-.apply-position-msg p {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  margin: 0;
-  font-style: italic;
+  display: none;
 }
 
 /* Pre-selection hint */
@@ -857,7 +835,7 @@ select.apply-input {
 /* --- Field hint (below degree, etc) --- */
 .apply-field-hint {
   font-size: 0.75rem;
-  color: #2563eb;
+  color: var(--accent);
   margin-top: 4px;
   font-weight: 500;
 }
@@ -921,11 +899,11 @@ select.apply-input {
   font-weight: 600;
 }
 .apply-sidenav__link.done {
-  color: #16a34a;
+  color: var(--text);
 }
 .apply-sidenav__link.done .apply-sidenav__num {
-  background: #f0fdf4;
-  color: #16a34a;
+  background: #f3f4f6;
+  color: var(--text);
 }
 .apply-sidenav__num {
   font-size: 0.65rem;
@@ -993,16 +971,22 @@ select.apply-input {
   margin: 0 0 8px;
 }
 .apply-sidetip p:last-child { margin-bottom: 0; }
+.apply-sidetip__pos-msg {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-style: italic;
+}
 .apply-sidetip__note {
   margin-top: 12px;
   padding: 12px;
-  background: #fef3c7;
+  background: var(--accent-light);
   border-radius: 6px;
-  border-left: 3px solid #f59e0b;
+  border-left: 3px solid var(--accent);
 }
 .apply-sidetip__note p {
   font-size: 0.75rem;
-  color: #92400e;
+  color: #7a1a1a;
   margin: 0;
 }
 
@@ -1013,19 +997,19 @@ select.apply-input {
   align-items: flex-start;
   margin-top: 20px;
   padding: 16px;
-  background: #fef3c7;
+  background: var(--accent-light);
   border-radius: var(--radius-sm);
-  border-left: 3px solid #f59e0b;
+  border-left: 3px solid var(--accent);
 }
 .apply-quality-note i {
-  color: #f59e0b;
+  color: var(--accent);
   font-size: 1rem;
   margin-top: 2px;
   flex-shrink: 0;
 }
 .apply-quality-note p {
   font-size: 0.8rem;
-  color: #92400e;
+  color: #7a1a1a;
   line-height: 1.6;
   margin: 0;
 }
@@ -1071,8 +1055,8 @@ select.apply-input {
 [dir="rtl"] .apply-section__header { flex-direction: row-reverse; }
 [dir="rtl"] .apply-field--cond { margin-left: 0; margin-right: 24px; padding-left: 0; padding-right: 16px; border-left: none; border-right: 2px solid var(--border); }
 [dir="rtl"] .apply-position-msg { border-left: none; border-right: 3px solid var(--accent); border-radius: var(--radius-sm) 0 0 var(--radius-sm); }
-[dir="rtl"] .apply-quality-note { border-left: none; border-right: 3px solid #f59e0b; }
-[dir="rtl"] .apply-sidetip__note { border-left: none; border-right: 3px solid #f59e0b; }
+[dir="rtl"] .apply-quality-note { border-left: none; border-right: 3px solid var(--accent); }
+[dir="rtl"] .apply-sidetip__note { border-left: none; border-right: 3px solid var(--accent); }
 [dir="rtl"] select.apply-input { background-position: left 12px center; padding-right: 16px; padding-left: 36px; }
 [dir="rtl"] .apply-ref-card { padding-left: 24px; padding-right: 56px; }
 [dir="rtl"] .apply-ref-card__num { left: auto; right: 18px; }

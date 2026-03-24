@@ -231,7 +231,6 @@ exclude:
   - docs/
   - assets/notebooks/
   - apply-backend/
-  - SETUP-APPLY.md
 
 plugins:
   - jekyll-paginate

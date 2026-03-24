@@ -38,6 +38,7 @@ js:
     <div class="apply-sidetip" data-tip="1">
       <h4 data-i18n="tip1_title">Choosing a role</h4>
       <p data-i18n="tip1_text">Not sure which fits? Postdocs lead independent research. PhD students dive deep into a topic over 3-5 years. Master's students build foundations. Interns get hands-on project experience.</p>
+      <p class="apply-sidetip__pos-msg" id="sideTipPosMsg" style="display:none"></p>
     </div>
     <div class="apply-sidetip" data-tip="2" style="display:none">
       <h4 data-i18n="tip2_title">A few notes</h4>
@@ -76,7 +77,8 @@ js:
           <span class="apply-step" data-step="5" data-i18n="step5">5 Vision</span>
           <span class="apply-step" data-step="6" data-i18n="step6">6 Logistics</span>
         </div>
-        <div class="apply-lang" id="langToggle">
+        <!-- Language toggle hidden for now -->
+        <div class="apply-lang" id="langToggle" style="display:none">
           <button class="apply-lang__btn" data-lang="en" title="English">EN</button>
           <button class="apply-lang__btn" data-lang="ar" title="العربية">عربي</button>
           <button class="apply-lang__btn" data-lang="id" title="Bahasa Indonesia">ID</button>
@@ -97,7 +99,7 @@ js:
   <!-- Success -->
   <div class="apply-success" id="applySuccess" style="display:none;">
     <div class="apply-success__icon">
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="32" fill="#E8F5E9"/><path d="M20 33l8 8 16-16" stroke="#2E7D32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="32" fill="#fef5f5"/><path d="M20 33l8 8 16-16" stroke="#b00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>
     <h2 class="apply-success__title">You're all set.</h2>
     <p class="apply-success__text">We've received your application and will review it carefully. Expect to hear from us within 2–4 weeks.</p>
