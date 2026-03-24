@@ -303,7 +303,7 @@ select.apply-input {
 /* --- Role cards (radio) --- */
 .apply-role-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 12px;
 }
 .apply-role-card {
@@ -803,6 +803,46 @@ select.apply-input {
   display: none;
 }
 
+/* --- Quick intro (designation + short name) --- */
+.apply-quickintro {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  animation: fadeSlideUp 0.3s ease;
+}
+.apply-quickintro__label {
+  font-size: 0.95rem;
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+/* --- Refs toggle button --- */
+.apply-refs-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: all var(--transition);
+  margin-top: 8px;
+}
+.apply-refs-toggle:hover {
+  border-color: var(--text-tertiary);
+  color: var(--text);
+}
+.apply-refs-toggle span {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
 /* Pre-selection hint */
 .apply-preselect {
   text-align: center;
@@ -977,6 +1017,24 @@ select.apply-input {
   border-top: 1px solid var(--border);
   font-style: italic;
 }
+.apply-sidetip__links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.apply-sidetip__links a {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+.apply-sidetip__links a:hover {
+  opacity: 0.7;
+}
 .apply-sidetip__note {
   margin-top: 12px;
   padding: 12px;
@@ -1089,7 +1147,7 @@ select.apply-input {
   .apply-grid--2,
   .apply-grid--3 { grid-template-columns: 1fr; }
 
-  .apply-role-grid { grid-template-columns: 1fr 1fr; }
+  .apply-role-grid { grid-template-columns: repeat(3, 1fr); }
 
   .apply-ref-card { padding-left: 48px; }
   [dir="rtl"] .apply-ref-card { padding-left: 24px; padding-right: 48px; }
@@ -1100,7 +1158,7 @@ select.apply-input {
 }
 
 @media (max-width: 480px) {
-  .apply-role-grid { grid-template-columns: 1fr; }
+  .apply-role-grid { grid-template-columns: 1fr 1fr; }
   .apply-hero__title { font-size: 1.6rem; }
   .apply-pill-grid { gap: 6px; }
   .apply-pill span { padding: 6px 14px; font-size: 0.8rem; }

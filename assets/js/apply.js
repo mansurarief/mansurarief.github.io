@@ -89,6 +89,26 @@
       degreeHint: null,
       degreeExpect: null,
       extraRequired: ['enrollment_status', 'expected_graduation']
+    },
+    'Visiting Faculty': {
+      short: 'visit',
+      msg: "Welcome, colleague. I\u2019m always looking for opportunities to collaborate with faculty from other institutions. Tell me about your research and how we might work together.",
+      durations: [['1 month','1 month'],['3 months','3 months'],['6 months','6 months'],['1 year','1 year']],
+      showPos: [],
+      reflectionLabel: 'Collaboration vision',
+      reflectionSub: 'What research synergies do you see? What would you like to accomplish during your visit?',
+      aiLabel: 'How does AI feature in your research or teaching? <span class="req">*</span>',
+      skillsSub: 'Your core expertise and methods',
+      affiliationPH: 'e.g. Associate Professor, University of Tokyo',
+      refsLabel: 'References <span class="req">*</span>',
+      ref2Required: false,
+      ref2Hidden: true,
+      pitchRequired: false,
+      pitchHidden: false,
+      pitchHint: 'Optional: a brief overview of your proposed collaboration or seminar topic.',
+      degreeHint: null,
+      degreeExpect: 'PhD',
+      extraRequired: []
     }
   };
 
@@ -161,19 +181,13 @@
     // Always required
     ['full_name','email','phone','nationality','residence','affiliation',
      'degree','field','institution','gpa','graduation_date','english_proficiency',
-     'start_date','duration',
-     'ref1_name','ref1_email','ref1_affiliation','ref1_relationship'].forEach(function (id) {
+     'start_date','duration'].forEach(function (id) {
       var $el = $('#' + id);
       if ($el.length && !$.trim($el.val())) fail($el, REQ);
     });
 
-    // Ref2 — required only for some positions
-    if (cfg.ref2Required) {
-      ['ref2_name','ref2_email','ref2_affiliation','ref2_relationship'].forEach(function (id) {
-        var $el = $('#' + id);
-        if ($el.length && !$.trim($el.val())) fail($el, REQ);
-      });
-    }
+    // Short name required
+    if (!$.trim($('#short_name').val())) fail($('#short_name'), REQ);
 
     // Email format
     var ev = $.trim($('#email').val());
@@ -252,10 +266,8 @@
     var cfg = POS[posType];
     if (!cfg) return;
 
-    // 1. Show welcome message in right sidebar tip
-    var msgKey = 'pos_msg_' + cfg.short;
-    var msgText = t(msgKey) || cfg.msg;
-    $('#sideTipPosMsg').text(msgText).fadeIn(200);
+    // 1. Show welcome message in right sidebar tip (personalized)
+    updateWelcomeMessage(cfg);
     $('#preselectHint').stop(true).fadeOut(200);
 
     // 2. Cascade-reveal gated sections + show topbar
@@ -364,9 +376,27 @@
   // Conditionals (non-position)
   // =========================================================================
   function setupConditionals() {
-    // Position selection
+    // Position selection — show quick intro then apply config
     $('input[name="position_type"]').on('change', function () {
+      $('#quickIntro').slideDown(250);
       applyPositionConfig($(this).val());
+    });
+
+    // Update welcome when name/designation changes
+    $('#short_name, #designation').on('input change', function () {
+      updateWelcomeMessage();
+    });
+
+    // Refs toggle
+    $('#refsToggle').on('click', function () {
+      var $cards = $('#refsCards');
+      if ($cards.is(':visible')) {
+        $cards.slideUp(200);
+        $(this).html('Add references <span>&plus;</span>');
+      } else {
+        $cards.slideDown(250);
+        $(this).html('Hide references <span>&minus;</span>');
+      }
     });
 
     // English score
@@ -635,6 +665,11 @@
         $('#applyLoading').fadeOut(200);
         try { localStorage.removeItem(DRAFT_KEY); } catch (_) {}
         if (res && res.application_id) $('#successRefId').html('Reference: <strong>' + $('<span>').text(res.application_id).html() + '</strong>');
+        // Personalize success title
+        var greeting = getGreeting();
+        if (greeting) {
+          $('.apply-success__title').text('Thank you, ' + greeting + '!');
+        }
         $form.slideUp(400); $('.apply-hero').slideUp(400); $('#applyTopbar').slideUp(400);
         $('#sideNav').fadeOut(400); $('#sideTips').fadeOut(400);
         $('#applySuccess').slideDown(400);
@@ -986,6 +1021,32 @@
     var affKey = 'ph_affil_' + (s === 'postdoc' ? 'post' : s === 'phd' ? 'phd' : s === 'masters' ? 'ms' : 'int');
     var affPh = t(affKey);
     if (affPh) { $('#affiliation').attr('placeholder', affPh); }
+  }
+
+  function getGreeting() {
+    var designation = $.trim($('#designation').val() || '');
+    var shortName = $.trim($('#short_name').val() || '');
+    if (!shortName) return '';
+    if (designation) return designation + ' ' + shortName;
+    return shortName;
+  }
+
+  function updateWelcomeMessage(cfg) {
+    if (!cfg) cfg = getCfg();
+    if (!cfg) return;
+    var msgKey = 'pos_msg_' + cfg.short;
+    var msgText = t(msgKey) || cfg.msg;
+    var greeting = getGreeting();
+    if (greeting) {
+      // Replace generic greeting with personalized one
+      msgText = msgText
+        .replace(/Welcome, researcher\.?/i, 'Welcome, ' + greeting + '.')
+        .replace(/Welcome, colleague\.?/i, 'Welcome, ' + greeting + '.')
+        .replace(/^A PhD/i, greeting + ', a PhD')
+        .replace(/^A Master/i, greeting + ', a Master')
+        .replace(/^Internships/i, greeting + ', internships');
+    }
+    $('#sideTipPosMsg').text(msgText).fadeIn(200);
   }
 
   function updateRefsLabel(cfg) {

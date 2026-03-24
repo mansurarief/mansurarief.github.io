@@ -36,32 +36,49 @@ js:
   <!-- Right sidebar tips (desktop) -->
   <aside class="apply-sidetips" id="sideTips" style="display:none">
     <div class="apply-sidetip" data-tip="1">
-      <h4 data-i18n="tip1_title">Choosing a role</h4>
-      <p data-i18n="tip1_text">Not sure which fits? Postdocs lead independent research. PhD students dive deep into a topic over 3-5 years. Master's students build foundations. Interns get hands-on project experience.</p>
+      <h4>A note from Prof. Arief</h4>
+      <p>I care deeply about building a team that is curious, kind, and driven by purpose. I value people who see technology as a way to serve humanity equitably &mdash; not just publish papers. If that resonates with you, I'd love to hear from you.</p>
       <p class="apply-sidetip__pos-msg" id="sideTipPosMsg" style="display:none"></p>
+      <div class="apply-sidetip__links">
+        <a href="/research" target="_blank">Our research areas &rarr;</a>
+        <a href="https://www.kfupm.edu.sa" target="_blank">About KFUPM &rarr;</a>
+      </div>
     </div>
     <div class="apply-sidetip" data-tip="2" style="display:none">
-      <h4 data-i18n="tip2_title">A few notes</h4>
-      <p data-i18n="tip2_text">Use your passport name for official records. Google Scholar helps us quickly find your publication record.</p>
+      <h4>About this section</h4>
+      <p>Use your <strong>passport name</strong> exactly &mdash; KFUPM HR will use this for visa processing. A Google Scholar link helps me quickly see your work and saves us both time.</p>
+      <p>If you don't have a personal website, that's fine &mdash; your CV and pitch deck will tell me what I need to know.</p>
     </div>
     <div class="apply-sidetip" data-tip="3" style="display:none">
-      <h4 data-i18n="tip3_title">About scores</h4>
-      <p data-i18n="tip3_text">GPA scales vary by country — include yours (e.g., 3.8/4.0). For English: IELTS 6.5+ or TOEFL 90+ is preferred.</p>
+      <h4>What I look for</h4>
+      <p>I'm less interested in perfect GPAs and more in your <strong>trajectory</strong>. Show me growth. If your GPA doesn't reflect your ability, the reflection essay is your chance to explain.</p>
+      <p>For English: IELTS 6.5+ or TOEFL 90+ is preferred, but strong research output can compensate. GPA scales vary &mdash; please include yours (e.g., 3.8/4.0).</p>
     </div>
     <div class="apply-sidetip" data-tip="4" style="display:none">
-      <h4 data-i18n="tip4_title">Document tips</h4>
-      <p data-i18n="tip4_text">Keep your CV concise (2-3 pages). For the pitch deck: 3 slides covering Problem, Approach, and Expected Impact.</p>
+      <h4>Document tips</h4>
+      <p>Your <strong>CV</strong> should be concise (2-3 pages). Focus on research output, not every course you took.</p>
+      <p>The <strong>pitch deck</strong>: 3 slides is intentional. Slide 1: What problem? Slide 2: Your approach. Slide 3: Expected impact. I care about clarity of thought, not slide design.</p>
+      <p>The <strong>reflection essay</strong> is where I get to know you as a person. What drives you? What do you genuinely want to build? Be honest &mdash; I can tell when someone is writing what they think I want to hear.</p>
       <div class="apply-sidetip__note">
-        <p data-i18n="tip4_note">We review essays and CVs carefully. Please invest personal time to make this your best work. AI tools are fine, but if we find artifacts suggesting a lack of preparation, we may decline the application to save everyone's time.</p>
+        <p>I review every application personally. AI tools are welcome, but if your essay reads like a generic prompt output, it signals you didn't invest the time. That matters to me.</p>
       </div>
     </div>
     <div class="apply-sidetip" data-tip="5" style="display:none">
-      <h4 data-i18n="tip5_title">Research vision</h4>
-      <p data-i18n="tip5_text">Pick 1-3 areas that genuinely interest you. The AI plans question is about your methodology — how you'll integrate AI into your actual research workflow.</p>
+      <h4>Our research areas</h4>
+      <p>My lab works at the intersection of <strong>AI safety, verification &amp; validation, and optimization under uncertainty</strong> &mdash; applied to autonomous systems, energy transition, and supply chains.</p>
+      <p>Pick areas that genuinely excite you, not what you think I want. The best collaborations come from authentic interest. I'm especially keen on people who can bridge theory and real-world impact.</p>
+      <p>The AI question: I want to know how you'll <em>actually</em> use AI in your workflow &mdash; tools, methods, pipelines. Not philosophy.</p>
     </div>
     <div class="apply-sidetip" data-tip="6" style="display:none">
-      <h4 data-i18n="tip6_title">Good to know</h4>
-      <p data-i18n="tip6_text">KFUPM provides housing for researchers and families. Visa processing typically takes 4-8 weeks. Start dates are flexible.</p>
+      <h4>Life at KFUPM</h4>
+      <p>KFUPM is in Dhahran, Eastern Saudi Arabia. It's a <strong>self-contained campus</strong> with housing, recreation, and a strong international research community. Tax-free salary and benefits.</p>
+      <p>Visa processing typically takes 4-8 weeks. KFUPM handles all sponsorship. Housing is provided for researchers and families &mdash; the family status question helps us plan ahead.</p>
+      <p>Start dates are flexible. I'm happy to work around your timeline.</p>
+      <div class="apply-sidetip__links">
+        <a href="https://www.kfupm.edu.sa/deanships/dgs/" target="_blank">Graduate Studies &rarr;</a>
+        <a href="https://www.kfupm.edu.sa" target="_blank">Campus &amp; life &rarr;</a>
+        <a href="https://visa.mofa.gov.sa" target="_blank">Saudi visa info &rarr;</a>
+      </div>
     </div>
   </aside>
 
@@ -160,15 +177,41 @@ js:
               <span class="apply-role-card__sub">Hands-on experience</span>
             </span>
           </label>
-        </div>
-
-        <!-- Position-specific welcome message -->
-        <div class="apply-position-msg" id="positionMsg" style="display:none">
-          <p id="positionMsgText"></p>
+          <label class="apply-role-card">
+            <input type="radio" name="position_type" value="Visiting Faculty">
+            <span class="apply-role-card__inner">
+              <span class="apply-role-card__icon"><i class="fas fa-chalkboard-teacher"></i></span>
+              <span class="apply-role-card__label">Faculty Visit</span>
+              <span class="apply-role-card__sub">Collaboration &amp; exchange</span>
+            </span>
+          </label>
         </div>
 
         <!-- Pre-selection prompt -->
         <p class="apply-preselect" id="preselectHint">Select a position above to get started.</p>
+
+        <!-- Quick intro (shown after position selection) -->
+        <div class="apply-quickintro" id="quickIntro" style="display:none">
+          <p class="apply-quickintro__label">Great! Before we begin, how should we address you?</p>
+          <div class="apply-grid apply-grid--2">
+            <div class="apply-field">
+              <label class="apply-label" for="designation">Title</label>
+              <select id="designation" name="designation" class="apply-input">
+                <option value="" disabled selected>Select</option>
+                <option value="Mr.">Mr.</option>
+                <option value="Ms.">Ms.</option>
+                <option value="Mrs.">Mrs.</option>
+                <option value="Dr.">Dr.</option>
+                <option value="Prof.">Prof.</option>
+                <option value="">Just my name</option>
+              </select>
+            </div>
+            <div class="apply-field">
+              <label class="apply-label" for="short_name">What should we call you? <span class="req">*</span></label>
+              <input type="text" id="short_name" name="short_name" class="apply-input" placeholder="e.g. Alex, Fatimah, Wei" required>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -532,26 +575,30 @@ js:
           <input type="text" id="fellowship_name" name="fellowship_name" class="apply-input" placeholder="Fellowship name">
         </div>
 
-        <!-- References -->
-        <div class="apply-field" style="margin-top:40px">
-          <label class="apply-label apply-label--lg" id="refsLabel">References <span class="req">*</span></label>
-        </div>
-        <div class="apply-ref-card">
-          <span class="apply-ref-card__num">1</span>
-          <div class="apply-grid apply-grid--2">
-            <div class="apply-field"><input type="text" id="ref1_name" name="ref1_name" class="apply-input" placeholder="Full name" required></div>
-            <div class="apply-field"><input type="email" id="ref1_email" name="ref1_email" class="apply-input" placeholder="Email" required></div>
-            <div class="apply-field"><input type="text" id="ref1_affiliation" name="ref1_affiliation" class="apply-input" placeholder="Affiliation" required></div>
-            <div class="apply-field"><input type="text" id="ref1_relationship" name="ref1_relationship" class="apply-input" placeholder="Relationship to you" required></div>
-          </div>
-        </div>
-        <div class="apply-ref-card" id="ref2Card">
-          <span class="apply-ref-card__num">2</span>
-          <div class="apply-grid apply-grid--2">
-            <div class="apply-field"><input type="text" id="ref2_name" name="ref2_name" class="apply-input" placeholder="Full name"></div>
-            <div class="apply-field"><input type="email" id="ref2_email" name="ref2_email" class="apply-input" placeholder="Email"></div>
-            <div class="apply-field"><input type="text" id="ref2_affiliation" name="ref2_affiliation" class="apply-input" placeholder="Affiliation"></div>
-            <div class="apply-field"><input type="text" id="ref2_relationship" name="ref2_relationship" class="apply-input" placeholder="Relationship to you"></div>
+        <!-- References (hidden by default, expandable) -->
+        <div class="apply-field" style="margin-top:40px" id="refsSection" style="display:none">
+          <label class="apply-label apply-label--lg" id="refsLabel">References <span style="font-weight:400;color:var(--text-tertiary);font-size:0.82rem">(optional)</span></label>
+          <p class="apply-sublabel">If you'd like to provide references now, you can. Otherwise, we'll ask later if needed.</p>
+          <button type="button" class="apply-refs-toggle" id="refsToggle">Add references <span>&plus;</span></button>
+          <div id="refsCards" style="display:none">
+            <div class="apply-ref-card" style="margin-top:16px">
+              <span class="apply-ref-card__num">1</span>
+              <div class="apply-grid apply-grid--2">
+                <div class="apply-field"><input type="text" id="ref1_name" name="ref1_name" class="apply-input" placeholder="Full name"></div>
+                <div class="apply-field"><input type="email" id="ref1_email" name="ref1_email" class="apply-input" placeholder="Email"></div>
+                <div class="apply-field"><input type="text" id="ref1_affiliation" name="ref1_affiliation" class="apply-input" placeholder="Affiliation"></div>
+                <div class="apply-field"><input type="text" id="ref1_relationship" name="ref1_relationship" class="apply-input" placeholder="Relationship to you"></div>
+              </div>
+            </div>
+            <div class="apply-ref-card" id="ref2Card">
+              <span class="apply-ref-card__num">2</span>
+              <div class="apply-grid apply-grid--2">
+                <div class="apply-field"><input type="text" id="ref2_name" name="ref2_name" class="apply-input" placeholder="Full name"></div>
+                <div class="apply-field"><input type="email" id="ref2_email" name="ref2_email" class="apply-input" placeholder="Email"></div>
+                <div class="apply-field"><input type="text" id="ref2_affiliation" name="ref2_affiliation" class="apply-input" placeholder="Affiliation"></div>
+                <div class="apply-field"><input type="text" id="ref2_relationship" name="ref2_relationship" class="apply-input" placeholder="Relationship to you"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
