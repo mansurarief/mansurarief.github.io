@@ -420,41 +420,14 @@
     });
 
     // Extra documents — position-aware suggestions
-    var EXTRA_DOCS = {
-      'Postdoctoral Researcher': [
-        { label: 'Cover letter', icon: 'fa-file-alt' },
-        { label: 'Publication list', icon: 'fa-list' },
-        { label: 'Research statement', icon: 'fa-file-contract' },
-        { label: 'Teaching portfolio', icon: 'fa-chalkboard' }
-      ],
-      'PhD Student': [
-        { label: 'Cover letter', icon: 'fa-file-alt' },
-        { label: 'Transcripts', icon: 'fa-scroll' },
-        { label: 'Degree certificate', icon: 'fa-certificate' },
-        { label: 'Writing sample / publication', icon: 'fa-pen-fancy' }
-      ],
-      "Master's Student": [
-        { label: 'Transcripts', icon: 'fa-scroll' },
-        { label: 'Degree certificate', icon: 'fa-certificate' },
-        { label: 'Cover letter', icon: 'fa-file-alt' }
-      ],
-      'Research Intern': [
-        { label: 'Transcripts', icon: 'fa-scroll' },
-        { label: 'Cover letter', icon: 'fa-file-alt' }
-      ],
-      'Visiting Faculty': [
-        { label: 'Cover letter', icon: 'fa-file-alt' },
-        { label: 'Publication list', icon: 'fa-list' },
-        { label: 'Collaboration proposal', icon: 'fa-handshake' }
-      ]
-    };
+    // Suggested docs loaded from _data/apply_positions.yml via APPLY_DATA global
+    function getSuggestedDocs(posName) {
+      if (typeof APPLY_DATA === 'undefined' || !APPLY_DATA.positions || !APPLY_DATA.positions[posName]) return [];
+      return APPLY_DATA.positions[posName].suggested_docs || [];
+    }
 
-    var DOC_TYPES = [
-      'Cover Letter', 'Transcripts', 'Diploma / Degree Certificate',
-      'Representative Paper', 'Research Statement', 'Teaching Portfolio',
-      'Publication List', 'Collaboration Proposal', 'Writing Sample',
-      'Letter of Recommendation', 'Other'
-    ];
+    // Doc types loaded from _data/apply_doc_types.yml via APPLY_DATA global
+    var DOC_TYPES = (typeof APPLY_DATA !== 'undefined' && APPLY_DATA.doc_types) ? APPLY_DATA.doc_types : ['Other'];
 
     var extraCount = 0;
     function addExtraUpload(label) {
@@ -506,13 +479,13 @@
     // Render suggested doc chips based on position
     function updateExtraSuggestions() {
       var pos = getPos();
-      var docs = EXTRA_DOCS[pos] || [];
+      var docs = getSuggestedDocs(pos);
       var $suggest = $('#extrasSuggest').empty();
       if (!docs.length) return;
-      docs.forEach(function (d) {
-        var $chip = $('<button type="button" class="apply-extra-chip"><i class="fas ' + d.icon + '"></i> ' + d.label + '</button>');
+      docs.forEach(function (label) {
+        var $chip = $('<button type="button" class="apply-extra-chip"><i class="fas fa-file-alt"></i> ' + $('<span>').text(label).html() + '</button>');
         $chip.on('click', function () {
-          addExtraUpload(d.label);
+          addExtraUpload(label);
           $(this).fadeOut(200, function () { $(this).remove(); });
         });
         $suggest.append($chip);
@@ -616,23 +589,8 @@
   // =========================================================================
   // Skills chips
   // =========================================================================
-  // All known skills for autocomplete
-  var SKILL_DB = [
-    // Languages
-    'Python','R','Julia','MATLAB','C','C++','C#','Java','JavaScript','TypeScript','Go','Rust','Scala','Kotlin','Swift','SQL','Bash/Shell',
-    // ML/AI
-    'PyTorch','TensorFlow','JAX','scikit-learn','Keras','XGBoost','LightGBM','Hugging Face Transformers','LangChain','LlamaIndex','OpenCV',
-    // AI Tools
-    'Claude / Claude Code','ChatGPT / OpenAI API','GitHub Copilot','Cursor','Gemini','Perplexity',
-    // Platforms
-    'Weights & Biases','MLflow','DVC','Kubeflow','Ray','Spark','Databricks','SageMaker',
-    // Methods
-    'Optimization','Reinforcement Learning','Simulation / Monte Carlo','Bayesian Methods','Deep Learning','Computer Vision','NLP','Robotics','Control Theory','Signal Processing','Operations Research',
-    // Tools
-    'Git / GitHub','Docker','Kubernetes','Linux','LaTeX','Jupyter','VS Code','Cloud (AWS)','Cloud (GCP)','Cloud (Azure)','GAMS','AMPL','Gurobi','CPLEX',
-    // Domains
-    'Autonomous Vehicles','Supply Chain','Energy Systems','Geospatial / GIS','IoT','Cybersecurity'
-  ];
+  // Skills loaded from _data/apply_skills.yml via APPLY_DATA global
+  var SKILL_DB = (typeof APPLY_DATA !== 'undefined' && APPLY_DATA.skills) ? APPLY_DATA.skills : [];
 
   var STAR_LABELS = ['', 'Just started (<1 yr)', 'Basic usage', 'Comfortable, use regularly', 'Strong, can teach others', 'Expert, large-scale without AI assist'];
 

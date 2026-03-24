@@ -176,46 +176,16 @@ js:
       </div>
       <div class="apply-section__body">
         <div class="apply-role-grid">
+          {% for pos in site.data.apply_positions %}
           <label class="apply-role-card">
-            <input type="radio" name="position_type" value="Postdoctoral Researcher" required>
+            <input type="radio" name="position_type" value="{{ pos.name }}" {% if forloop.first %}required{% endif %}>
             <span class="apply-role-card__inner">
-              <span class="apply-role-card__icon"><i class="fas fa-flask"></i></span>
-              <span class="apply-role-card__label">Postdoc</span>
-              <span class="apply-role-card__sub">Independent research</span>
+              <span class="apply-role-card__icon"><i class="fas {{ pos.icon }}"></i></span>
+              <span class="apply-role-card__label">{{ pos.label }}</span>
+              <span class="apply-role-card__sub">{{ pos.subtitle }}</span>
             </span>
           </label>
-          <label class="apply-role-card">
-            <input type="radio" name="position_type" value="PhD Student">
-            <span class="apply-role-card__inner">
-              <span class="apply-role-card__icon"><i class="fas fa-graduation-cap"></i></span>
-              <span class="apply-role-card__label">PhD Student</span>
-              <span class="apply-role-card__sub">Deep exploration</span>
-            </span>
-          </label>
-          <label class="apply-role-card">
-            <input type="radio" name="position_type" value="Master's Student">
-            <span class="apply-role-card__inner">
-              <span class="apply-role-card__icon"><i class="fas fa-book-open"></i></span>
-              <span class="apply-role-card__label">Master's</span>
-              <span class="apply-role-card__sub">Foundation &amp; growth</span>
-            </span>
-          </label>
-          <label class="apply-role-card">
-            <input type="radio" name="position_type" value="Research Intern">
-            <span class="apply-role-card__inner">
-              <span class="apply-role-card__icon"><i class="fas fa-laptop-code"></i></span>
-              <span class="apply-role-card__label">Intern</span>
-              <span class="apply-role-card__sub">Hands-on experience</span>
-            </span>
-          </label>
-          <label class="apply-role-card">
-            <input type="radio" name="position_type" value="Visiting Faculty">
-            <span class="apply-role-card__inner">
-              <span class="apply-role-card__icon"><i class="fas fa-chalkboard-teacher"></i></span>
-              <span class="apply-role-card__label">Faculty Visit</span>
-              <span class="apply-role-card__sub">Collaboration &amp; exchange</span>
-            </span>
-          </label>
+          {% endfor %}
         </div>
 
         <!-- Pre-selection prompt -->
@@ -483,16 +453,9 @@ js:
           <label class="apply-label">Research areas of interest <span class="req">*</span></label>
           <p class="apply-sublabel">Select up to 3 areas that genuinely interest you.</p>
           <div class="apply-pill-grid" id="researchAreaPills">
-            <label class="apply-pill"><input type="checkbox" name="research_areas" value="AI Safety & Verification"><span>AI Safety &amp; Verification</span></label>
-            <label class="apply-pill"><input type="checkbox" name="research_areas" value="Autonomous Vehicles & Systems"><span>Autonomous Vehicles &amp; Systems</span></label>
-            <label class="apply-pill"><input type="checkbox" name="research_areas" value="Machine Learning / Deep Learning"><span>ML / Deep Learning</span></label>
-            <label class="apply-pill"><input type="checkbox" name="research_areas" value="Optimization & Decision Making"><span>Optimization &amp; Decision Making</span></label>
-            <label class="apply-pill"><input type="checkbox" name="research_areas" value="Supply Chain & Logistics"><span>Supply Chain &amp; Logistics</span></label>
-            <label class="apply-pill"><input type="checkbox" name="research_areas" value="Critical Minerals & Energy Transition"><span>Critical Minerals &amp; Energy</span></label>
-            <label class="apply-pill"><input type="checkbox" name="research_areas" value="Natural Language Processing"><span>NLP</span></label>
-            <label class="apply-pill"><input type="checkbox" name="research_areas" value="Computer Vision"><span>Computer Vision</span></label>
-            <label class="apply-pill"><input type="checkbox" name="research_areas" value="Simulation & Rare-Event Analysis"><span>Simulation &amp; Rare Events</span></label>
-            <label class="apply-pill"><input type="checkbox" name="research_areas" value="Other"><span>Other</span></label>
+            {% for area in site.data.apply_research_areas %}
+            <label class="apply-pill"><input type="checkbox" name="research_areas" value="{{ area }}"><span>{{ area }}</span></label>
+            {% endfor %}
           </div>
           <div class="apply-meta" id="areaCount" style="text-align:left;margin-top:4px"></div>
         </div>
@@ -655,3 +618,12 @@ js:
 
   </form>
 </div>
+
+<!-- Inject data from _data/*.yml into JS globals for apply.js -->
+<script>
+var APPLY_DATA = {
+  skills: [{% for cat in site.data.apply_skills %}{% for skill in cat[1] %}"{{ skill }}"{% unless forloop.last %},{% endunless %}{% endfor %}{% unless forloop.last %},{% endunless %}{% endfor %}],
+  doc_types: [{% for dt in site.data.apply_doc_types %}"{{ dt }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+  positions: { {% for pos in site.data.apply_positions %}"{{ pos.name }}": { suggested_docs: [{% for doc in pos.suggested_docs %}"{{ doc }}"{% unless forloop.last %},{% endunless %}{% endfor %}] }{% unless forloop.last %},{% endunless %}{% endfor %} }
+};
+</script>

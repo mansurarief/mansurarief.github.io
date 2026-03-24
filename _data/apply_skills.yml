@@ -1,0 +1,89 @@
+# Technical skills for autocomplete in the application form
+# Add/remove skills here — they'll appear as autocomplete suggestions
+
+languages:
+  - Python
+  - R
+  - Julia
+  - MATLAB
+  - C
+  - C++
+  - "C#"
+  - Java
+  - JavaScript
+  - TypeScript
+  - Go
+  - Rust
+  - Scala
+  - Kotlin
+  - Swift
+  - SQL
+  - Bash/Shell
+
+ml_ai_frameworks:
+  - PyTorch
+  - TensorFlow
+  - JAX
+  - scikit-learn
+  - Keras
+  - XGBoost
+  - LightGBM
+  - Hugging Face Transformers
+  - LangChain
+  - LlamaIndex
+  - OpenCV
+
+ai_tools:
+  - Claude / Claude Code
+  - ChatGPT / OpenAI API
+  - GitHub Copilot
+  - Cursor
+  - Gemini
+  - Perplexity
+
+platforms:
+  - Weights & Biases
+  - MLflow
+  - DVC
+  - Kubeflow
+  - Ray
+  - Spark
+  - Databricks
+  - SageMaker
+
+methods:
+  - Optimization
+  - Reinforcement Learning
+  - Simulation / Monte Carlo
+  - Bayesian Methods
+  - Deep Learning
+  - Computer Vision
+  - NLP
+  - Robotics
+  - Control Theory
+  - Signal Processing
+  - Operations Research
+
+devops_tools:
+  - Git / GitHub
+  - Docker
+  - Kubernetes
+  - Linux
+  - LaTeX
+  - Jupyter
+  - VS Code
+  - Cloud (AWS)
+  - Cloud (GCP)
+  - Cloud (Azure)
+  - GAMS
+  - AMPL
+  - Gurobi
+  - CPLEX
+
+domains:
+  - Autonomous Vehicles
+  - Supply Chain
+  - Energy Systems
+  - Geospatial / GIS
+  - IoT
+  - Cybersecurity

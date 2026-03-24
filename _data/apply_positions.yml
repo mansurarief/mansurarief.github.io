@@ -1,0 +1,53 @@
+# Position types and their suggested documents
+# The key matches the radio button value in the form
+
+- name: Postdoctoral Researcher
+  short: postdoc
+  icon: fa-flask
+  label: Postdoc
+  subtitle: Independent research
+  suggested_docs:
+    - Cover Letter
+    - Publication List
+    - Research Statement
+    - Teaching Portfolio
+
+- name: PhD Student
+  short: phd
+  icon: fa-graduation-cap
+  label: PhD Student
+  subtitle: Deep exploration
+  suggested_docs:
+    - Cover Letter
+    - Transcripts
+    - Diploma / Degree Certificate
+    - Writing Sample
+
+- name: "Master's Student"
+  short: masters
+  icon: fa-book-open
+  label: "Master's"
+  subtitle: Foundation & growth
+  suggested_docs:
+    - Transcripts
+    - Diploma / Degree Certificate
+    - Cover Letter
+
+- name: Research Intern
+  short: intern
+  icon: fa-laptop-code
+  label: Intern
+  subtitle: Hands-on experience
+  suggested_docs:
+    - Transcripts
+    - Cover Letter
+
+- name: Visiting Faculty
+  short: visit
+  icon: fa-chalkboard-teacher
+  label: Faculty Visit
+  subtitle: Collaboration & exchange
+  suggested_docs:
+    - Cover Letter
+    - Publication List
+    - Collaboration Proposal
