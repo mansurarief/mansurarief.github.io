@@ -5,7 +5,7 @@
   short: postdoc
   icon: fa-flask
   label: Postdoc
-  subtitle: Independent research
+
   suggested_docs:
     - Cover Letter
     - Publication List
@@ -16,7 +16,7 @@
   short: phd
   icon: fa-graduation-cap
   label: PhD Student
-  subtitle: Deep exploration
+
   suggested_docs:
     - Cover Letter
     - Transcripts
@@ -27,7 +27,7 @@
   short: masters
   icon: fa-book-open
   label: "Master's"
-  subtitle: Foundation & growth
+
   suggested_docs:
     - Transcripts
     - Diploma / Degree Certificate
@@ -37,7 +37,7 @@
   short: intern
   icon: fa-laptop-code
   label: Intern
-  subtitle: Hands-on experience
+
   suggested_docs:
     - Transcripts
     - Cover Letter
@@ -46,7 +46,7 @@
   short: visit
   icon: fa-chalkboard-teacher
   label: Faculty Visit
-  subtitle: Collaboration & exchange
+
   suggested_docs:
     - Cover Letter
     - Publication List
