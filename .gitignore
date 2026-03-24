@@ -21,3 +21,7 @@ CLAUDE.md
 # Backend secrets
 apply-backend/.env
 apply-backend/credentials.json
+
+# Python cache
+__pycache__/
+*.pyc
