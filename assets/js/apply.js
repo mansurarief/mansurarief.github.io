@@ -494,8 +494,8 @@
 
     $('#addExtraBtn').on('click', function () { addExtraUpload(); });
 
-    // Start over
-    $('#startOverBtn').on('click', function () {
+    // Start over (both bottom button and sidebar link)
+    $('#startOverBtn, #sideStartOver').on('click', function () {
       if (!confirm('Are you sure you want to start over? All entered data will be cleared.')) return;
       try { localStorage.removeItem(DRAFT_KEY); } catch (_) {}
       window.location.reload();

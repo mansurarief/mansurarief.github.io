@@ -736,9 +736,13 @@ select.apply-input {
   cursor: pointer;
   padding: 8px 16px;
   transition: color var(--transition);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: transparent;
 }
 .apply-startover__btn:hover {
-  color: var(--accent);
+  color: var(--text-secondary);
+  text-decoration-color: var(--text-tertiary);
 }
 
 /* --- Success --- */
@@ -1137,6 +1141,24 @@ select.apply-input {
   background: var(--accent);
   border-radius: 2px;
   transition: width 0.5s ease;
+}
+
+/* Sidebar reset/start-over */
+.apply-sidenav__reset {
+  display: block;
+  margin-top: 12px;
+  font-family: var(--font);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition);
+}
+.apply-sidenav__reset:hover {
+  color: var(--text-secondary);
 }
 
 /* --- Right sidebar tips --- */
