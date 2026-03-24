@@ -820,14 +820,15 @@
       e.preventDefault();
       if (!validate()) return;
 
-      // Cloudflare Turnstile check — uncomment when configured
-      // var turnstileResponse = $('[name="cf-turnstile-response"]').val();
-      // if (!turnstileResponse) {
-      //   var $err = $form.find('.apply-submit-error');
-      //   if (!$err.length) { $err = $('<div class="apply-submit-error"></div>'); $form.prepend($err); }
-      //   $err.text('Please complete the verification check.').show();
-      //   return;
-      // }
+      // Cloudflare Turnstile check
+      var turnstileResponse = $('[name="cf-turnstile-response"]').val();
+      if (!turnstileResponse) {
+        var $err = $form.find('.apply-submit-error');
+        if (!$err.length) { $err = $('<div class="apply-submit-error"></div>'); $form.prepend($err); }
+        $err.text('Please complete the verification check above.').show();
+        scrollTo($('.apply-turnstile'));
+        return;
+      }
 
       var cfg = getCfg();
 
