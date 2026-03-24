@@ -1300,8 +1300,8 @@
       $links.append('<a href="https://ise.kfupm.edu.sa/" target="_blank">ISE Department &rarr;</a>');
     }
     // Research centers for all
-    $links.append('<a href="https://irc-sml.kfupm.edu.sa" target="_blank">IRC Smart Mobility &amp; Logistics &rarr;</a>');
-    $links.append('<a href="https://sdaia-jrcai.kfupm.edu.sa" target="_blank">JRC-AI (KFUPM-SDAIA) &rarr;</a>');
+    $links.append('<a href="https://ri.kfupm.edu.sa/irc-sml" target="_blank">IRC Smart Mobility &amp; Logistics &rarr;</a>');
+    $links.append('<a href="https://ri.kfupm.edu.sa/jrcai" target="_blank">JRC-AI (KFUPM-SDAIA) &rarr;</a>');
 
     // Tip 6 links — logistics, also position-aware
     var $logLinks = $('#tipLinksLogistics');
