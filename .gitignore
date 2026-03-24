@@ -17,3 +17,7 @@ Gemfile.lock
 beautiful-jekyll-theme-*.gem
 
 CLAUDE.md
+
+# Backend secrets
+apply-backend/.env
+apply-backend/credentials.json

@@ -22,6 +22,7 @@ navbar-links:
   Teaching: "teaching"
   Calendar: "calendar"
   CV: "/assets/pdf/vita-mansur-m-arief.pdf"
+  Apply: "apply"
   Contact: "contact"
 #  External Links:
 #    - SISL: "https://sisl.stanford.edu"
@@ -229,6 +230,8 @@ exclude:
   - screenshot.png
   - docs/
   - assets/notebooks/
+  - apply-backend/
+  - SETUP-APPLY.md
 
 plugins:
   - jekyll-paginate
