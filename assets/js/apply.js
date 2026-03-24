@@ -470,17 +470,19 @@
       });
 
       var $row = $(
-        '<div class="apply-extra-row" style="margin-top:12px">' +
+        '<div class="apply-extra-row">' +
           '<div class="apply-extra-row__type">' +
             '<select class="apply-input apply-extra-type" name="extra_type_' + extraCount + '">' + opts + '</select>' +
           '</div>' +
-          '<div class="apply-upload" data-for="' + id + '">' +
-            '<input type="file" id="' + id + '" name="' + id + '" class="apply-upload__input" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg">' +
-            '<div class="apply-upload__zone">' +
-              '<div class="apply-upload__icon"><i class="fas fa-file-upload"></i></div>' +
-              '<div class="apply-upload__text"><strong>' + (title || 'Choose file') + '</strong><span>PDF, DOC, or image &middot; Max 10 MB</span></div>' +
+          '<div class="apply-extra-row__file">' +
+            '<div class="apply-upload" data-for="' + id + '">' +
+              '<input type="file" id="' + id + '" name="' + id + '" class="apply-upload__input" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg">' +
+              '<div class="apply-upload__zone">' +
+                '<div class="apply-upload__icon"><i class="fas fa-file-upload"></i></div>' +
+                '<div class="apply-upload__text"><strong>' + (title || 'Choose file') + '</strong><span>PDF, DOC, or image &middot; Max 10 MB</span></div>' +
+              '</div>' +
+              '<div class="apply-upload__status"></div>' +
             '</div>' +
-            '<div class="apply-upload__status"></div>' +
           '</div>' +
           '<button type="button" class="apply-extra-remove" title="Remove">&times;</button>' +
         '</div>'
@@ -497,7 +499,7 @@
       });
 
       $('#extrasWrap').append($row);
-      initUpload($row.find('.apply-upload'));
+      initUpload($row.find('.apply-upload').first());
       if (extraCount >= 6) $('#addExtraBtn').hide();
     }
 
@@ -557,8 +559,18 @@
       else { $('#fellowshipField').slideUp(200); $('#fellowship_name').val(''); }
     });
 
-    // Research area "Other"
+    // Research areas — max 3, show Other field
     $(document).on('change', 'input[name="research_areas"]', function () {
+      var checked = $('input[name="research_areas"]:checked').length;
+      // Enforce max 3
+      if (checked >= 3) {
+        $('input[name="research_areas"]:not(:checked)').prop('disabled', true).closest('.apply-pill').addClass('apply-pill--disabled');
+      } else {
+        $('input[name="research_areas"]').prop('disabled', false).closest('.apply-pill').removeClass('apply-pill--disabled');
+      }
+      // Counter
+      $('#areaCount').text(checked + ' / 3 selected');
+      // Other field
       if ($('input[name="research_areas"][value="Other"]').is(':checked')) $('#otherAreaField').slideDown(200);
       else { $('#otherAreaField').slideUp(200); $('#research_area_other').val(''); }
     });
@@ -604,25 +616,129 @@
   // =========================================================================
   // Skills chips
   // =========================================================================
+  // All known skills for autocomplete
+  var SKILL_DB = [
+    // Languages
+    'Python','R','Julia','MATLAB','C','C++','C#','Java','JavaScript','TypeScript','Go','Rust','Scala','Kotlin','Swift','SQL','Bash/Shell',
+    // ML/AI
+    'PyTorch','TensorFlow','JAX','scikit-learn','Keras','XGBoost','LightGBM','Hugging Face Transformers','LangChain','LlamaIndex','OpenCV',
+    // AI Tools
+    'Claude / Claude Code','ChatGPT / OpenAI API','GitHub Copilot','Cursor','Gemini','Perplexity',
+    // Platforms
+    'Weights & Biases','MLflow','DVC','Kubeflow','Ray','Spark','Databricks','SageMaker',
+    // Methods
+    'Optimization','Reinforcement Learning','Simulation / Monte Carlo','Bayesian Methods','Deep Learning','Computer Vision','NLP','Robotics','Control Theory','Signal Processing','Operations Research',
+    // Tools
+    'Git / GitHub','Docker','Kubernetes','Linux','LaTeX','Jupyter','VS Code','Cloud (AWS)','Cloud (GCP)','Cloud (Azure)','GAMS','AMPL','Gurobi','CPLEX',
+    // Domains
+    'Autonomous Vehicles','Supply Chain','Energy Systems','Geospatial / GIS','IoT','Cybersecurity'
+  ];
+
+  var STAR_LABELS = ['', 'Just started (<1 yr)', 'Basic usage', 'Comfortable, use regularly', 'Strong, can teach others', 'Expert, large-scale without AI assist'];
+
   function setupChips() {
-    var $input = $('#skills_input'), $hidden = $('#technical_skills'), $wrap = $('#chipsWrap');
+    var $input = $('#skills_input'), $hidden = $('#technical_skills'), $list = $('#skillList'), $ac = $('#skillAutocomplete');
     if (!$input.length) return;
-    function chips() { var c = []; $wrap.find('.apply-chip').each(function () { c.push($(this).data('v')); }); return c; }
-    function sync() { $hidden.val(chips().join(', ')); }
-    function add(t) {
-      t = $.trim(t); if (!t || chips().indexOf(t) !== -1) return;
-      $wrap.append($('<span class="apply-chip"></span>').data('v', t).text(t).append(' <button type="button" class="apply-chip__x">&times;</button>'));
+
+    function getSkills() {
+      var s = [];
+      $list.find('.apply-skill-row').each(function () {
+        var name = $(this).data('skill');
+        var stars = $(this).find('.apply-skill-row__star.filled').length;
+        s.push(name + ' (' + stars + '/5)');
+      });
+      return s;
+    }
+    function sync() { $hidden.val(getSkills().join(', ')); }
+    function hasSkill(name) { return $list.find('.apply-skill-row').filter(function () { return $(this).data('skill') === name; }).length > 0; }
+
+    function addSkill(name) {
+      name = $.trim(name); if (!name || hasSkill(name)) return;
+      var $row = $(
+        '<div class="apply-skill-row" data-skill="' + $('<span>').text(name).html() + '">' +
+          '<span class="apply-skill-row__name">' + $('<span>').text(name).html() + '</span>' +
+          '<span class="apply-skill-row__stars">' +
+            '<button type="button" class="apply-skill-row__star" data-n="1" title="' + STAR_LABELS[1] + '"><i class="fas fa-star"></i></button>' +
+            '<button type="button" class="apply-skill-row__star" data-n="2" title="' + STAR_LABELS[2] + '"><i class="fas fa-star"></i></button>' +
+            '<button type="button" class="apply-skill-row__star" data-n="3" title="' + STAR_LABELS[3] + '"><i class="fas fa-star"></i></button>' +
+            '<button type="button" class="apply-skill-row__star" data-n="4" title="' + STAR_LABELS[4] + '"><i class="fas fa-star"></i></button>' +
+            '<button type="button" class="apply-skill-row__star" data-n="5" title="' + STAR_LABELS[5] + '"><i class="fas fa-star"></i></button>' +
+          '</span>' +
+          '<button type="button" class="apply-skill-row__remove" title="Remove">&times;</button>' +
+        '</div>'
+      );
+      $list.append($row);
       sync();
     }
-    $wrap.on('click', '.apply-chip__x', function () { $(this).parent().remove(); sync(); });
-    // Click chipbox to focus input
-    $('#chipBox').on('click', function () { $input.focus(); });
-    $input.on('keydown', function (e) {
-      if (e.key === 'Enter' || e.key === ',') { e.preventDefault(); $(this).val().split(',').forEach(add); $(this).val(''); }
-      // Backspace on empty input removes last chip
-      if (e.key === 'Backspace' && !$(this).val()) { $wrap.find('.apply-chip').last().remove(); sync(); }
+
+    // Star click
+    $list.on('click', '.apply-skill-row__star', function () {
+      var n = parseInt($(this).data('n'));
+      var $stars = $(this).closest('.apply-skill-row__stars').find('.apply-skill-row__star');
+      $stars.each(function () {
+        $(this).toggleClass('filled', parseInt($(this).data('n')) <= n);
+      });
+      sync();
     });
-    $input.on('blur', function () { if ($.trim($(this).val())) { $(this).val().split(',').forEach(add); $(this).val(''); } });
+
+    // Remove
+    $list.on('click', '.apply-skill-row__remove', function () {
+      $(this).closest('.apply-skill-row').slideUp(150, function () { $(this).remove(); sync(); });
+    });
+
+    // Autocomplete
+    var acIdx = -1;
+    function showAC(query) {
+      query = query.toLowerCase();
+      var matches = SKILL_DB.filter(function (s) { return s.toLowerCase().indexOf(query) !== -1 && !hasSkill(s); }).slice(0, 8);
+      if (!matches.length) { $ac.removeClass('open').empty(); return; }
+      $ac.empty();
+      matches.forEach(function (s) {
+        $ac.append('<div class="apply-ac-item" data-skill="' + $('<span>').text(s).html() + '">' + $('<span>').text(s).html() + '</div>');
+      });
+      acIdx = -1;
+      $ac.addClass('open');
+    }
+
+    $input.on('input', function () {
+      var v = $.trim($(this).val());
+      if (v.length >= 1) showAC(v);
+      else $ac.removeClass('open').empty();
+    });
+
+    $input.on('keydown', function (e) {
+      var $items = $ac.find('.apply-ac-item');
+      if (e.key === 'ArrowDown') { e.preventDefault(); acIdx = Math.min(acIdx + 1, $items.length - 1); $items.removeClass('highlighted').eq(acIdx).addClass('highlighted'); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); acIdx = Math.max(acIdx - 1, 0); $items.removeClass('highlighted').eq(acIdx).addClass('highlighted'); }
+      else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (acIdx >= 0 && $items.eq(acIdx).length) {
+          addSkill($items.eq(acIdx).data('skill'));
+        } else if ($.trim($(this).val())) {
+          $(this).val().split(',').forEach(function (v) { addSkill(v); });
+        }
+        $(this).val('');
+        $ac.removeClass('open').empty();
+      }
+      else if (e.key === 'Escape') { $ac.removeClass('open').empty(); }
+    });
+
+    $ac.on('click', '.apply-ac-item', function () {
+      addSkill($(this).data('skill'));
+      $input.val('').focus();
+      $ac.removeClass('open').empty();
+    });
+
+    // Close autocomplete on outside click
+    $(document).on('click', function (e) {
+      if (!$(e.target).closest('.apply-autocomplete-wrap').length) $ac.removeClass('open');
+    });
+
+    $input.on('blur', function () {
+      setTimeout(function () { $ac.removeClass('open'); }, 200);
+      var v = $.trim($input.val());
+      if (v) { v.split(',').forEach(function (s) { addSkill(s); }); $input.val(''); }
+    });
   }
 
   // =========================================================================

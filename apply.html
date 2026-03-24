@@ -338,7 +338,7 @@ js:
             </select>
           </div>
         </div>
-        <div class="apply-field apply-field--cond" id="englishScoreField" style="display:none;">
+        <div class="apply-field apply-field--cond" id="englishScoreField" style="display:none;margin-top:16px;">
           <label class="apply-label" for="english_score">Score <span class="req">*</span></label>
           <input type="text" id="english_score" name="english_score" class="apply-input apply-input--sm" placeholder="e.g. 7.5 or 105">
         </div>
@@ -421,11 +421,6 @@ js:
           <button type="button" class="apply-refs-toggle" id="addExtraBtn" style="margin-top:12px">Add a document <span>&plus;</span></button>
         </div>
 
-        <div class="apply-quality-note" data-i18n="tip4_note">
-          <i class="fas fa-info-circle"></i>
-          <p>We review essays and CVs carefully. Please invest personal time to make this your best work. AI tools are fine, but if we find artifacts suggesting a lack of preparation, we may decline the application to save everyone's time.</p>
-        </div>
-
         <!-- Reflection -->
         <div class="apply-field" style="margin-top:32px">
           <label class="apply-label" id="reflectionLabel">Personal reflection <span class="req">*</span></label>
@@ -469,28 +464,39 @@ js:
       </div>
       <div class="apply-section__body">
         <div class="apply-field">
-          <label class="apply-label">Technical skills</label>
-          <p class="apply-sublabel" id="skillsSublabel">Type and press Enter or comma to add</p>
-          <div class="apply-chipbox" id="chipBox">
-            <div class="apply-chipbox__chips" id="chipsWrap"></div>
-            <input type="text" id="skills_input" class="apply-chipbox__input" placeholder="e.g. Python, PyTorch, optimization...">
+          <label class="apply-label">Technical skills &amp; tools</label>
+          <p class="apply-sublabel" id="skillsSublabel">Type a skill and press Enter. Then rate your proficiency with stars.</p>
+          <div class="apply-autocomplete-wrap">
+            <input type="text" id="skills_input" class="apply-input" placeholder="e.g. Python, PyTorch, Docker..." autocomplete="off">
+            <div class="apply-autocomplete-list" id="skillAutocomplete"></div>
           </div>
           <input type="hidden" id="technical_skills" name="technical_skills" value="">
+          <div class="apply-skill-list" id="skillList"></div>
+          <div class="apply-skill-legend">
+            <span><i class="fas fa-star"></i> = just started (&lt;1 yr)</span>
+            <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> = comfortable, use regularly</span>
+            <span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> = can contribute to large-scale projects without AI/autocomplete</span>
+          </div>
         </div>
 
         <div class="apply-field" style="margin-top:32px">
           <label class="apply-label">Research areas of interest <span class="req">*</span></label>
-          <div class="apply-pill-grid">
+          <p class="apply-sublabel">Select up to 3 areas that genuinely interest you.</p>
+          <div class="apply-pill-grid" id="researchAreaPills">
             <label class="apply-pill"><input type="checkbox" name="research_areas" value="AI Safety & Verification"><span>AI Safety &amp; Verification</span></label>
-            <label class="apply-pill"><input type="checkbox" name="research_areas" value="Autonomous Systems"><span>Autonomous Systems</span></label>
+            <label class="apply-pill"><input type="checkbox" name="research_areas" value="Autonomous Vehicles & Systems"><span>Autonomous Vehicles &amp; Systems</span></label>
             <label class="apply-pill"><input type="checkbox" name="research_areas" value="Machine Learning / Deep Learning"><span>ML / Deep Learning</span></label>
             <label class="apply-pill"><input type="checkbox" name="research_areas" value="Optimization & Decision Making"><span>Optimization &amp; Decision Making</span></label>
+            <label class="apply-pill"><input type="checkbox" name="research_areas" value="Supply Chain & Logistics"><span>Supply Chain &amp; Logistics</span></label>
+            <label class="apply-pill"><input type="checkbox" name="research_areas" value="Critical Minerals & Energy Transition"><span>Critical Minerals &amp; Energy</span></label>
             <label class="apply-pill"><input type="checkbox" name="research_areas" value="Natural Language Processing"><span>NLP</span></label>
             <label class="apply-pill"><input type="checkbox" name="research_areas" value="Computer Vision"><span>Computer Vision</span></label>
+            <label class="apply-pill"><input type="checkbox" name="research_areas" value="Simulation & Rare-Event Analysis"><span>Simulation &amp; Rare Events</span></label>
             <label class="apply-pill"><input type="checkbox" name="research_areas" value="Other"><span>Other</span></label>
           </div>
+          <div class="apply-meta" id="areaCount" style="text-align:left;margin-top:4px"></div>
         </div>
-        <div class="apply-field apply-field--cond" id="otherAreaField" style="display:none;">
+        <div class="apply-field apply-field--cond" id="otherAreaField" style="display:none;margin-top:16px;">
           <input type="text" id="research_area_other" name="research_area_other" class="apply-input" placeholder="Specify your research area">
         </div>
 
@@ -588,7 +594,7 @@ js:
             <label class="apply-pill apply-pill--radio" id="fellowshipPill"><input type="radio" name="funding_status" value="Have external fellowship"><span>External fellowship</span></label>
           </div>
         </div>
-        <div class="apply-field apply-field--cond" id="fellowshipField" style="display:none;">
+        <div class="apply-field apply-field--cond" id="fellowshipField" style="display:none;margin-top:16px;">
           <input type="text" id="fellowship_name" name="fellowship_name" class="apply-input" placeholder="Fellowship name">
         </div>
 
