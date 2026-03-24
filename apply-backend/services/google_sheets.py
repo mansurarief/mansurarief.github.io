@@ -1,5 +1,6 @@
 """Google Sheets integration for application data storage."""
 
+import base64
 import json
 import logging
 from datetime import datetime
@@ -64,7 +65,11 @@ SHEET_RANGE = "Sheet1"
 
 
 def _get_credentials() -> Credentials:
-    info = json.loads(settings.GOOGLE_CREDENTIALS_JSON)
+    if settings.GOOGLE_CREDENTIALS_B64:
+        raw = base64.b64decode(settings.GOOGLE_CREDENTIALS_B64)
+        info = json.loads(raw)
+    else:
+        info = json.loads(settings.GOOGLE_CREDENTIALS_JSON)
     return Credentials.from_service_account_info(info, scopes=SCOPES)
 
 

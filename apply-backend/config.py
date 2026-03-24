@@ -6,12 +6,14 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     """Application settings populated from environment variables or .env file."""
 
-    GOOGLE_CREDENTIALS_JSON: str
-    GOOGLE_SHEET_ID: str
-    GOOGLE_DRIVE_FOLDER_ID: str
-    RESEND_API_KEY: str
-    ADMIN_API_KEY: str
-    EMAIL_FROM: str = "V&V Lab <v-and-v-lab@kfupm.io>"
+    GOOGLE_CREDENTIALS_JSON: str = ""
+    GOOGLE_CREDENTIALS_B64: str = ""
+    GOOGLE_SHEET_ID: str = ""
+    GOOGLE_DRIVE_FOLDER_ID: str = ""
+    RESEND_API_KEY: str = ""
+    ADMIN_API_KEY: str = ""
+    TURNSTILE_SECRET_KEY: str = ""
+    EMAIL_FROM: str = "AI V&V Lab <ai-v-and-v-lab@kfupm.io>"
     CORS_ORIGINS: str = "https://mansurarief.github.io"
 
     @property

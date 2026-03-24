@@ -1,42 +1,38 @@
-"""Google Drive integration for file uploads."""
+"""File storage via Google Cloud Storage."""
 
-import io
+import base64
 import json
 import logging
 
+from google.cloud import storage
 from google.oauth2.service_account import Credentials
-from googleapiclient.discovery import build
-from googleapiclient.http import MediaIoBaseUpload
 
 from config import settings
 
 logger = logging.getLogger(__name__)
 
-SCOPES = ["https://www.googleapis.com/auth/drive.file"]
+BUCKET_NAME = "vvlab-applications"
 
 
-def get_credentials() -> Credentials:
-    """Build Google service-account credentials from the JSON env var."""
-    info = json.loads(settings.GOOGLE_CREDENTIALS_JSON)
-    return Credentials.from_service_account_info(info, scopes=SCOPES)
+def _get_credentials() -> Credentials:
+    """Build Google service-account credentials from JSON or base64 env var."""
+    if settings.GOOGLE_CREDENTIALS_B64:
+        raw = base64.b64decode(settings.GOOGLE_CREDENTIALS_B64)
+        info = json.loads(raw)
+    else:
+        info = json.loads(settings.GOOGLE_CREDENTIALS_JSON)
+    return Credentials.from_service_account_info(info)
 
 
-def _drive_service():
-    return build("drive", "v3", credentials=get_credentials(), cache_discovery=False)
+def _storage_client():
+    return storage.Client(credentials=_get_credentials(), project="v-and-v-lab")
 
 
 def create_folder(name: str, parent_folder_id: str) -> str:
-    """Create a subfolder inside *parent_folder_id* and return its ID."""
-    service = _drive_service()
-    metadata = {
-        "name": name,
-        "mimeType": "application/vnd.google-apps.folder",
-        "parents": [parent_folder_id],
-    }
-    folder = service.files().create(body=metadata, fields="id").execute()
-    folder_id = folder["id"]
-    logger.info("Created Drive folder '%s' (id=%s)", name, folder_id)
-    return folder_id
+    """For GCS, 'folders' are just path prefixes. Return the path."""
+    if parent_folder_id:
+        return f"{parent_folder_id}/{name}"
+    return name
 
 
 def upload_file(
@@ -45,24 +41,17 @@ def upload_file(
     mime_type: str,
     folder_id: str,
 ) -> str:
-    """Upload a file to Google Drive and return a shareable web link."""
-    service = _drive_service()
+    """Upload a file to GCS and return a public URL."""
+    client = _storage_client()
+    bucket = client.bucket(BUCKET_NAME)
 
-    metadata = {"name": filename, "parents": [folder_id]}
-    media = MediaIoBaseUpload(io.BytesIO(file_bytes), mimetype=mime_type, resumable=True)
+    blob_path = f"{folder_id}/{filename}" if folder_id else filename
+    blob = bucket.blob(blob_path)
+    blob.upload_from_string(file_bytes, content_type=mime_type)
 
-    uploaded = (
-        service.files()
-        .create(body=metadata, media_body=media, fields="id,webViewLink")
-        .execute()
-    )
+    # Make publicly readable
+    blob.make_public()
+    link = blob.public_url
 
-    # Make the file readable by anyone with the link
-    service.permissions().create(
-        fileId=uploaded["id"],
-        body={"type": "anyone", "role": "reader"},
-    ).execute()
-
-    link = uploaded.get("webViewLink", f"https://drive.google.com/file/d/{uploaded['id']}/view")
     logger.info("Uploaded '%s' -> %s", filename, link)
     return link

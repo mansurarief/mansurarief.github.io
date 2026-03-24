@@ -161,19 +161,16 @@ async def apply(
                 pitch_deck, MAX_PITCH_DECK_SIZE, ALLOWED_PITCH_TYPES, "Pitch Deck"
             )
 
-        # --- Create Drive folder ---
+        # --- Create storage folder path ---
         date_str = datetime.utcnow().strftime("%Y%m%d")
         safe_name = full_name.strip().replace(" ", "_")
         folder_name = f"{safe_name}_{date_str}"
 
-        # Create Applications/{position_type} folder (or reuse existing)
-        position_folder_id = create_folder(
-            f"Applications/{position_type}", settings.GOOGLE_DRIVE_FOLDER_ID
-        )
-        applicant_folder_id = create_folder(folder_name, position_folder_id)
+        position_folder = create_folder(position_type, "Applications")
+        applicant_folder = create_folder(folder_name, position_folder)
 
         # --- Upload files ---
-        cv_link = upload_file(cv_bytes, cv.filename or "cv.pdf", cv.content_type, applicant_folder_id)
+        cv_link = upload_file(cv_bytes, cv.filename or "cv.pdf", cv.content_type, applicant_folder)
 
         reflection_link = ""
         if reflection_bytes is not None:
@@ -181,7 +178,7 @@ async def apply(
                 reflection_bytes,
                 reflection_pdf.filename or "reflection.pdf",
                 reflection_pdf.content_type,
-                applicant_folder_id,
+                applicant_folder,
             )
 
         pitch_link = ""
@@ -190,7 +187,7 @@ async def apply(
                 pitch_bytes,
                 pitch_deck.filename or "pitch_deck.pdf",
                 pitch_deck.content_type,
-                applicant_folder_id,
+                applicant_folder,
             )
 
         # --- Upload extra documents (up to 6) ---
@@ -202,7 +199,7 @@ async def apply(
                 ef_data = await ef.read()
                 if len(ef_data) <= 10 * 1024 * 1024:  # 10 MB limit
                     label = extra_types[i] or f"extra_{i+1}"
-                    link = upload_file(ef_data, ef.filename, ef.content_type, applicant_folder_id)
+                    link = upload_file(ef_data, ef.filename, ef.content_type, applicant_folder)
                     extra_links.append(f"{label}: {link}")
 
         # --- Build data dict and append to sheet ---
