@@ -276,7 +276,7 @@
       $('#stepsTracker').fadeIn(300);
       $('#sideNav').fadeIn(400);
       $('#sideTips').fadeIn(400);
-      $('.apply-section--gated').each(function (i) {
+      $('.apply-section--gated:not(:visible)').each(function (i) {
         var $s = $(this);
         setTimeout(function () {
           $s.show().addClass('apply-section--reveal');
@@ -361,7 +361,13 @@
       });
     }
 
-    // 9. Fellowship pill visibility for intern
+    // 9. Update sidebar links per position
+    updatePositionLinks(cfg);
+
+    // 10. Update extra document suggestions
+    updateExtraSuggestions();
+
+    // 10. Fellowship pill visibility for intern
     if (cfg.short === 'intern') {
       $('#fellowshipPill').hide();
     } else {
@@ -376,15 +382,148 @@
   // Conditionals (non-position)
   // =========================================================================
   function setupConditionals() {
-    // Position selection — show quick intro then apply config
+    // Name entry — show welcome message and reveal role section
+    var roleRevealed = false;
+    $('#short_name').on('input', debounce(function () {
+      var name = $.trim($(this).val());
+      if (name && !roleRevealed) {
+        roleRevealed = true;
+        var greeting = getGreeting();
+        $('#welcomeMsgText').text('Nice to meet you, ' + greeting + '. Which role are you interested in?');
+        $('#welcomeMsg').fadeIn(300);
+        // Reveal role section
+        $('#sec-1').show().addClass('apply-section--reveal');
+      }
+      if (name) {
+        var greeting = getGreeting();
+        $('#welcomeMsgText').text('Nice to meet you, ' + greeting + '. Which role are you interested in?');
+        // Update position welcome if already selected
+        updateWelcomeMessage();
+      }
+      if (!name) {
+        $('#welcomeMsg').fadeOut(200);
+      }
+    }, 300));
+
+    $('#designation').on('change', function () {
+      var name = $.trim($('#short_name').val());
+      if (name) {
+        var greeting = getGreeting();
+        $('#welcomeMsgText').text('Nice to meet you, ' + greeting + '. Which role are you interested in?');
+        updateWelcomeMessage();
+      }
+    });
+
+    // Position selection — apply config and reveal rest of form
     $('input[name="position_type"]').on('change', function () {
-      $('#quickIntro').slideDown(250);
       applyPositionConfig($(this).val());
     });
 
-    // Update welcome when name/designation changes
-    $('#short_name, #designation').on('input change', function () {
-      updateWelcomeMessage();
+    // Extra documents — position-aware suggestions
+    var EXTRA_DOCS = {
+      'Postdoctoral Researcher': [
+        { label: 'Cover letter', icon: 'fa-file-alt' },
+        { label: 'Publication list', icon: 'fa-list' },
+        { label: 'Research statement', icon: 'fa-file-contract' },
+        { label: 'Teaching portfolio', icon: 'fa-chalkboard' }
+      ],
+      'PhD Student': [
+        { label: 'Cover letter', icon: 'fa-file-alt' },
+        { label: 'Transcripts', icon: 'fa-scroll' },
+        { label: 'Degree certificate', icon: 'fa-certificate' },
+        { label: 'Writing sample / publication', icon: 'fa-pen-fancy' }
+      ],
+      "Master's Student": [
+        { label: 'Transcripts', icon: 'fa-scroll' },
+        { label: 'Degree certificate', icon: 'fa-certificate' },
+        { label: 'Cover letter', icon: 'fa-file-alt' }
+      ],
+      'Research Intern': [
+        { label: 'Transcripts', icon: 'fa-scroll' },
+        { label: 'Cover letter', icon: 'fa-file-alt' }
+      ],
+      'Visiting Faculty': [
+        { label: 'Cover letter', icon: 'fa-file-alt' },
+        { label: 'Publication list', icon: 'fa-list' },
+        { label: 'Collaboration proposal', icon: 'fa-handshake' }
+      ]
+    };
+
+    var DOC_TYPES = [
+      'Cover Letter', 'Transcripts', 'Diploma / Degree Certificate',
+      'Representative Paper', 'Research Statement', 'Teaching Portfolio',
+      'Publication List', 'Collaboration Proposal', 'Writing Sample',
+      'Letter of Recommendation', 'Other'
+    ];
+
+    var extraCount = 0;
+    function addExtraUpload(label) {
+      if (extraCount >= 6) return;
+      extraCount++;
+      var id = 'extra_' + extraCount;
+      var title = label || '';
+
+      // Build type selector options
+      var opts = '<option value="" disabled' + (title ? '' : ' selected') + '>Document type</option>';
+      DOC_TYPES.forEach(function (dt) {
+        opts += '<option value="' + dt + '"' + (dt === title ? ' selected' : '') + '>' + dt + '</option>';
+      });
+
+      var $row = $(
+        '<div class="apply-extra-row" style="margin-top:12px">' +
+          '<div class="apply-extra-row__type">' +
+            '<select class="apply-input apply-extra-type" name="extra_type_' + extraCount + '">' + opts + '</select>' +
+          '</div>' +
+          '<div class="apply-upload" data-for="' + id + '">' +
+            '<input type="file" id="' + id + '" name="' + id + '" class="apply-upload__input" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg">' +
+            '<div class="apply-upload__zone">' +
+              '<div class="apply-upload__icon"><i class="fas fa-file-upload"></i></div>' +
+              '<div class="apply-upload__text"><strong>' + (title || 'Choose file') + '</strong><span>PDF, DOC, or image &middot; Max 10 MB</span></div>' +
+            '</div>' +
+            '<div class="apply-upload__status"></div>' +
+          '</div>' +
+          '<button type="button" class="apply-extra-remove" title="Remove">&times;</button>' +
+        '</div>'
+      );
+
+      // Update upload zone label when type changes
+      $row.find('.apply-extra-type').on('change', function () {
+        $row.find('.apply-upload__text strong').text($(this).val() || 'Choose file');
+      });
+
+      // Remove row
+      $row.find('.apply-extra-remove').on('click', function () {
+        $row.slideUp(200, function () { $row.remove(); extraCount--; $('#addExtraBtn').show(); });
+      });
+
+      $('#extrasWrap').append($row);
+      initUpload($row.find('.apply-upload'));
+      if (extraCount >= 6) $('#addExtraBtn').hide();
+    }
+
+    // Render suggested doc chips based on position
+    function updateExtraSuggestions() {
+      var pos = getPos();
+      var docs = EXTRA_DOCS[pos] || [];
+      var $suggest = $('#extrasSuggest').empty();
+      if (!docs.length) return;
+      docs.forEach(function (d) {
+        var $chip = $('<button type="button" class="apply-extra-chip"><i class="fas ' + d.icon + '"></i> ' + d.label + '</button>');
+        $chip.on('click', function () {
+          addExtraUpload(d.label);
+          $(this).fadeOut(200, function () { $(this).remove(); });
+        });
+        $suggest.append($chip);
+      });
+    }
+
+    $('#addExtraBtn').on('click', function () { addExtraUpload(); });
+
+    // Start over
+    $('#startOverBtn').on('click', function () {
+      if (!confirm('Are you sure you want to start over? All entered data will be cleared.')) return;
+      try { localStorage.removeItem(DRAFT_KEY); } catch (_) {}
+      window.location.reload();
     });
 
     // Refs toggle
@@ -428,36 +567,38 @@
   // =========================================================================
   // File uploads
   // =========================================================================
-  function setupUploads() {
-    $('.apply-upload').each(function () {
-      var $wrap = $(this), id = $wrap.data('for');
-      var $input = $('#' + id), $zone = $wrap.find('.apply-upload__zone'), $status = $wrap.find('.apply-upload__status');
+  function initUpload($wrap) {
+    var id = $wrap.data('for');
+    var $input = $('#' + id), $zone = $wrap.find('.apply-upload__zone'), $status = $wrap.find('.apply-upload__status');
 
-      $zone.on('click', function () { $input.trigger('click'); });
+    $zone.on('click', function () { $input.trigger('click'); });
 
-      function show(f) {
-        $status.html('<span class="fname">' + $('<span>').text(f.name).html() + '</span><span class="fsize">' + fmtBytes(f.size) + '</span><button type="button" class="fremove">Remove</button>').addClass('visible');
-        $zone.addClass('has-file');
-        clearErr($input);
+    function show(f) {
+      $status.html('<span class="fname">' + $('<span>').text(f.name).html() + '</span><span class="fsize">' + fmtBytes(f.size) + '</span><button type="button" class="fremove">Remove</button>').addClass('visible');
+      $zone.addClass('has-file');
+      clearErr($input);
+    }
+    function clear() {
+      $input.val(''); $input.wrap('<form>').closest('form')[0].reset(); $input.unwrap();
+      $status.html('').removeClass('visible'); $zone.removeClass('has-file');
+    }
+    $input.on('change', function () { this.files && this.files.length ? show(this.files[0]) : clear(); });
+    $status.on('click', '.fremove', function (e) { e.stopPropagation(); clear(); });
+
+    $zone.on('dragover', function (e) { e.preventDefault(); $(this).addClass('dragover'); });
+    $zone.on('dragleave', function (e) { e.preventDefault(); $(this).removeClass('dragover'); });
+    $zone.on('drop', function (e) {
+      e.preventDefault(); $(this).removeClass('dragover');
+      var files = e.originalEvent.dataTransfer.files;
+      if (files && files.length) {
+        try { var dt = new DataTransfer(); dt.items.add(files[0]); $input[0].files = dt.files; } catch (_) {}
+        $input.trigger('change');
       }
-      function clear() {
-        $input.val(''); $input.wrap('<form>').closest('form')[0].reset(); $input.unwrap();
-        $status.html('').removeClass('visible'); $zone.removeClass('has-file');
-      }
-      $input.on('change', function () { this.files && this.files.length ? show(this.files[0]) : clear(); });
-      $status.on('click', '.fremove', function (e) { e.stopPropagation(); clear(); });
-
-      $zone.on('dragover', function (e) { e.preventDefault(); $(this).addClass('dragover'); });
-      $zone.on('dragleave', function (e) { e.preventDefault(); $(this).removeClass('dragover'); });
-      $zone.on('drop', function (e) {
-        e.preventDefault(); $(this).removeClass('dragover');
-        var files = e.originalEvent.dataTransfer.files;
-        if (files && files.length) {
-          try { var dt = new DataTransfer(); dt.items.add(files[0]); $input[0].files = dt.files; } catch (_) {}
-          $input.trigger('change');
-        }
-      });
     });
+  }
+
+  function setupUploads() {
+    $('.apply-upload').each(function () { initUpload($(this)); });
   }
 
   // =========================================================================
@@ -1062,6 +1203,46 @@
       hint = t('pos_refs_2req_h') || '(2 required)';
     }
     $('#refsLabel').html(label + ' <span class="req">*</span> <span style="font-weight:400;color:var(--text-tertiary);font-size:0.82rem">' + hint + '</span>');
+  }
+
+  function updatePositionLinks(cfg) {
+    if (!cfg) return;
+    var s = cfg.short;
+
+    // Tip 1 links — position-specific program + always show research centers
+    var $links = $('#tipLinksPos');
+    $links.empty();
+    $links.append('<a href="/research" target="_blank">Our research areas &rarr;</a>');
+
+    // Position-specific program links
+    if (s === 'masters') {
+      $links.append('<a href="https://ise.kfupm.edu.sa/programs/graduate-program/ms-program-in-ise/" target="_blank">MS Program in ISE &rarr;</a>');
+    }
+    if (s === 'phd') {
+      $links.append('<a href="https://ise.kfupm.edu.sa/programs/graduate-program/phd-program-in-ise/" target="_blank">PhD Program in ISE &rarr;</a>');
+    }
+    // ISE department for non-interns
+    if (s !== 'intern') {
+      $links.append('<a href="https://ise.kfupm.edu.sa/" target="_blank">ISE Department &rarr;</a>');
+    }
+    // Research centers for all
+    $links.append('<a href="https://irc-sml.kfupm.edu.sa" target="_blank">IRC Smart Mobility &amp; Logistics &rarr;</a>');
+    $links.append('<a href="https://sdaia-jrcai.kfupm.edu.sa" target="_blank">JRC-AI (KFUPM-SDAIA) &rarr;</a>');
+
+    // Tip 6 links — logistics, also position-aware
+    var $logLinks = $('#tipLinksLogistics');
+    $logLinks.empty();
+    if (s === 'masters') {
+      $logLinks.append('<a href="https://ise.kfupm.edu.sa/programs/graduate-program/ms-program-in-ise/" target="_blank">MS Program details &rarr;</a>');
+    }
+    if (s === 'phd') {
+      $logLinks.append('<a href="https://ise.kfupm.edu.sa/programs/graduate-program/phd-program-in-ise/" target="_blank">PhD Program details &rarr;</a>');
+    }
+    if (s === 'masters' || s === 'phd') {
+      $logLinks.append('<a href="https://www.kfupm.edu.sa/deanships/dgs/" target="_blank">Graduate Studies &rarr;</a>');
+    }
+    $logLinks.append('<a href="https://www.kfupm.edu.sa" target="_blank">KFUPM campus &amp; life &rarr;</a>');
+    $logLinks.append('<a href="https://visa.mofa.gov.sa" target="_blank">Saudi visa info &rarr;</a>');
   }
 
   // =========================================================================

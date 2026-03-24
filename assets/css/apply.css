@@ -677,6 +677,25 @@ select.apply-input {
   transform: translateX(4px);
 }
 
+/* --- Start over --- */
+.apply-startover {
+  margin-top: 24px;
+}
+.apply-startover__btn {
+  font-family: var(--font);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: color var(--transition);
+}
+.apply-startover__btn:hover {
+  color: var(--accent);
+}
+
 /* --- Success --- */
 .apply-success {
   max-width: 600px;
@@ -803,18 +822,87 @@ select.apply-input {
   display: none;
 }
 
-/* --- Quick intro (designation + short name) --- */
-.apply-quickintro {
-  margin-top: 28px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-  animation: fadeSlideUp 0.3s ease;
+/* --- Welcome message after name entry --- */
+.apply-welcome-msg {
+  margin-top: 20px;
+  animation: fadeSlideUp 0.4s ease;
 }
-.apply-quickintro__label {
-  font-size: 0.95rem;
+.apply-welcome-msg p {
+  font-size: 1.05rem;
   color: var(--text);
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Extra doc row (type selector + upload + remove) --- */
+.apply-extra-row {
+  display: grid;
+  grid-template-columns: 200px 1fr auto;
+  gap: 12px;
+  align-items: start;
+  animation: fadeSlideUp 0.25s ease;
+}
+.apply-extra-row__type {
+  padding-top: 0;
+}
+.apply-extra-row__type .apply-input {
+  height: 100%;
+  min-height: 48px;
+  font-size: 0.82rem;
+}
+.apply-extra-remove {
+  background: none;
+  border: none;
+  color: var(--text-tertiary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 16px 4px;
+  line-height: 1;
+  transition: color var(--transition);
+}
+.apply-extra-remove:hover {
+  color: var(--accent);
+}
+@media (max-width: 768px) {
+  .apply-extra-row {
+    grid-template-columns: 1fr auto;
+  }
+  .apply-extra-row__type {
+    grid-column: 1 / -1;
+  }
+}
+
+/* --- Extra doc suggestion chips --- */
+.apply-extras-suggest {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.apply-extra-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-family: var(--font);
+  font-size: 0.82rem;
   font-weight: 500;
-  margin-bottom: 16px;
+  color: var(--text-secondary);
+  background: var(--card);
+  border: 1.5px dashed var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.apply-extra-chip:hover {
+  border-color: var(--text-tertiary);
+  border-style: solid;
+  color: var(--text);
+}
+.apply-extra-chip i {
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
 }
 
 /* --- Refs toggle button --- */

@@ -39,9 +39,11 @@ js:
       <h4>A note from Prof. Arief</h4>
       <p>I care deeply about building a team that is curious, kind, and driven by purpose. I value people who see technology as a way to serve humanity equitably &mdash; not just publish papers. If that resonates with you, I'd love to hear from you.</p>
       <p class="apply-sidetip__pos-msg" id="sideTipPosMsg" style="display:none"></p>
-      <div class="apply-sidetip__links">
+      <div class="apply-sidetip__links" id="tipLinksPos">
         <a href="/research" target="_blank">Our research areas &rarr;</a>
         <a href="https://www.kfupm.edu.sa" target="_blank">About KFUPM &rarr;</a>
+        <a href="https://irc-sml.kfupm.edu.sa" target="_blank">IRC Smart Mobility &amp; Logistics &rarr;</a>
+        <a href="https://sdaia-jrcai.kfupm.edu.sa" target="_blank">JRC-AI (KFUPM-SDAIA) &rarr;</a>
       </div>
     </div>
     <div class="apply-sidetip" data-tip="2" style="display:none">
@@ -74,9 +76,8 @@ js:
       <p>KFUPM is in Dhahran, Eastern Saudi Arabia. It's a <strong>self-contained campus</strong> with housing, recreation, and a strong international research community. Tax-free salary and benefits.</p>
       <p>Visa processing typically takes 4-8 weeks. KFUPM handles all sponsorship. Housing is provided for researchers and families &mdash; the family status question helps us plan ahead.</p>
       <p>Start dates are flexible. I'm happy to work around your timeline.</p>
-      <div class="apply-sidetip__links">
-        <a href="https://www.kfupm.edu.sa/deanships/dgs/" target="_blank">Graduate Studies &rarr;</a>
-        <a href="https://www.kfupm.edu.sa" target="_blank">Campus &amp; life &rarr;</a>
+      <div class="apply-sidetip__links" id="tipLinksLogistics">
+        <a href="https://www.kfupm.edu.sa" target="_blank">KFUPM campus &amp; life &rarr;</a>
         <a href="https://visa.mofa.gov.sa" target="_blank">Saudi visa info &rarr;</a>
       </div>
     </div>
@@ -137,8 +138,38 @@ js:
     <!-- Draft banner slot -->
     <div id="draftSlot"></div>
 
+    <!-- ========== SECTION 00: Welcome ========== -->
+    <section class="apply-section" id="sec-0">
+      <div class="apply-section__header">
+        <span class="apply-section__num">&bull;</span>
+        <h2 class="apply-section__title">Let's start with your name</h2>
+      </div>
+      <div class="apply-section__body">
+        <div class="apply-grid apply-grid--3">
+          <div class="apply-field">
+            <label class="apply-label" for="designation">Title</label>
+            <select id="designation" name="designation" class="apply-input">
+              <option value="" selected>Just my name</option>
+              <option value="Mr.">Mr.</option>
+              <option value="Ms.">Ms.</option>
+              <option value="Mrs.">Mrs.</option>
+              <option value="Dr.">Dr.</option>
+              <option value="Prof.">Prof.</option>
+            </select>
+          </div>
+          <div class="apply-field" style="grid-column: span 2;">
+            <label class="apply-label" for="short_name">What should we call you? <span class="req">*</span></label>
+            <input type="text" id="short_name" name="short_name" class="apply-input" placeholder="e.g. Alex, Fatimah, Wei" required>
+          </div>
+        </div>
+        <div class="apply-welcome-msg" id="welcomeMsg" style="display:none">
+          <p id="welcomeMsgText"></p>
+        </div>
+      </div>
+    </section>
+
     <!-- ========== SECTION 01: What role ========== -->
-    <section class="apply-section" id="sec-1">
+    <section class="apply-section apply-section--gated" id="sec-1" style="display:none">
       <div class="apply-section__header">
         <span class="apply-section__num">01</span>
         <h2 class="apply-section__title">What role interests you?</h2>
@@ -189,29 +220,6 @@ js:
 
         <!-- Pre-selection prompt -->
         <p class="apply-preselect" id="preselectHint">Select a position above to get started.</p>
-
-        <!-- Quick intro (shown after position selection) -->
-        <div class="apply-quickintro" id="quickIntro" style="display:none">
-          <p class="apply-quickintro__label">Great! Before we begin, how should we address you?</p>
-          <div class="apply-grid apply-grid--2">
-            <div class="apply-field">
-              <label class="apply-label" for="designation">Title</label>
-              <select id="designation" name="designation" class="apply-input">
-                <option value="" disabled selected>Select</option>
-                <option value="Mr.">Mr.</option>
-                <option value="Ms.">Ms.</option>
-                <option value="Mrs.">Mrs.</option>
-                <option value="Dr.">Dr.</option>
-                <option value="Prof.">Prof.</option>
-                <option value="">Just my name</option>
-              </select>
-            </div>
-            <div class="apply-field">
-              <label class="apply-label" for="short_name">What should we call you? <span class="req">*</span></label>
-              <input type="text" id="short_name" name="short_name" class="apply-input" placeholder="e.g. Alex, Fatimah, Wei" required>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -403,6 +411,15 @@ js:
           </div>
         </div>
         <p class="apply-hint" id="pitchHint" style="margin-top:8px">A concise 3-slide (5 min) presentation of your proposed research direction. No need to make it perfect — we want to see how you think.</p>
+
+        <!-- Additional documents (optional, position-aware) -->
+        <div class="apply-field" style="margin-top:28px">
+          <label class="apply-label">Additional documents <span style="font-weight:400;color:var(--text-tertiary)">(optional)</span></label>
+          <p class="apply-sublabel" id="extraDocsSublabel">Upload any supporting documents relevant to your application.</p>
+          <div class="apply-extras-suggest" id="extrasSuggest"></div>
+          <div class="apply-extras" id="extrasWrap"></div>
+          <button type="button" class="apply-refs-toggle" id="addExtraBtn" style="margin-top:12px">Add a document <span>&plus;</span></button>
+        </div>
 
         <div class="apply-quality-note" data-i18n="tip4_note">
           <i class="fas fa-info-circle"></i>
@@ -625,6 +642,9 @@ js:
         <span class="apply-submit__text">Submit Application</span>
         <span class="apply-submit__arrow">&rarr;</span>
       </button>
+      <div class="apply-startover">
+        <button type="button" class="apply-startover__btn" id="startOverBtn">Start over</button>
+      </div>
     </section>
 
   </form>
