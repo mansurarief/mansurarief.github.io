@@ -820,15 +820,14 @@
       e.preventDefault();
       if (!validate()) return;
 
-      // Cloudflare Turnstile check
-      var turnstileResponse = $('[name="cf-turnstile-response"]').val();
-      if (!turnstileResponse) {
-        var $err = $form.find('.apply-submit-error');
-        if (!$err.length) { $err = $('<div class="apply-submit-error"></div>'); $form.prepend($err); }
-        $err.text('Please complete the verification check.').show();
-        scrollTo($('.apply-turnstile'));
-        return;
-      }
+      // Cloudflare Turnstile check — uncomment when configured
+      // var turnstileResponse = $('[name="cf-turnstile-response"]').val();
+      // if (!turnstileResponse) {
+      //   var $err = $form.find('.apply-submit-error');
+      //   if (!$err.length) { $err = $('<div class="apply-submit-error"></div>'); $form.prepend($err); }
+      //   $err.text('Please complete the verification check.').show();
+      //   return;
+      // }
 
       var cfg = getCfg();
 
@@ -871,6 +870,7 @@
       // Clean up
       fd.delete('research_areas'); fd.set('research_areas', areas.join(', '));
       fd.delete('consent_data'); fd.delete('consent_accuracy'); fd.delete('skills_input');
+      fd.delete('research_area_other'); // already merged into research_areas
 
       $('#applyLoading').fadeIn(200);
       $form.find('button,input,select,textarea').prop('disabled', true);

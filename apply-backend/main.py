@@ -86,6 +86,10 @@ async def apply(
     nationality: str = Form(""),
     residence: str = Form(""),
     affiliation: str = Form(""),
+    short_name: str = Form(""),
+    designation: str = Form(""),
+    google_scholar: str = Form(""),
+    personal_website: str = Form(""),
     # Academic background
     degree: str = Form(""),
     field: str = Form(""),
@@ -116,10 +120,25 @@ async def apply(
     heard_about: str = Form(""),
     reflection_type: str = Form(""),
     reflection_text: str = Form(""),
+    family_status: str = Form(""),
+    research_area_other: str = Form(""),
+    # Extra document types (optional, up to 6)
+    extra_type_1: str = Form(""),
+    extra_type_2: str = Form(""),
+    extra_type_3: str = Form(""),
+    extra_type_4: str = Form(""),
+    extra_type_5: str = Form(""),
+    extra_type_6: str = Form(""),
     # Files
     cv: UploadFile = File(...),
     reflection_pdf: UploadFile | None = File(None),
     pitch_deck: UploadFile | None = File(None),
+    extra_1: UploadFile | None = File(None),
+    extra_2: UploadFile | None = File(None),
+    extra_3: UploadFile | None = File(None),
+    extra_4: UploadFile | None = File(None),
+    extra_5: UploadFile | None = File(None),
+    extra_6: UploadFile | None = File(None),
 ):
     """Receive and process a new research position application."""
     # --- Validate required fields ---
@@ -174,15 +193,31 @@ async def apply(
                 applicant_folder_id,
             )
 
+        # --- Upload extra documents (up to 6) ---
+        extra_files = [extra_1, extra_2, extra_3, extra_4, extra_5, extra_6]
+        extra_types = [extra_type_1, extra_type_2, extra_type_3, extra_type_4, extra_type_5, extra_type_6]
+        extra_links = []
+        for i, ef in enumerate(extra_files):
+            if ef is not None and ef.filename:
+                ef_data = await ef.read()
+                if len(ef_data) <= 10 * 1024 * 1024:  # 10 MB limit
+                    label = extra_types[i] or f"extra_{i+1}"
+                    link = upload_file(ef_data, ef.filename, ef.content_type, applicant_folder_id)
+                    extra_links.append(f"{label}: {link}")
+
         # --- Build data dict and append to sheet ---
         data = {
             "Position Type": position_type,
+            "Designation": designation,
+            "Short Name": short_name,
             "Full Name": full_name,
             "Email": email,
             "Phone": phone,
             "Nationality": nationality,
             "Residence": residence,
             "Affiliation": affiliation,
+            "Google Scholar": google_scholar,
+            "Personal Website": personal_website,
             "Degree": degree,
             "Field": field,
             "Institution": institution,
@@ -199,6 +234,7 @@ async def apply(
             "AI Plans": ai_plans,
             "Start Date": start_date,
             "Duration": duration,
+            "Family Status": family_status,
             "Funding Status": funding_status,
             "Fellowship Name": fellowship_name,
             "Ref1 Name": ref1_name,
@@ -210,6 +246,7 @@ async def apply(
             "Ref2 Affiliation": ref2_affiliation,
             "Ref2 Relationship": ref2_relationship,
             "Heard About": heard_about,
+            "Extra Documents": " | ".join(extra_links) if extra_links else "",
         }
 
         app_id = append_application(data)
