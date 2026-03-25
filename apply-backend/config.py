@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     RESEND_API_KEY: str = ""
     ADMIN_API_KEY: str = ""
     TURNSTILE_SECRET_KEY: str = ""
-    EMAIL_FROM: str = "AI V&V Lab <apply@ai-vnv.kfupm.io>"
+    EMAIL_FROM: str = "AI V&V Lab <ai-vnv@kfupm.io>"
     CORS_ORIGINS: str = "https://mansurarief.github.io,https://ai-vnv.kfupm.io"
 
     @property
