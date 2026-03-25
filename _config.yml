@@ -230,7 +230,6 @@ exclude:
   - screenshot.png
   - docs/
   - assets/notebooks/
-  - apply-backend/
 
 plugins:
   - jekyll-paginate
