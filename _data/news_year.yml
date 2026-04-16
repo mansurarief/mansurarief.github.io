@@ -1,6 +1,9 @@
 - year: 2026
   events:
 
+    - date: 2026-04-16
+      content: "Excited to share our new paper [Deepbullwhip: An Open-Source Simulation and Benchmarking for Multi-Echelon Bullwhip Analyses](https://arxiv.org/abs/2604.13478)! DeepBullwhip is available on [PyPI](https://pypi.org/project/deepbullwhip/) for easy installation. Read more on the [blog post](https://ai-vnv.kfupm.io/blog/catalyzing-supply-chain-research-with-deepbullwhip/)."
+
     - date: 2026-03-10
       content: Excited to be joining both the [IRC Smart Mobility and Logistics (IRC-SML)](https://ri.kfupm.edu.sa/irc-sml) and the [KFUPM-SDAIA Joint Research Center in AI (JRC-AI)](https://ri.kfupm.edu.sa/jrcai) as a scholar.
 
