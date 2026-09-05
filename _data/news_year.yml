@@ -1,6 +1,36 @@
 - year: 2026
   events:
 
+    - date: 2026-09-04
+      content: "Two papers are accepted for the [IEEE International Conference on Industrial Engineering and Engineering Management (IEEM 2026)](https://www.ieem.org/): [Comparing Socially-Equitable Renewable Energy Budget Allocation MDP Policies in Mature and Emerging Economies](https://arxiv.org/abs/2607.10201), led by Riya Kinnarkar, and [A Robust and Efficient Optimization Model for Electric Vehicle Charging Stations in Developing Countries under Electricity Uncertainty](https://arxiv.org/abs/2307.05470), with Yan Akhra and Iwan Vanany."
+
+    - date: 2026-09-01
+      content: "New preprint led by Ahmad Alfan Alfian Irfan and Nur Ahmad Khatim: [A Closed-Loop Evaluation of Capability Loss and Recovery in Compressed Driving Policies](https://arxiv.org/abs/2609.00718)."
+
+    - date: 2026-08-29
+      content: "Congrats to the ePuskesmas team for publishing [Extending ePuskesmas with a Domain-Specific Large Language Model for Orthopaedic Documentation of Osteoarthritis and Osteoporosis](https://doi.org/10.51601/ijhp.v6i3.696) in the International Journal of Health and Pharmaceutical."
+
+    - date: 2026-08-25
+      content: "New preprint with collaborators at ITS Surabaya: [Coupling-Aware Sales and Operations Planning with Forced Co-Production in Polymer Production Plants](https://arxiv.org/abs/2608.24399)."
+
+    - date: 2026-08-18
+      content: "New preprint: [Dijkstra as an Oracle for Online Stochastic Shortest Path Navigation with Provable Guarantees](https://arxiv.org/abs/2608.17703)."
+
+    - date: 2026-07-21
+      content: "Our book chapter [Decision-Making Under Uncertainty Using Artificial Intelligence](https://doi.org/10.1002/9781394306824.ch2), with Jef Caers, Céline Scheidt, and Lewis Li, is published in *Decision-Making for Earth Resource Development: Quantifying Uncertainty* (Wiley, Geophysical Monograph Series)."
+
+    - date: 2026-07-20
+      content: "New preprint: [Integrating High-Level Requirements to Low-Level Tests with Machine-Readable V&V Specifications](https://arxiv.org/abs/2607.17686)."
+
+    - date: 2026-07-11
+      content: "New preprint led by Riya Kinnarkar: [Comparing Socially-Equitable Renewable Energy Budget Allocation MDP Policies in Mature and Emerging Economies](https://arxiv.org/abs/2607.10201)."
+
+    - date: 2026-06-29
+      content: "New preprint with SISL colleagues, [Simplifying Flow Matching Transformations with Low-Rank Mixture Models](https://arxiv.org/abs/2606.29724), accepted at CoDIT 2026."
+
+    - date: 2026-06-06
+      content: "[Optimizing the Financial and Service Performance of Distressed BRT Systems in Makassar City](https://doi.org/10.48084/etasr.17679), with Muhammad Rusman, Andry Yusdi, and Dwi Handayani, is published in Engineering, Technology & Applied Science Research."
+
     - date: 2026-04-16
       content: "Excited to share our new paper [Deepbullwhip: An Open-Source Simulation and Benchmarking for Multi-Echelon Bullwhip Analyses](https://arxiv.org/abs/2604.13478)! DeepBullwhip is available on [PyPI](https://pypi.org/project/deepbullwhip/) for easy installation. Read more on the [blog post](https://ai-vnv.kfupm.io/blog/catalyzing-supply-chain-research-with-deepbullwhip/)."
 

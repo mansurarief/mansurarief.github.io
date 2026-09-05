@@ -1,6 +1,66 @@
+- tag: 'Ahmad Alfan Alfian Irfan, Nur Ahmad Khatim, <u>Mansur Arief</u>. “A Closed-Loop Evaluation of Capability Loss and Recovery in Compressed Driving Policies.” <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2609.00718'
+  selected: true
+  category: 1
+  year: 2026
+
+- tag: 'Ahmad Azmul A. Irfan, Nur Ahmad Khatim, Achmad Zaki, Bisatyo Mardjikoen, <u>Mansur Arief</u>, Amril Nur Ismail, Ahmad Farhap. “Extending ePuskesmas with a Domain-Specific Large Language Model for Orthopaedic Documentation of Osteoarthritis and Osteoporosis: A Proof-of-Concept Study toward Indonesian Primary Health Care Strengthening.” <i>International Journal of Health and Pharmaceutical, 6(3): 838-851, 2026</i>.'
+  link: 'https://doi.org/10.51601/ijhp.v6i3.696'
+  selected: false
+  category: 4
+  year: 2026
+
+- tag: '<u>Mansur Arief</u>, Yan Pratama Akhra, Bilal Ahmadi, Pradipta Apsarini, Iwan Vanany. “Coupling-Aware Sales and Operations Planning with Forced Co-Production in Polymer Production Plants.” <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2608.24399'
+  selected: false
+  category: 4
+  year: 2026
+
+- tag: '<u>Mansur Arief</u>, Ali Akarma, Ahmad Alfan Alfian Irfan. “Dijkstra as an Oracle for Online Stochastic Shortest Path Navigation with Provable Guarantees.” <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2608.17703'
+  selected: true
+  category: 4
+  year: 2026
+
+- tag: 'Jef Caers, <u>Mansur Arief</u>, Céline Scheidt, Lewis Li. “Decision-Making Under Uncertainty Using Artificial Intelligence.” In <i>Decision-Making for Earth Resource Development: Quantifying Uncertainty</i>, Geophysical Monograph Series, pp. 35-82. Wiley, 2026.'
+  link: 'https://doi.org/10.1002/9781394306824.ch2'
+  selected: true
+  category: 3
+  year: 2026
+
+- tag: '<u>Mansur Arief</u>, Nur Ahmad Khatim, Ali Akarma, Ahmad Alfan Alfian Irfan. “Integrating High-Level Requirements to Low-Level Tests with Machine-Readable V&V Specifications.” <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2607.17686'
+  selected: false
+  category: 1
+  year: 2026
+
+- tag: 'Riya Kinnarkar, <u>Mansur Arief</u>, Yan Pratama Akhra, Dino Arla. “Comparing Socially-Equitable Renewable Energy Budget Allocation MDP Policies in Mature and Emerging Economies.” <i>IEEE International Conference on Industrial Engineering and Engineering Management (IEEM), 2026 (to appear)</i>.'
+  link: 'https://arxiv.org/abs/2607.10201'
+  selected: false
+  category: 3
+  year: 2026
+
+- tag: 'Liam A. Kruse, Houjun Liu, Alexandros E. Tzikas, <u>Mansur Arief</u>, Mykel J. Kochenderfer. “Simplifying Flow Matching Transformations with Low-Rank Mixture Models.” <i>International Conference on Control, Decision and Information Technologies (CoDIT), 2026 (to appear)</i>.'
+  link: 'https://arxiv.org/abs/2606.29724'
+  selected: false
+  category: 1
+  year: 2026
+
+- tag: 'Muhammad Rusman, Andry Yusdi, Dwi Handayani, <u>Mansur Arief</u>. “Optimizing the Financial and Service Performance of Distressed BRT Systems in Makassar City.” <i>Engineering, Technology & Applied Science Research, 16(3): 35395-35402, 2026</i>.'
+  link: 'https://doi.org/10.48084/etasr.17679'
+  selected: false
+  category: 4
+  year: 2026
+
+- tag: 'Azmul A. Irfan, Nur Ahmad Khatim, Alfan Alfian Irfan, Achmad Zaki, Erike A. Suwarsono, <u>Mansur Arief</u>. “Knee-xRAI: An Explainable AI Framework for Automatic Kellgren-Lawrence Grading of Knee Osteoarthritis.” <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2604.23435'
+  selected: false
+  category: 4
+  year: 2026
+
 - tag: '<u>Mansur Arief</u>. “Deepbullwhip: An Open-Source Simulation and Benchmarking for Multi-Echelon Bullwhip Analyses.” <i>arXiv preprint</i>.'
   link: 'https://arxiv.org/abs/2604.13478'
-  selected: true
+  selected: false
   category: 4
   year: 2026
 
@@ -22,15 +82,15 @@
   category: 4
   year: 2025
 
-- tag: 'Alexandros E. Tzikas, Nazim Kemal Ure, <u>Mansur Arief</u>, Mykel J. Kochenderfer, Stephen P. Boyd. “Resource Allocation under Stochastic Demands using Shrinking Horizon Optimization.” <i>American Control Conference, 2026</i>.'
+- tag: 'Alexandros E. Tzikas, Nazim Kemal Ure, <u>Mansur Arief</u>, Mykel J. Kochenderfer, Stephen P. Boyd. “Resource Allocation under Stochastic Demands using Shrinking Horizon Optimization.” <i>2026 American Control Conference (ACC), pp. 613-620</i>.'
   link: 'https://arxiv.org/abs/2509.25412'
   selected: false
   category: 4
-  year: 2025
+  year: 2026
 
 - tag: 'William Xu, Amir Eskanlou, <u>Mansur Arief</u>, David Zhen Yin, Jef K. Caers. “AI-Driven Optimization under Uncertainty for Mineral Processing Operations.” <i>Sustainable Earth Resources Communications, 1(2): 100-112, 2025</i>.'
   link: 'https://doi.org/10.46690/serc.2025.02.07'
-  selected: true
+  selected: false
   category: 3
   year: 2025
 
@@ -119,11 +179,11 @@
   category: 1
   year: 2025
   
-- tag: '<u>Arief, Mansur</u>, Yan Akhra, Iwan Vanany. "A Robust and Efficient Optimization Model for Electric Vehicle Charging Stations in Developing Countries under Electricity Uncertainty." <i>Under Review</i>.'
+- tag: '<u>Arief, Mansur</u>, Yan Akhra, Iwan Vanany. "A Robust and Efficient Optimization Model for Electric Vehicle Charging Stations in Developing Countries under Electricity Uncertainty." <i>IEEE International Conference on Industrial Engineering and Engineering Management (IEEM), 2026 (to appear)</i>.'
   link: 'https://arxiv.org/abs/2307.05470'
   selected: false
   category: 3
-  year: 2023
+  year: 2026
 
 - tag: 'Amilia, Nissa, Zulkifli Palinrungi, Iwan Vanany, <u>Mansur Arief</u>. "Designing an Optimized Electric Vehicle Charging Station Infrastructure for Urban Area: A Case Study from Indonesia." <i>ITSC, 2022</i>.'
   link: 'https://ieeexplore.ieee.org/abstract/document/9922278'
