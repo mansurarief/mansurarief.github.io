@@ -1,3 +1,48 @@
+# mansurarief.github.io
+
+Personal academic site, built with [Beautiful Jekyll](https://beautifuljekyll.com/) (upstream README below).
+
+## Local development
+
+Use Docker — the macOS system Ruby (2.6.x) is too old for Jekyll 4. These services use the
+same `jekyll/builder` image as CI (`.github/workflows/ci.yml`), so a build that succeeds
+locally succeeds on GitHub Pages.
+
+```bash
+docker compose up serve         # live preview at http://localhost:4000
+docker compose run --rm build   # one-off build into ./_site
+```
+
+### How the build resolves gems
+
+The container runs `jekyll build` directly and **never runs `bundle install`**. Bundler can
+therefore only resolve against gems already baked into the image. Two consequences:
+
+- **Do not create a `Gemfile.lock`.** It is in `.gitignore` for a reason — if one is present,
+  Bundler tries to materialize the exact pinned versions, they are absent from the image, and
+  the build fails with `Bundler::GemNotFound`. If you ever run `bundle install` on the host,
+  delete the resulting lockfile before building.
+- **Version constraints must match the image.** Every dependency in `Gemfile` and
+  `beautiful-jekyll-theme.gemspec` must be satisfiable by the image's gem set. Check what is
+  available with:
+
+  ```bash
+  docker run --rm --entrypoint /bin/sh jekyll/builder:latest -c 'gem list'
+  ```
+
+Because CI tracks `jekyll/builder:latest`, an upstream image update can break the build
+without any change to this repo — that is what happened in September 2026, when the image
+moved to Ruby 3.4 / Jekyll 4.4.1 and the old `jekyll ~> 3.8` and `rake ~> 12.0` pins stopped
+resolving. If CI fails on `Bundler::GemNotFound`, compare the pins against `gem list` above.
+
+## Deployment
+
+Pushing to `master` triggers the `Beautiful Jekyll CI` workflow, which builds the site and
+deploys it to GitHub Pages. **If that workflow fails, the live site silently keeps serving the
+previous version** — check the Actions tab before assuming a content change didn't take.
+
+---
+
 [![](https://i.imgur.com/zNBkzj1.png)](https://beautifuljekyll.com/plans/)
 
 # Beautiful Jekyll

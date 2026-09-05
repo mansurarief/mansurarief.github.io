@@ -1,0 +1,36 @@
+# Local development environment for mansurarief.github.io
+#
+# Uses the same `jekyll/builder` image as the GitHub Actions workflow
+# (.github/workflows/ci.yml), so a build that succeeds here succeeds in CI.
+# The system Ruby on macOS (2.6.x) is too old for Jekyll 4 — always use these
+# services instead of a host-installed `jekyll`.
+#
+#   docker compose up serve    # live preview at http://localhost:4000
+#   docker compose run --rm build   # one-off production build into ./_site
+#
+# Note: the container resolves gems from the ones preinstalled in the image;
+# it does not run `bundle install`. Any gem added to the Gemfile must already
+# be present in the image, and version constraints in
+# beautiful-jekyll-theme.gemspec must be satisfiable by the image's gem set.
+
+services:
+  serve:
+    image: jekyll/builder:latest
+    command: >
+      /bin/bash -c "chmod 777 /srv/jekyll &&
+      jekyll serve --host 0.0.0.0 --future --livereload --force_polling"
+    ports:
+      - "4000:4000"
+      - "35729:35729"
+    volumes:
+      - .:/srv/jekyll
+
+  build:
+    image: jekyll/builder:latest
+    command: >
+      /bin/bash -c "chmod 777 /srv/jekyll &&
+      jekyll build --future"
+    environment:
+      PAGES_REPO_NWO: mansurarief/mansurarief.github.io
+    volumes:
+      - .:/srv/jekyll
