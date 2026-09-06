@@ -118,7 +118,7 @@
   category: 3
   year: 2025
 
-- tag: 'William Xu, Mansur Arief, David Zhen Yin, and Jef Caers. “Designing Mineral Processing Under Uncertainty Using AI: The Case of Phosphogypsum.” <i>AGU 2024<i>.'
+- tag: 'William Xu, <u>Mansur Arief</u>, David Zhen Yin, and Jef Caers. “Designing Mineral Processing Under Uncertainty Using AI: The Case of Phosphogypsum.” <i>AGU 2024</i>.'
   link: 'https://scholar.google.com/scholar?cluster=8653590290756411593'
   selected: false
   category: 3
@@ -155,7 +155,7 @@
   category: 4
   year: 2024
 
-- tag: 'Gupta, Abhibha, Rully A Hendrawan, <u>Mansur, Arief</u>. "Enhancing Visual Perception in Novel Environments via Incremental Data Augmentation Based on Style Transfer." <i>arXiv preprint</i>.'
+- tag: 'Gupta, Abhibha, Rully A Hendrawan, <u>Mansur Arief</u>. "Enhancing Visual Perception in Novel Environments via Incremental Data Augmentation Based on Style Transfer." <i>arXiv preprint</i>.'
   link: 'https://arxiv.org/abs/2309.08851'
   selected: false
   category: 2
@@ -265,7 +265,7 @@
   year: 2019
 
 - tag: '<u>Arief, Mansur</u>, Peter Glynn, and Ding Zhao. "An Accelerated Approach to Safely and Efficiently Test Pre-production Autonomous Vehicles on Public Streets." <i>ITSC, 2018</i>.'
-  link: 'https://ieeexplore.ieee.org/document/9094370'
+  link: 'https://ieeexplore.ieee.org/document/8569371'
   selected: false
   category: 1
   year: 2018
