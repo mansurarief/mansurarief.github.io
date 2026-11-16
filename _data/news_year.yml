@@ -5,13 +5,28 @@
       content: "Our IEEM 2026 paper [A Robust and Efficient Optimization Model for Electric Vehicle Charging Stations in Developing Countries under Electricity Uncertainty](https://arxiv.org/abs/2307.05470), with Yan Akhra and Iwan Vanany, received the **Outstanding Paper Award** at IEEM 2026 in Singapore."
 
     - date: 2026-11-16
-      content: "Recent acceptances: [DeepBullwhip](https://arxiv.org/abs/2604.13478) in the International Journal of Supply and Operations Management (IJSOM); [Integrating High-Level Requirements to Low-Level Tests with Machine-Readable V&V Specifications](https://arxiv.org/abs/2607.17686) at IEEE/SICE SII 2027; [Learned Control Variates for Rare Grid-Outage Estimation at EV Charging Stations](https://arxiv.org/abs/2610.27159), led by Sulyman Iyanda, at ICSGSC 2026; and two papers at ICCA 2026, [Duckietown.jl](https://github.com/ai-vnv/Duckietown.jl) led by Ahmad Alfan Alfian Irfan and a reliability study of explainable AI for freight mode classification led by Ali Alawi Balfaqih."
+      content: "Our paper [DeepBullwhip: An Open-Source Simulation and Benchmarking for Multi-Echelon Bullwhip Analyses](https://arxiv.org/abs/2604.13478) is accepted in the International Journal of Supply and Operations Management (IJSOM)."
+
+    - date: 2026-11-16
+      content: "Our paper [Integrating High-Level Requirements to Low-Level Tests with Machine-Readable V&V Specifications](https://arxiv.org/abs/2607.17686), with Nur Ahmad Khatim, Ali Akarma, and Ahmad Alfan Alfian Irfan, is accepted at the IEEE/SICE International Symposium on System Integration (SII 2027)."
+
+    - date: 2026-11-16
+      content: "Congrats to Sulyman Iyanda, whose paper [Learned Control Variates for Rare Grid-Outage Estimation at EV Charging Stations](https://arxiv.org/abs/2610.27159) is accepted at the International Conference on Smart Grid and Smart Cities (ICSGSC 2026) in Guangzhou, China."
+
+    - date: 2026-11-16
+      content: "Congrats to Ahmad Alfan Alfian Irfan, whose paper [Duckietown.jl: A Closed-Loop Driving Benchmark for Sequential Decision-Making in Julia](https://github.com/ai-vnv/Duckietown.jl) is accepted at the International Conference on Computer and Applications (ICCA 2026)."
+
+    - date: 2026-11-16
+      content: "Congrats to Ali Alawi Balfaqih, whose paper [A Reliability Study of Explainable AI for Freight Mode Classification](https://github.com/alialawiaidarosbalfaqih-crypto/Air-or-Ocean-XAI) is accepted at the International Conference on Computer and Applications (ICCA 2026)."
 
     - date: 2026-11-16
       content: "Our paper [Certifiable Deep Importance Sampling for Rare-Event Simulation of Black-Box Systems](https://doi.org/10.1287/opre.2021.0699), with Yuanlu Bai, Shengyi He, Wenhao Ding, Zhiyuan Huang, Henry Lam, Bo Li, and Ding Zhao, is published in Operations Research."
 
     - date: 2026-11-15
-      content: "Two papers submitted to the [IEEE Intelligent Vehicles Symposium (IV 2027)](https://ieee-iv.org/): JEPTERA, a platform-agnostic JEPA-assisted model predictive planner for urban UAV navigation, led by Ghibran Fathoni Belva with Ahmad Alfan Alfian Irfan, and D’BEAST, which uses logged bad experiences as explanations for autonomous driving agents, led by Ahmad Alfan Alfian Irfan with Nur Ahmad Khatim."
+      content: "Ghibran Fathoni Belva's paper JEPTERA, a platform-agnostic JEPA-assisted model predictive planner for urban UAV navigation, with Ahmad Alfan Alfian Irfan, is submitted to the [IEEE Intelligent Vehicles Symposium (IV 2027)](https://ieee-iv.org/)."
+
+    - date: 2026-11-15
+      content: "Ahmad Alfan Alfian Irfan's paper D’BEAST, which uses logged bad experiences as explanations for autonomous driving agents, with Nur Ahmad Khatim, is submitted to the [IEEE Intelligent Vehicles Symposium (IV 2027)](https://ieee-iv.org/)."
 
     - date: 2026-10-20
       content: "New preprint led by Sulyman Iyanda: [Learned Control Variates for Rare Grid-Outage Estimation at Electric Vehicle Charging Stations](https://arxiv.org/abs/2610.27159). Read more on the [blog post](https://ai-vnv.kfupm.io/blog/learned-control-variates-for-rare-grid-outages/)."
