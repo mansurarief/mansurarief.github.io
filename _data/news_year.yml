@@ -10,6 +10,9 @@
     - date: 2026-11-16
       content: "Our paper [Certifiable Deep Importance Sampling for Rare-Event Simulation of Black-Box Systems](https://doi.org/10.1287/opre.2021.0699), with Yuanlu Bai, Shengyi He, Wenhao Ding, Zhiyuan Huang, Henry Lam, Bo Li, and Ding Zhao, is published in Operations Research."
 
+    - date: 2026-11-15
+      content: "Two papers submitted to the [IEEE Intelligent Vehicles Symposium (IV 2027)](https://ieee-iv.org/): JEPTERA, a platform-agnostic JEPA-assisted model predictive planner for urban UAV navigation, led by Ghibran Fathoni Belva with Ahmad Alfan Alfian Irfan, and D’BEAST, which uses logged bad experiences as explanations for autonomous driving agents, led by Ahmad Alfan Alfian Irfan with Nur Ahmad Khatim."
+
     - date: 2026-10-20
       content: "New preprint led by Sulyman Iyanda: [Learned Control Variates for Rare Grid-Outage Estimation at Electric Vehicle Charging Stations](https://arxiv.org/abs/2610.27159). Read more on the [blog post](https://ai-vnv.kfupm.io/blog/learned-control-variates-for-rare-grid-outages/)."
 
