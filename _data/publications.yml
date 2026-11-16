@@ -1,3 +1,54 @@
+- tag: 'Sulyman Iyanda, <u>Mansur Arief</u>. “Learned Control Variates for Rare Grid-Outage Estimation at EV Charging Stations.” <i>International Conference on Smart Grid and Smart Cities (ICSGSC), 2026 (to appear)</i>.'
+  link: 'https://arxiv.org/abs/2610.27159'
+  selected: false
+  category: 3
+  year: 2026
+
+- tag: 'Ahmad Alfan Alfian Irfan, <u>Mansur Arief</u>. “Duckietown.jl: A Closed-Loop Driving Benchmark for Sequential Decision-Making in Julia.” <i>International Conference on Computer and Applications (ICCA), 2026 (to appear)</i>.'
+  link: 'https://github.com/ai-vnv/Duckietown.jl'
+  selected: false
+  category: 1
+  year: 2026
+
+- tag: 'Ali Alawi Balfaqih, <u>Mansur Arief</u>. “A Reliability Study of Explainable AI for Freight Mode Classification.” <i>International Conference on Computer and Applications (ICCA), 2026 (to appear)</i>.'
+  link: 'https://github.com/alialawiaidarosbalfaqih-crypto/Air-or-Ocean-XAI'
+  selected: false
+  category: 4
+  year: 2026
+
+- tag: 'Reza Wahyu Firdaus, Dino Arla, <u>Mansur Arief</u>. “Particle Swarm Optimization of Air Gap Distance for Externally Gapped Line Arrester (EGLA) on High Isokeraunic 70 kV Transmission Line Based on Field-Measured Lightning Data.” <i>International Conference on Technology and Policy in Energy and Electric Power (ICT-PEP), 2026</i>.'
+  link: 'https://ieeexplore.ieee.org/document/11761588'
+  selected: false
+  category: 3
+  year: 2026
+
+- tag: 'Ghibran Fathoni Belva, <u>Mansur Arief</u>, Ahmad Alfan Alfian Irfan. “JEPTERA: A Platform Agnostic JEPA-Assisted Model Predictive Planner for Urban UAV Navigation.” <i>arXiv preprint</i>.'
+  selected: false
+  category: 1
+  year: 2026
+
+- tag: 'Ahmad Alfan Alfian Irfan, Nur Ahmad Khatim, <u>Mansur Arief</u>. “D’BEAST: Logged Bad Experiences as Explanation for Autonomous Driving Agents.” <i>arXiv preprint</i>.'
+  selected: false
+  category: 1
+  year: 2026
+
+- tag: '<u>Mansur Arief</u>, Sulyman Iyanda, Grisdy Mahardikana, Houssem Eddine Bouslimane, Yan Akhra. “Learning-Based Rare-Event Estimators for Safe EV Chargers Planning under Cascading Outages.” <i>Under review</i>.'
+  selected: false
+  category: 3
+  year: 2026
+
+- tag: 'Anna C. Edmonds, <u>Mansur Arief</u>, Robert J. Moss, Mykel J. Kochenderfer, Jef Caers. “Optimizing Lithium Production Decisions under Geological, Demand, and Pricing Uncertainties: A POMDP Framework for Multi-Objective Decision Making.” <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2606.18598'
+  selected: false
+  category: 3
+  year: 2026
+
+- tag: 'Jonas Kloeckner, <u>Mansur Arief</u>, Sofia Mantilla Salas, Jef Caers. “Beyond Grade and Tonnage: AI-Based Planning Considering Resource Economics and Sustainability.” <i>SSRN preprint</i>.'
+  link: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6916599'
+  selected: false
+  category: 3
+  year: 2026
+
 - tag: 'Ahmad Alfan Alfian Irfan, Nur Ahmad Khatim, <u>Mansur Arief</u>. “A Closed-Loop Evaluation of Capability Loss and Recovery in Compressed Driving Policies.” <i>arXiv preprint</i>.'
   link: 'https://arxiv.org/abs/2609.00718'
   selected: true
@@ -28,7 +79,7 @@
   category: 3
   year: 2026
 
-- tag: '<u>Mansur Arief</u>, Nur Ahmad Khatim, Ali Akarma, Ahmad Alfan Alfian Irfan. “Integrating High-Level Requirements to Low-Level Tests with Machine-Readable V&V Specifications.” <i>arXiv preprint</i>.'
+- tag: '<u>Mansur Arief</u>, Nur Ahmad Khatim, Ali Akarma, Ahmad Alfan Alfian Irfan. “Integrating High-Level Requirements to Low-Level Tests with Machine-Readable V&V Specifications.” <i>IEEE/SICE International Symposium on System Integration (SII), 2027 (to appear)</i>.'
   link: 'https://arxiv.org/abs/2607.17686'
   selected: false
   category: 1
@@ -40,7 +91,7 @@
   category: 3
   year: 2026
 
-- tag: 'Liam A. Kruse, Houjun Liu, Alexandros E. Tzikas, <u>Mansur Arief</u>, Mykel J. Kochenderfer. “Simplifying Flow Matching Transformations with Low-Rank Mixture Models.” <i>International Conference on Control, Decision and Information Technologies (CoDIT), 2026 (to appear)</i>.'
+- tag: 'Liam A. Kruse, Houjun Liu, Alexandros E. Tzikas, <u>Mansur Arief</u>, Mykel J. Kochenderfer. “Simplifying Flow Matching Transformations with Low-Rank Mixture Models.” <i>International Conference on Control, Decision and Information Technologies (CoDIT), 2026</i>.'
   link: 'https://arxiv.org/abs/2606.29724'
   selected: false
   category: 1
@@ -58,7 +109,7 @@
   category: 4
   year: 2026
 
-- tag: '<u>Mansur Arief</u>. “Deepbullwhip: An Open-Source Simulation and Benchmarking for Multi-Echelon Bullwhip Analyses.” <i>arXiv preprint</i>.'
+- tag: '<u>Mansur Arief</u>. “DeepBullwhip: An Open-Source Simulation and Benchmarking for Multi-Echelon Bullwhip Analyses.” <i>International Journal of Supply and Operations Management (IJSOM), 2026 (to appear)</i>.'
   link: 'https://arxiv.org/abs/2604.13478'
   selected: false
   category: 4
@@ -106,7 +157,7 @@
   category: 3
   year: 2025
 
-- tag: 'Liam Kruse, Alexandros Tikas, Harrison Delecki, <u>Mansur Arief</u>, Mykel Kochenderfer. "Enhanced Importance Sampling through Latent Space Exploration in Normalizing Flows." <i>arXiv preprint</i>.'
+- tag: 'Liam Kruse, Alexandros Tzikas, Harrison Delecki, <u>Mansur Arief</u>, Mykel Kochenderfer. “Enhanced Importance Sampling through Latent Space Exploration in Normalizing Flows.” <i>AAAI Conference on Artificial Intelligence (AAAI-25), 2025</i>.'
   link: 'https://arxiv.org/abs/2501.03394'
   selected: false
   category: 1
@@ -125,11 +176,11 @@
   year: 2024
 
 
-- tag: 'Sharma, Armaan, <u>Mansur Arief</u>. "Hydrogen in Aviation: Evaluating the Feasibility and Benefits of a Green Fuel Alternative." <i>arXiv preprint</i>.'
+- tag: 'Sharma, Armaan, <u>Mansur Arief</u>. “Hydrogen in Aviation: Evaluating the Feasibility and Benefits of a Green Fuel Alternative.” <i>Journal of High School Research, 2(1), 2025</i>.'
   link: 'https://arxiv.org/abs/2412.15137'
   selected: false
   category: 3
-  year: 2024
+  year: 2025
 
 - tag: 'Tzikas, AE, Liam Kruse, <u>Mansur Arief</u>, Mykel Kochenderfer, Stephen Boyd. "Discrete-Time Distribution Steering using Monte Carlo Tree Search." <i>arXiv preprint</i>.'
   link: 'https://arxiv.org/abs/2412.06220'
@@ -161,11 +212,11 @@
   category: 2
   year: 2024
 
-- tag: '<u>Arief, Mansur</u>, Mike Timmerman, Jiachen Li, David Isele, Mykel Kochenderfer. "Optimized Guided Meta Training for Intelligent Agents under Highly Interactive Driving Scenarios." <i>IEEE RA-L</i>.'
+- tag: '<u>Arief, Mansur</u>, Mike Timmerman, Jiachen Li, David Isele, Mykel Kochenderfer. “Importance Sampling-Guided Meta-Training for Intelligent Agents in Highly Interactive Environments.” <i>IEEE Robotics and Automation Letters, 10(2): 1098-1105, 2025</i>.'
   link: 'https://ieeexplore.ieee.org/abstract/document/10803069'
   selected: false
   category: 1
-  year: 2024
+  year: 2025
 
 - tag: 'Ward, Isaac R., Dylan Asmar, <u>Mansur Arief</u>, Jana K Mike, Mykel Kochenderfer. "Optimal Control of Mechanical Ventilators with Learned Respiratory Dynamics." <i>CBMS 2024</i>.'
   link: 'https://ieeexplore.ieee.org/abstract/document/10600979/'
@@ -179,7 +230,7 @@
   category: 1
   year: 2025
   
-- tag: '<u>Arief, Mansur</u>, Yan Akhra, Iwan Vanany. "A Robust and Efficient Optimization Model for Electric Vehicle Charging Stations in Developing Countries under Electricity Uncertainty." <i>IEEE International Conference on Industrial Engineering and Engineering Management (IEEM), 2026 (to appear)</i>.'
+- tag: '<u>Arief, Mansur</u>, Yan Akhra, Iwan Vanany. "A Robust and Efficient Optimization Model for Electric Vehicle Charging Stations in Developing Countries under Electricity Uncertainty." <i>IEEE International Conference on Industrial Engineering and Engineering Management (IEEM), 2026 (to appear)</i>. <b>Outstanding Paper Award</b>.'
   link: 'https://arxiv.org/abs/2307.05470'
   selected: false
   category: 3
@@ -216,11 +267,11 @@
   category: 4
   year: 2022
 
-- tag: '<u>Arief, Mansur</u>, Yuanlu Bai, Wenhao Ding, Shengyi He, Zhiyuan Huang, Henry Lam, and Ding Zhao. "Certifiable Deep Importance Sampling for Rare-Event Simulation of Black-Box Systems." <i>Under Review</i>.'
-  link: 'https://arxiv.org/abs/2111.02204'
-  selected: false
+- tag: '<u>Arief, Mansur</u>, Yuanlu Bai, Wenhao Ding, Shengyi He, Zhiyuan Huang, Henry Lam, and Ding Zhao. "Certifiable Deep Importance Sampling for Rare-Event Simulation of Black-Box Systems." <i>Operations Research, 2026</i>.'
+  link: 'https://doi.org/10.1287/opre.2021.0699'
+  selected: true
   category: 1
-  year: 2022
+  year: 2026
 
 - tag: '<u>Arief, Mansur</u>, Zhepeng Cen, Zhenyuan Liu,  Zhiyuan Huang, Bo Li, Henry Lam, and Ding Zhao. "Certifiable Evaluation for Autonomous Vehicle Perception Systems Using Deep Importance Sampling (Deep IS)." <i>ITSC, 2022</i>.'
   link: 'https://ieeexplore.ieee.org/abstract/document/9922202'

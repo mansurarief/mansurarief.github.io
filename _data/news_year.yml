@@ -1,6 +1,24 @@
 - year: 2026
   events:
 
+    - date: 2026-11-16
+      content: "Our IEEM 2026 paper [A Robust and Efficient Optimization Model for Electric Vehicle Charging Stations in Developing Countries under Electricity Uncertainty](https://arxiv.org/abs/2307.05470), with Yan Akhra and Iwan Vanany, received the **Outstanding Paper Award** at IEEM 2026 in Singapore."
+
+    - date: 2026-11-16
+      content: "Recent acceptances: [DeepBullwhip](https://arxiv.org/abs/2604.13478) in the International Journal of Supply and Operations Management (IJSOM); [Integrating High-Level Requirements to Low-Level Tests with Machine-Readable V&V Specifications](https://arxiv.org/abs/2607.17686) at IEEE/SICE SII 2027; [Learned Control Variates for Rare Grid-Outage Estimation at EV Charging Stations](https://arxiv.org/abs/2610.27159), led by Sulyman Iyanda, at ICSGSC 2026; and two papers at ICCA 2026, [Duckietown.jl](https://github.com/ai-vnv/Duckietown.jl) led by Ahmad Alfan Alfian Irfan and a reliability study of explainable AI for freight mode classification led by Ali Alawi Balfaqih."
+
+    - date: 2026-11-16
+      content: "Our paper [Certifiable Deep Importance Sampling for Rare-Event Simulation of Black-Box Systems](https://doi.org/10.1287/opre.2021.0699), with Yuanlu Bai, Shengyi He, Wenhao Ding, Zhiyuan Huang, Henry Lam, Bo Li, and Ding Zhao, is published in Operations Research."
+
+    - date: 2026-10-20
+      content: "New preprint led by Sulyman Iyanda: [Learned Control Variates for Rare Grid-Outage Estimation at Electric Vehicle Charging Stations](https://arxiv.org/abs/2610.27159). Read more on the [blog post](https://ai-vnv.kfupm.io/blog/learned-control-variates-for-rare-grid-outages/)."
+
+    - date: 2026-10-07
+      content: "We released [Duckietown.jl](https://github.com/ai-vnv/Duckietown.jl), a closed-loop driving benchmark for sequential decision-making in Julia. Read more on the [blog post](https://ai-vnv.kfupm.io/blog/duckietown-jl-driving-benchmark/)."
+
+    - date: 2026-09-22
+      content: "[Particle Swarm Optimization of Air Gap Distance for Externally Gapped Line Arrester (EGLA) on High Isokeraunic 70 kV Transmission Line](https://ieeexplore.ieee.org/document/11761588), led by Reza Wahyu Firdaus and Dino Arla, is published in the ICT-PEP 2026 proceedings."
+
     - date: 2026-09-04
       content: "Two papers are accepted for the [IEEE International Conference on Industrial Engineering and Engineering Management (IEEM 2026)](https://www.ieem.org/): [Comparing Socially-Equitable Renewable Energy Budget Allocation MDP Policies in Mature and Emerging Economies](https://arxiv.org/abs/2607.10201), led by Riya Kinnarkar, and [A Robust and Efficient Optimization Model for Electric Vehicle Charging Stations in Developing Countries under Electricity Uncertainty](https://arxiv.org/abs/2307.05470), with Yan Akhra and Iwan Vanany."
 
