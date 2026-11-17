@@ -1,6 +1,12 @@
 - year: 2026
   events:
 
+    - date: 2026-11-17
+      content: "New preprint led by Ghibran Fathoni Belva: [JEPTERA: A Platform Agnostic JEPA-Assisted Model Predictive Planner for Urban UAV Navigation](https://arxiv.org/abs/2611.20593)."
+
+    - date: 2026-11-17
+      content: "New preprint led by Ahmad Alfan Alfian Irfan: [D’BEAST: Logged Bad Experiences as Explanation for Autonomous Driving Agents](https://arxiv.org/abs/2611.20019)."
+
     - date: 2026-11-16
       content: "Our IEEM 2026 paper [A Robust and Efficient Optimization Model for Electric Vehicle Charging Stations in Developing Countries under Electricity Uncertainty](https://arxiv.org/abs/2307.05470), with Yan Akhra and Iwan Vanany, received the **Outstanding Paper Award** at IEEM 2026 in Singapore."
 
@@ -8,10 +14,10 @@
       content: "Our paper [Certifiable Deep Importance Sampling for Rare-Event Simulation of Black-Box Systems](https://doi.org/10.1287/opre.2021.0699), with Yuanlu Bai, Shengyi He, Wenhao Ding, Zhiyuan Huang, Henry Lam, Bo Li, and Ding Zhao, is published in Operations Research."
 
     - date: 2026-11-15
-      content: "Ghibran Fathoni Belva's paper JEPTERA, a platform-agnostic JEPA-assisted model predictive planner for urban UAV navigation, with Ahmad Alfan Alfian Irfan, is submitted to the [IEEE Intelligent Vehicles Symposium (IV 2027)](https://ieee-iv.org/)."
+      content: "Ghibran Fathoni Belva's paper [JEPTERA](https://arxiv.org/abs/2611.20593), a platform-agnostic JEPA-assisted model predictive planner for urban UAV navigation, with Ahmad Alfan Alfian Irfan, is submitted to the [IEEE Intelligent Vehicles Symposium (IV 2027)](https://ieee-iv.org/)."
 
     - date: 2026-11-15
-      content: "Ahmad Alfan Alfian Irfan's paper D’BEAST, which uses logged bad experiences as explanations for autonomous driving agents, with Nur Ahmad Khatim, is submitted to the [IEEE Intelligent Vehicles Symposium (IV 2027)](https://ieee-iv.org/)."
+      content: "Ahmad Alfan Alfian Irfan's paper [D’BEAST](https://arxiv.org/abs/2611.20019), which uses logged bad experiences as explanations for autonomous driving agents, with Nur Ahmad Khatim, is submitted to the [IEEE Intelligent Vehicles Symposium (IV 2027)](https://ieee-iv.org/)."
 
     - date: 2026-11-12
       content: "Our paper [DeepBullwhip: An Open-Source Simulation and Benchmarking for Multi-Echelon Bullwhip Analyses](https://arxiv.org/abs/2604.13478) is accepted in the International Journal of Supply and Operations Management (IJSOM)."

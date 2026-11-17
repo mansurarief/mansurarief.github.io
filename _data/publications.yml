@@ -23,11 +23,13 @@
   year: 2026
 
 - tag: 'Ghibran Fathoni Belva, <u>Mansur Arief</u>, Ahmad Alfan Alfian Irfan. “JEPTERA: A Platform Agnostic JEPA-Assisted Model Predictive Planner for Urban UAV Navigation.” <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2611.20593'
   selected: false
   category: 1
   year: 2026
 
 - tag: 'Ahmad Alfan Alfian Irfan, Nur Ahmad Khatim, <u>Mansur Arief</u>. “D’BEAST: Logged Bad Experiences as Explanation for Autonomous Driving Agents.” <i>arXiv preprint</i>.'
+  link: 'https://arxiv.org/abs/2611.20019'
   selected: false
   category: 1
   year: 2026
